@@ -25,25 +25,25 @@ OTHER_FILES += README.md \
                CamTool.travis.pro
 
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/opencv-build/lib/release/ -lopencv_highgui
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv-build/lib/debug/ -lopencv_highgui
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_highgui
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_highgui
 else:symbian: LIBS += -lopencv_highgui
-else:unix: LIBS += -L$$PWD/opencv-build/lib/ -lopencv_highgui
+else:unix: LIBS += -L/usr/local/lib -lopencv_highgui
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/opencv-build/lib/release/ -lopencv_core
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv-build/lib/debug/ -lopencv_core
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_core
+else:win32:CONFIG(debug, debug|release): LIBS += -L$/usr/local/lib/debug/ -lopencv_core
 else:symbian: LIBS += -lopencv_core
-else:unix: LIBS += -L$$PWD/opencv-build/lib/ -lopencv_core
+else:unix: LIBS += -L/usr/local/lib -lopencv_core
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/opencv-build/lib/release/ -lopencv_imgproc
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv-build/lib/debug/ -lopencv_imgproc
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_imgproc
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_imgproc
 else:symbian: LIBS += -lopencv_imgproc
-else:unix: LIBS += -L$$PWD/opencv-build/lib/ -lopencv_imgproc
+else:unix: LIBS += -L/usr/local/lib -lopencv_imgproc
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/opencv-build/lib/release/ -lopencv_objdetect
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/opencv-build/lib/debug/ -lopencv_objdetect
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_objdetect
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_objdetect
 else:symbian: LIBS += -lopencv_objdetect
-else:unix: LIBS += -L$$PWD/opencv-build/lib/ -lopencv_objdetect
+else:unix: LIBS += -L/usr/local/lib -lopencv_objdetect
 
-INCLUDEPATH += $$PWD/opencv-build/include
-DEPENDPATH += $$PWD/opencv-build/include
+INCLUDEPATH += /usr/local/include
+DEPENDPATH += /usr/local/include
