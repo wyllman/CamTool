@@ -15,10 +15,12 @@ TEMPLATE = app
 
 
 SOURCES  += lib/main.cpp\
-            lib/view/mainwindow.cpp
+            lib/view/mainwindow.cpp \
+            test/view/mainwindow_spec.cpp
 
 HEADERS  += lib/view/mainwindow.h\
-            lib/globalConf.h
+            lib/globalConf.h \
+            test/view/mainwindow_spec.h
 
 FORMS    += lib/view/mainwindow.ui
 
@@ -27,7 +29,7 @@ OTHER_FILES += README.md \
                .travis.yml \
                CamTool.travis.pro \
                Doxyfile \
-    doc/MAIN.md
+               doc/MAIN.md
 
 # Dependencias
 #   - OpenCV (MacBook Air 10.6.8)

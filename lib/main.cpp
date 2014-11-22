@@ -19,6 +19,18 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 
+#include "globalConf.h"
+
+#if TEST_CHECKING
+   #include <cppunit/TestSuite.h>
+   #include <cppunit/Test.h>
+   #include <cppunit/ui/text/TestRunner.h>
+
+   #include "../test/view/mainwindow_spec.h"
+#else
+
+#endif
+
 using namespace std;
 using namespace cv;
 
@@ -30,12 +42,27 @@ using namespace cv;
  */
 int main(int argc, char *argv[]) {
    QApplication a(argc, argv);
+   int result = 0;
+   cout << "Iniciando CamTool..." << endl;
+
+
+#if TEST_CHECKING
+   cout << "Modo testeo activado." << endl;
+   cout << "Iniciando test..." << endl;
+
+   CppUnit::TextUi::TestRunner runner; /* Crear el objeto de CppUnit que ejecutará las pruebas */
+   runner.addTest(mainwindow_spec::suite());
+   runner.run();
+#else
+   cout << "Sin modo testeo." << endl;
+
    //MainWindow w;
    //w.show();
-   
+   //result = a.exec();
+
+
    cvNamedWindow("Camera_Output", 1); //Create window
    CvCapture* capture = cvCaptureFromCAM(CV_CAP_ANY); //Capture using any camera connected to your system
-
    char key;
 
    while(1){ //Create infinte loop for live streaming
@@ -48,7 +75,10 @@ int main(int argc, char *argv[]) {
    }
    cvReleaseCapture(&capture); //Release capture.
    cvDestroyWindow("Camera_Output"); //Destroy Window
+#endif
+
+   cout << "Finalizando CamTool..." << endl;
 
 
-   return a.exec();
+   return result; //a.exec();
 }

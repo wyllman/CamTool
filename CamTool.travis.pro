@@ -16,9 +16,11 @@ TEMPLATE = app
 
 SOURCES  += lib/main.cpp\
             lib/view/mainwindow.cpp
+            test/view/mainwindow_spec.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h
+            test/view/mainwindow_spec.h
 
 FORMS    += lib/view/mainwindow.ui
 

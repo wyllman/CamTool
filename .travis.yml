@@ -19,6 +19,6 @@ script:
   - qmake CamTool.travis.pro
   - make
   # Ejecutar el proyecto
-  #- ./CamTool
+  - ./CamTool
   # Ejecuciones de bash
-  - ls -la
+  #- ls -la

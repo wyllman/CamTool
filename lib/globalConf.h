@@ -22,4 +22,5 @@
  */
 #define TEST_CHECKING true
 
+
 #endif // GLOBALCONF_H
