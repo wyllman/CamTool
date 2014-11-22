@@ -20,4 +20,5 @@ script:
   - make
   # Ejecutar el proyecto
   #- ./CamTool
-
+  # Ejecuciones de bash
+  - ls -la
