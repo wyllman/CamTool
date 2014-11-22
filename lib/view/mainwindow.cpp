@@ -8,18 +8,23 @@
  * @section DESCRIPTION
  * @details
  *
+ * Archivo de código fuente para la clase de la
+ * ventana principal en QT.
  */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-   QMainWindow(parent),
-   ui(new Ui::MainWindow)
-{
+/**
+ * @brief MainWindow::MainWindow
+ * @param parent
+ */
+MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
    ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
+/**
+ * @brief MainWindow::~MainWindow
+ */
+MainWindow::~MainWindow() {
    delete ui;
 }

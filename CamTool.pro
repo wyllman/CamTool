@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------
 
+# Creado para uso personal (MacBook Air 10.6.8)
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

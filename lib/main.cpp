@@ -8,6 +8,10 @@
  * @section DESCRIPTION
  * @details
  *
+ * Archivo de ejecución principal. Se encarga de
+ * discernir si ejecutar o no los test implementados.
+ * Cargar la interfaz de QT y mostrar o no la ventana
+ * principal del programa.
  */
 #include <QApplication>
 #include "view/mainwindow.h"
@@ -18,8 +22,13 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char *argv[])
-{
+/**
+ * @brief main
+ * @param argc
+ * @param argv
+ * @return
+ */
+int main(int argc, char *argv[]) {
    QApplication a(argc, argv);
    //MainWindow w;
    //w.show();

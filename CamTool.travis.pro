@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-# Uso para la plataforma Travis CI
+# Creado para el uso de la plataforma Travis CI
 
 QT       += core gui
 

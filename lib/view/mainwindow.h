@@ -1,5 +1,3 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
 /**
  * @file mainwindow.h
  * @author  Wyllman <wyllman@gmail.com>
@@ -10,21 +8,27 @@
  * @section DESCRIPTION
  * @details
  *
+ * Archivo de cabecera para la clase de la
+ * ventana principal en QT.
  */
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
 #include <QMainWindow>
 
 namespace Ui {
    class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
-      Q_OBJECT
-      
+/**
+ * @brief The MainWindow class
+ */
+class MainWindow : public QMainWindow {
+   Q_OBJECT
    public:
       explicit MainWindow(QWidget *parent = 0);
       ~MainWindow();
-      
+
    private:
       Ui::MainWindow *ui;
 };
