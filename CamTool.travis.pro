@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------
 
+# Uso para la plataforma Travis CI
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -15,17 +17,17 @@ TEMPLATE = app
 SOURCES  += lib/main.cpp\
             lib/view/mainwindow.cpp
 
-HEADERS  += lib/view/mainwindow.h
+HEADERS  += lib/view/mainwindow.h\
+            lib/globalConf.h
 
 FORMS    += lib/view/mainwindow.ui
 
-OTHER_FILES += README.md \
-               doc/VERSION_LOG.md \
-               .travis.yml \
-               CamTool.travis.pro
 
-
+# Dependencias
+#   - OpenCV (Travis: using: sudo apt-get install libopencv-dev):
 LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect
-
 INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include
+
+#   - CppUnit:
+LIBS += -lcppunit

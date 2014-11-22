@@ -15,16 +15,20 @@ TEMPLATE = app
 SOURCES  += lib/main.cpp\
             lib/view/mainwindow.cpp
 
-HEADERS  += lib/view/mainwindow.h
+HEADERS  += lib/view/mainwindow.h\
+            lib/globalConf.h
 
 FORMS    += lib/view/mainwindow.ui
 
 OTHER_FILES += README.md \
                doc/VERSION_LOG.md \
                .travis.yml \
-    CamTool.travis.pro
+               CamTool.travis.pro \
+               Doxyfile \
+    doc/MAIN.md
 
-
+# Dependencias
+#   - OpenCV (MacBook Air 10.6.8)
 win32:CONFIG(release, debug|release): LIBS += -L/opt/local/lib/release/ -lopencv_highgui
 else:win32:CONFIG(debug, debug|release): LIBS += -L/opt/local/lib/debug/ -lopencv_highgui
 else:symbian: LIBS += -lopencv_highgui
@@ -47,3 +51,6 @@ else:unix: LIBS += -L/opt/local/lib/ -lopencv_objdetect
 
 INCLUDEPATH += /opt/local/include
 DEPENDPATH += /opt/local/include
+
+#   - CppUnit
+LIBS += -lcppunit

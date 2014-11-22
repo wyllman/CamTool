@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author  Wyllman <wyllman@gmail.com>
+ * @version 0.0.1
+ * @date   Noviembre, 2014
+ * @brief Conjunto de herramientas para webCams
+ *
+ * @section DESCRIPTION
+ * @details
+ *
+ */
 #include <QApplication>
 #include "view/mainwindow.h"
 
