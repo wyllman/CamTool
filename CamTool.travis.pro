@@ -24,25 +24,11 @@ OTHER_FILES += README.md \
                .travis.yml \
                CamTool.travis.pro
 
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_core
-else:win32:CONFIG(debug, debug|release): LIBS += -L$/usr/local/lib/debug/ -lopencv_core
-else:symbian: LIBS += -lopencv_core
-else:unix: LIBS += -L/usr/local/lib -lopencv_core
 
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_imgproc
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_imgproc
-else:symbian: LIBS += -lopencv_imgproc
-else:unix: LIBS += -L/usr/local/lib -lopencv_imgproc
-
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_highgui
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_highgui
-else:symbian: LIBS += -lopencv_highgui
-else:unix: LIBS += -L/usr/local/lib -lopencv_highgui
-
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/lib/release/ -lopencv_objdetect
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/lib/debug/ -lopencv_objdetect
-else:symbian: LIBS += -lopencv_objdetect
-else:unix: LIBS += -L/usr/local/lib -lopencv_objdetect
+LIBS += -L/usr/local/lib/ -lopencv_core
+LIBS += -L/usr/local/lib/ -lopencv_imgproc
+LIBS += -L/usr/local/lib/ -lopencv_highgui
+LIBS += -L/usr/local/lib/ -lopencv_objdetect
 
 INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include
