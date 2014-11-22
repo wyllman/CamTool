@@ -3,4 +3,7 @@
 
 #Qt temp files
 *.pro.user
+*.autosave
 
+#Vi tmp files
+*.swp

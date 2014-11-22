@@ -18,3 +18,7 @@ SOURCES  += lib/main.cpp\
 HEADERS  += lib/view/mainwindow.h
 
 FORMS    += lib/view/mainwindow.ui
+
+OTHER_FILES += README.md \
+               doc/VERSION_LOG.md
+
