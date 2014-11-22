@@ -8,32 +8,15 @@ before_install:
   # Instalación de la librería CppUnit
   - sudo apt-get -y install libcppunit-dev
   # Instalación de dependencias para OpenCV
-  - sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev libtiff4-dev libjasper-dev libopenexr-dev cmake python-dev python-numpy python-tk libtbb-dev libeigen3-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev default-jdk ant libvtk5-qt4-dev
+  #- sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev libtiff4-dev libjasper-dev libopenexr-dev cmake python-dev python-numpy python-tk libtbb-dev libeigen3-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev default-jdk ant libvtk5-qt4-dev
 
   - sudo apt-get install libopencv-dev
 
-  # Instalación de las librerías OpenCV
-  #- curl -sL https://github.com/Itseez/opencv/archive/2.4.10.zip > opencv.zip
-  #- unzip opencv.zip
-  #- rm opencv.zip
-  #- mkdir opencv-build
-  #- cd opencv-build/
-  #- cmake -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_DOCS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_opencv_java=OFF -DBUILD_JASPER=ON -DWITH_JASPER=ON -DBUILD_ZLIB=ON -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DWITH_OPENEXR=OFF -DBUILD_PNG=ON -DWITH_PNG=ON -DWITH_TIFF=ON -DBUILD_TIFF=ON -DWITH_WEBP=OFF -DWITH_JPEG=ON -DBUILD_JPEG=ON ../opencv-2.4.10/
-  #- make
-  #- sudo make install
-  #- sudo ldconfig
-  #- cd ..
 
 script:
   - pwd
   - ls -la
-  #- ls -la opencv-build/
-  #- ls -la opencv-build/lib
-  #- ls -la /usr/local/bin
-  - ls -la /usr/
-  - ls -la /usr/lib
-  - ls -la /usr/local/lib
-  - ls -la /usr/local/include
+
   - qmake -project
   - qmake CamTool.travis.pro
   - make
