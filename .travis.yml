@@ -3,7 +3,31 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get update
-  - sudo apt-get install build-essential
+  # Instalación del compilador QT
+  - sudo apt-get -y install libqt4-dev
+  # Instalación de la librería CppUnit
+  - sudo apt-get -y install libcppunit-dev
+  # Instalación de dependencias para OpenCV
+  #   - install a developer environment
+  - sudo apt-get -y install build-essential cmake pkg-config
+  #   -  Install Image I/O libraries
+  - sudo apt-get -y install libjpeg62-dev
+  - sudo apt-get -y install libtiff4-dev libjasper-dev
+  #   - Install the GTK dev library
+  - sudo apt-get -y install  libgtk2.0-dev
+  #   -  Install Video I/O libraries
+  - sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+  #   - install support for Firewire video cameras (Opt)
+  - sudo apt-get -y install libdc1394-22-dev
+  #   - install video streaming libraries (Opt)
+  - sudo apt-get -y install libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+  #   - install the Python development environment and the Python Numerical library (Opt)
+  - sudo apt-get -y install python-dev python-numpy
+  #   - install the parallel code processing library (the Intel tbb library - Opt)
+  - sudo apt-get -y install libtbb-dev
+
+
+  # Instalación de las librerías OpenCV
   - curl -sL https://github.com/Itseez/opencv/archive/2.4.6.1.zip > opencv.zip
   - unzip opencv.zip
   - rm opencv.zip
@@ -13,14 +37,13 @@ before_install:
   - make
   - sudo make install
   - cd ..
-install:
-  - sudo apt-get install libqt4-dev
-  - sudo apt-get install libcppunit-dev
+
 script:
   - pwd
   - ls -la
   - ls -la opencv-build/
   - ls -la opencv-build/lib
+  - ls -la /usr/local/bin
   - ls -la /usr/local/lib
   - ls -la /usr/local/include
   - qmake -project
