@@ -21,7 +21,8 @@ FORMS    += lib/view/mainwindow.ui
 
 OTHER_FILES += README.md \
                doc/VERSION_LOG.md \
-               .travis.yml
+               .travis.yml \
+    CamTool.travis.pro
 
 
 win32:CONFIG(release, debug|release): LIBS += -L/opt/local/lib/release/ -lopencv_highgui

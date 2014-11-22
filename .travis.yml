@@ -18,5 +18,8 @@ install:
 script:
   - pwd
   - ls -la
-  - ls -la opencv-build
+  - ls -la opencv-build/include/
+  - qmake -project
+  - qmake CamTool.travis.pro
+  - make
 
