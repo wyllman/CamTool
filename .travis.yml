@@ -18,8 +18,7 @@ before_install:
   - rm opencv.zip
   - mkdir opencv-build
   - cd opencv-build/
-  - cmake -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_VTK=ON ../opencv-2.4.10/
-
+  - cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ../opencv-2.4.10/
   - make
   - sudo make install
   - sudo ldconfig
