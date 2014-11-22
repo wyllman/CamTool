@@ -41,7 +41,7 @@ using namespace cv;
  * @return
  */
 int main(int argc, char *argv[]) {
-   QApplication a(argc, argv);
+   //QApplication a(argc, argv);
    int result = 0;
    cout << "Iniciando CamTool..." << endl;
 
