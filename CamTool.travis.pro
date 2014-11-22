@@ -25,10 +25,7 @@ OTHER_FILES += README.md \
                CamTool.travis.pro
 
 
-LIBS += -L/usr/local/lib/ -lopencv_core
-LIBS += -L/usr/local/lib/ -lopencv_imgproc
-LIBS += -L/usr/local/lib/ -lopencv_highgui
-LIBS += -L/usr/local/lib/ -lopencv_objdetect
+LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_objdetect
 
 INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include
