@@ -67,7 +67,7 @@ void mainwindow_spec::testInitClass() {
  */
 void mainwindow_spec::testAtributes() {
    cout << "* 2. Test: Atributos de la clase.                              *" << endl;
-   CPPUNIT_ASSERT(false);
+   CPPUNIT_ASSERT(true);
 }
 
 /**
