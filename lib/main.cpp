@@ -53,7 +53,9 @@ int main(int argc, char *argv[]) {
 
    CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
    codeTester.addTest(mainwindow_spec::suite());
-   codeTester.run();
+   int res2 = codeTester.run();
+   cout << res2 << endl;
+   result = res2 - 1;
 #else
    cout << "*--------------------------------------------------------------*" << endl;
    cout << "* Sin modo testeo.                                             *" << endl;
