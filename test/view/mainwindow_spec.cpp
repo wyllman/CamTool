@@ -1,9 +1,9 @@
 /**
- * @file mainwindow.cpp
+ * @file    mainwindow_spec.cpp
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Ventana Principal QT
+ * @date    Noviembre, 2014
+ * @brief   Espectativas Ventana Principal QT
  *
  * @section DESCRIPTION
  * @details
@@ -27,7 +27,7 @@ mainwindow_spec::mainwindow_spec() {}
  * @return
  */
 CppUnit::Test* mainwindow_spec::suite() {
-   CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "CamTool Test Suit" );
+   CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "Main Window Test Suit" );
 
    suiteOfTests->addTest( new CppUnit::TestCaller<mainwindow_spec>(
                                   "Init Test",
@@ -46,7 +46,8 @@ CppUnit::Test* mainwindow_spec::suite() {
  */
 void mainwindow_spec::setUp() {
    cout << endl;
-   cout << "*--------------------------------------------------------------*" << endl;
+   //cout << "*--------------------------------------------------------------*" << endl;
+   cout << "*--mainwindow--------------------------------------------------*" << endl;
 }
 
 /**

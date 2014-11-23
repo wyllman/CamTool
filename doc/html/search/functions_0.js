@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['mainwindow',['MainWindow',['../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
-  ['mainwindow_5fspec',['mainwindow_spec',['../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8',1,'mainwindow_spec']]]
+  ['cameracontroller',['CameraController',['../d4/d3e/class_camera_controller.html#ad0f7e32ab3bc7ccb06f3e479b0d0681a',1,'CameraController']]],
+  ['cameracontroller_5fspec',['CameraController_spec',['../d4/df9/class_camera_controller__spec.html#a266794d2553dfda54b83a09fc786b363',1,'CameraController_spec']]]
 ];

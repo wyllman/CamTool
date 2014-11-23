@@ -1,9 +1,9 @@
 /**
- * @file mainwindow_spec.cpp
+ * @file    mainwindow.cpp
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Espectativas ventana Principal QT
+ * @date    Noviembre, 2014
+ * @brief   Ventana Principal QT
  *
  * @section DESCRIPTION
  * @details

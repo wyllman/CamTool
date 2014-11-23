@@ -1,9 +1,9 @@
 /**
- * @file globalConf.h
+ * @file    globalConf.h
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Directivas de preprocesador y componentes globales
+ * @date    Noviembre, 2014
+ * @brief   Directivas de preprocesador y componentes globales
  *
  * @section DESCRIPTION
  * @details

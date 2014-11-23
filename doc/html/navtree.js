@@ -2,6 +2,7 @@ var NAVTREE =
 [
   [ "CamTool", "index.html", [
     [ "CamTool", "d3/dcc/md__r_e_a_d_m_e.html", null ],
+    [ "CamTool - Información y enlaces de ayuda.", "da/d74/md_doc__h_e_l_p__i_n_f_o.html", null ],
     [ "Namespaces", null, [
       [ "Lista de 'namespaces'", "namespaces.html", "namespaces" ]
     ] ],

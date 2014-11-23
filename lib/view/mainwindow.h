@@ -1,9 +1,9 @@
 /**
- * @file mainwindow.h
+ * @file    mainwindow.h
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Ventana Principal QT
+ * @date    Noviembre, 2014
+ * @brief   Ventana Principal QT
  *
  * @section DESCRIPTION
  * @details
@@ -14,13 +14,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-
 #include "../globalConf.h"
 
 #if TEST_CHECKING
    #include "../../test/view/mainwindow_spec.h"
 #endif
+
+#include <QMainWindow>
 
 namespace Ui {
    class MainWindow;

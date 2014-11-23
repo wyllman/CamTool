@@ -1,15 +1,15 @@
 /**
- * @file mainwindow_spec.h
+ * @file    mainwindow_spec.h
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Espectativas ventana Principal QT
+ * @date    Noviembre, 2014
+ * @brief   Espectativas ventana Principal QT
  *
  * @section DESCRIPTION
  * @details
  *
- * Archivo de cabecera para la clase de la
- * ventana principal en QT.
+ * Archivo de cabecera para la clase de las
+ * espectativas de la clase mainwindow
  */
 #ifndef MAINWINDOW_SPEC_H
 #define MAINWINDOW_SPEC_H

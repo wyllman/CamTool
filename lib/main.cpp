@@ -1,9 +1,9 @@
 /**
- * @file main.cpp
+ * @file    main.cpp
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
- * @date   Noviembre, 2014
- * @brief Conjunto de herramientas para webCams
+ * @date    Noviembre, 2014
+ * @brief   Conjunto de herramientas para webCams
  *
  * @section DESCRIPTION
  * @details
@@ -13,12 +13,6 @@
  * Cargar la interfaz de QT y mostrar o no la ventana
  * principal del programa.
  */
-#include <QApplication>
-#include "view/mainwindow.h"
-
-#include <opencv2/opencv.hpp>
-#include <iostream>
-
 #include "globalConf.h"
 
 #if TEST_CHECKING
@@ -27,12 +21,18 @@
    #include <cppunit/ui/text/TestRunner.h>
 
    #include "../test/view/mainwindow_spec.h"
+   #include "./test/controller/cameracontroller_spec.h"
 #else
+   #include <QApplication>
+   #include "view/mainwindow.h"
+   #include <opencv2/opencv.hpp>
 
+   using namespace cv;
 #endif
 
+#include <iostream>
 using namespace std;
-using namespace cv;
+
 
 /**
  * @brief main
@@ -40,7 +40,7 @@ using namespace cv;
  * @param argv
  * @return
  */
-int main(int argc, char *argv[]) {
+int main() { //int argc, char *argv[]) {
    int result = 0;
    cout << "****************************************************************" << endl;
    cout << "* Iniciado CamTool.                                            *" << endl;
@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
 
    CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
    codeTester.addTest(mainwindow_spec::suite());
+   codeTester.addTest(CameraController_spec::suite());
    int res2 = codeTester.run();
    cout << res2 << endl;
    result = res2 - 1;
@@ -61,7 +62,7 @@ int main(int argc, char *argv[]) {
    cout << "* Sin modo testeo.                                             *" << endl;
    cout << "*    + Iniciando ejecución...                                  *" << endl;
 
-   QApplication qtApp(argc, argv);
+   //QApplication qtApp(argc, argv);
    //MainWindow w;
    //w.show();
 

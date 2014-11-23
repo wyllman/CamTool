@@ -16,20 +16,26 @@ TEMPLATE = app
 
 SOURCES  += lib/main.cpp\
             lib/view/mainwindow.cpp \
-            test/view/mainwindow_spec.cpp
+            test/view/mainwindow_spec.cpp \
+            test/controller/cameracontroller_spec.cpp \
+    lib/controller/cameracontroller.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h \
-            test/view/mainwindow_spec.h
+            test/view/mainwindow_spec.h \
+            test/controller/cameracontroller_spec.h \
+    lib/controller/cameracontroller.h
 
 FORMS    += lib/view/mainwindow.ui
 
+# Controlar otros archivos con el QT Creator
 OTHER_FILES += README.md \
                doc/VERSION_LOG.md \
                .travis.yml \
                CamTool.travis.pro \
                Doxyfile \
-               doc/MAIN.md
+               doc/MAIN.md \
+               doc/HELP_INFO.md
 
 # Dependencias
 #   - OpenCV (MacBook Air 10.6.8)
