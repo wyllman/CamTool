@@ -10,6 +10,9 @@ before_install:
   # Instalación de la librería OpenCV
   - sudo apt-get -y install libopencv-dev
 
+  # Instalación de un Xserver (Xvfb)
+  - sudo apt-get -y xvfb
+
 script:
   # Compilar el proyecto
   - qmake -project

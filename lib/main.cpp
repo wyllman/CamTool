@@ -23,13 +23,14 @@
    #include "../test/view/mainwindow_spec.h"
    #include "./test/controller/cameracontroller_spec.h"
 #else
-   #include <QApplication>
+
    #include "view/mainwindow.h"
    #include <opencv2/opencv.hpp>
 
    using namespace cv;
 #endif
 
+#include <QApplication>
 #include <iostream>
 using namespace std;
 
@@ -40,8 +41,11 @@ using namespace std;
  * @param argv
  * @return
  */
-int main() { //int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
    int result = 0;
+   QApplication qtApp(argc, argv);
+
+
    cout << "****************************************************************" << endl;
    cout << "* Iniciado CamTool.                                            *" << endl;
    cout << "****************************************************************" << endl;
