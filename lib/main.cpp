@@ -42,23 +42,26 @@ using namespace cv;
  */
 int main(int argc, char *argv[]) {
    int result = 0;
-   cout << "Iniciando CamTool..." << endl;
-
+   cout << "****************************************************************" << endl;
+   cout << "* Iniciado CamTool.                                            *" << endl;
+   cout << "****************************************************************" << endl;
 
 #if TEST_CHECKING
-   cout << "Modo testeo activado." << endl;
-   cout << "Iniciando test..." << endl;
+   cout << "*--------------------------------------------------------------*" << endl;
+   cout << "* Modo testeo activado.                                        *" << endl;
+   cout << "*    + Iniciando test...                                       *" << endl;
 
-   CppUnit::TextUi::TestRunner runner; /* Crear el objeto de CppUnit que ejecutará las pruebas */
-   runner.addTest(mainwindow_spec::suite());
-   runner.run();
+   CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
+   codeTester.addTest(mainwindow_spec::suite());
+   codeTester.run();
 #else
-   cout << "Sin modo testeo." << endl;
-   QApplication a(argc, argv);
+   cout << "*--------------------------------------------------------------*" << endl;
+   cout << "* Sin modo testeo.                                             *" << endl;
+   cout << "*    + Iniciando ejecución...                                  *" << endl;
+
+   QApplication qtApp(argc, argv);
    //MainWindow w;
    //w.show();
-   //result = a.exec();
-
 
    cvNamedWindow("Camera_Output", 1); //Create window
    CvCapture* capture = cvCaptureFromCAM(CV_CAP_ANY); //Capture using any camera connected to your system
@@ -74,10 +77,13 @@ int main(int argc, char *argv[]) {
    }
    cvReleaseCapture(&capture); //Release capture.
    cvDestroyWindow("Camera_Output"); //Destroy Window
+
+   //result = qtApp.exec();
 #endif
 
-   cout << "Finalizando CamTool..." << endl;
-
+   cout << "*--------------------------------------------------------------*" << endl;
+   cout << "* Finalizando CamTool...                                       *" << endl;
+   cout << "****************************************************************" << endl;
 
    return result; //a.exec();
 }

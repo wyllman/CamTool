@@ -29,16 +29,13 @@ class mainwindow_spec: public CppUnit::TestFixture {
 
       static CppUnit::Test* suite();
 
-      void setUp() {}
-      void tearDown() {}
+      void setUp();
+      void tearDown();
 
    protected:
-      void testSum() {
-         CPPUNIT_ASSERT(true);
-      }
-      void testSub() {
-         CPPUNIT_ASSERT(true);
-      }
+      void testInitClass();
+      void testAtributes();
+      void testMethods();
 };
 
 #endif // MAINWINDOW_SPEC_H

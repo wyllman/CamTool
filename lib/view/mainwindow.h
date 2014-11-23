@@ -16,6 +16,12 @@
 
 #include <QMainWindow>
 
+#include "../globalConf.h"
+
+#if TEST_CHECKING
+   #include "../../test/view/mainwindow_spec.h"
+#endif
+
 namespace Ui {
    class MainWindow;
 }
@@ -31,6 +37,10 @@ class MainWindow : public QMainWindow {
 
    private:
       Ui::MainWindow *ui;
+
+#if TEST_CHECKING
+      friend class mainwindow_spec;
+#endif
 };
 
 #endif // MAINWINDOW_H
