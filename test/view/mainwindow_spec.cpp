@@ -63,7 +63,7 @@ void mainwindow_spec::testInitClass() {
 }
 
 /**
- * @brief testSum
+ * @brief mainwindow_spec::testAtributes()
  */
 void mainwindow_spec::testAtributes() {
    cout << "* 2. Test: Atributos de la clase.                              *" << endl;
@@ -71,7 +71,7 @@ void mainwindow_spec::testAtributes() {
 }
 
 /**
- * @brief testSub
+ * @brief mainwindow_spec::testMethods()
  */
 void mainwindow_spec::testMethods() {
    cout << "* 3. Test: Uso de los métodos de la clase.                     *" << endl;
