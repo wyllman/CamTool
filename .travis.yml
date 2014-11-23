@@ -11,7 +11,8 @@ before_install:
   - sudo apt-get -y install libopencv-dev
 
   # Instalación de un Xserver (Xvfb)
-  - sudo apt-get -y xvfb
+  #- sudo apt-get -y xvfb
+  - sudo aptitude install xvfb
 
 script:
   # Compilar el proyecto
