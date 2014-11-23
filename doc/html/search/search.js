@@ -7,11 +7,11 @@
 
 var indexSectionsWithContent =
 {
-  0: "cgmrtu~",
+  0: "cgmrstu~",
   1: "m",
   2: "u",
   3: "gmr",
-  4: "m~",
+  4: "mst~",
   5: "u",
   6: "t",
   7: "c"

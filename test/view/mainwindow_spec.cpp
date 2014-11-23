@@ -32,7 +32,6 @@ CppUnit::Test* mainwindow_spec::suite() {
    suiteOfTests->addTest( new CppUnit::TestCaller<mainwindow_spec>(
                                   "Init Test",
                                   &mainwindow_spec::testInitClass ) );
-
    suiteOfTests->addTest( new CppUnit::TestCaller<mainwindow_spec>(
                                   "Test Atrib",
                                   &mainwindow_spec::testAtributes ) );

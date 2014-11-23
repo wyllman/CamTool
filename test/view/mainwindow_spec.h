@@ -21,6 +21,7 @@
 #include "../../lib/view/mainwindow.h"
 
 /**
+ * @class mainwindow_spec
  * @brief The mainwindow_spec class
  */
 class mainwindow_spec: public CppUnit::TestFixture {
