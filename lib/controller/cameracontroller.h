@@ -28,6 +28,8 @@ class CameraController {
    public:
       CameraController();
 
+   private:
+
 #if TEST_CHECKING
       friend class CameraController_spec;
 #endif

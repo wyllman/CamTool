@@ -45,6 +45,7 @@ CppUnit::Test* mainwindow_spec::suite() {
  * @brief mainwindow_spec::setUp
  */
 void mainwindow_spec::setUp() {
+   _numPassTest = 0;
    cout << endl;
    //cout << "*--------------------------------------------------------------*" << endl;
    cout << "*--mainwindow--------------------------------------------------*" << endl;
@@ -53,14 +54,27 @@ void mainwindow_spec::setUp() {
 /**
  * @brief mainwindow_spec::tearDown
  */
-void mainwindow_spec::tearDown() {}
+void mainwindow_spec::tearDown() {
+   cout << " - " << _numPassTest << " test realizados con éxito";
+}
 
 /**
  * @brief mainwindow_spec::testInitClass
  */
 void mainwindow_spec::testInitClass() {
    cout << "* 1. Test: Inicialización de la clase.                         *" << endl;
-   CPPUNIT_ASSERT(true);
+
+   /*
+   // Comprobando el uso del constructor por defecto.
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de MainWindow ()"
+                                    , _dummyObject = new MainWindow (););
+   addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
+                           , _dummyObject != NULL);
+   addPassTest ();
+   */
+   CPPUNIT_ASSERT (true);
+   addPassTest ();
 }
 
 /**
@@ -68,7 +82,8 @@ void mainwindow_spec::testInitClass() {
  */
 void mainwindow_spec::testAtributes() {
    cout << "* 2. Test: Atributos de la clase.                              *" << endl;
-   CPPUNIT_ASSERT(true);
+   CPPUNIT_ASSERT (true);
+   addPassTest ();
 }
 
 /**
@@ -76,5 +91,14 @@ void mainwindow_spec::testAtributes() {
  */
 void mainwindow_spec::testMethods() {
    cout << "* 3. Test: Uso de los métodos de la clase.                     *" << endl;
-   CPPUNIT_ASSERT(true);
+   CPPUNIT_ASSERT (true);
+   addPassTest ();
+}
+
+/**
+ * @brief mainwindow_spec::addPassTest
+ */
+void mainwindow_spec::addPassTest () {
+   ++_numPassTest;
+   cout << ".";
 }

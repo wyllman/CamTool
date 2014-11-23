@@ -6,7 +6,8 @@ Control de versiones y cambios.
   - En main.cpp crear ejemplo de catura de webCam usando OpenCv (sin QT).
   - Iniciar el control de versiones git con repositorio remoto en GitHub.
   - Integración del proyecto en la plataforma Travis CI (creación del archivo .travis.yml)
-  - Instalación de las librerías de OpenCV, el compilador de QT y las librerías CppUnit en Travis.
-  - Crear archivo .pro para travis.
-  - Compilar el proyecto en travis usando el archivo .pro propio.
-  - Crear versión inicial de la documentación usando DoxyGen
+  - Instalación de las librerías de OpenCV, el compilador de QT y las librerías CppUnit en Travis.(.travis.yml)
+  - Crear archivo .pro para travis.(CamTool.travis.pro)
+  - Compilar el proyecto en travis usando el archivo .pro propio.(CamTool.travis.pro, .travis.yml)
+  - Crear versión inicial de la documentación usando DoxyGen.(Archivo de configuración Doxyfile).
+  - Crear la estructura inicial de la clase CameraController y sus espectativas.

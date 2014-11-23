@@ -20,6 +20,8 @@
 #include <cppunit/TestSuite.h>
 #include "../../lib/view/mainwindow.h"
 
+class MainWindow;
+
 /**
  * @class mainwindow_spec
  * @brief The mainwindow_spec class
@@ -37,6 +39,12 @@ class mainwindow_spec: public CppUnit::TestFixture {
       void testInitClass();
       void testAtributes();
       void testMethods();
+
+   private:
+      int _numPassTest;
+      MainWindow* _dummyObject;
+
+      void addPassTest ();
 };
 
 #endif // MAINWINDOW_SPEC_H

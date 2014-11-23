@@ -20,6 +20,8 @@
 #include <cppunit/TestSuite.h>
 #include "../../lib/controller/cameracontroller.h"
 
+class CameraController;
+
 /**
  * @class CameraController_spec
  * @brief The CameraController_spec class
@@ -37,6 +39,12 @@ class CameraController_spec: public CppUnit::TestFixture {
       void testInitClass();
       void testAtributes();
       void testMethods();
+   private:
+      int _numPassTest;
+      CameraController* _dummyObject;
+
+      void addPassTest ();
+
 };
 
 #endif // CAMERACONTROLLER_SPEC_H

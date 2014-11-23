@@ -55,7 +55,7 @@ int main() { //int argc, char *argv[]) {
    codeTester.addTest(mainwindow_spec::suite());
    codeTester.addTest(CameraController_spec::suite());
    int res2 = codeTester.run();
-   cout << res2 << endl;
+   //cout << res2 << endl;
    result = res2 - 1;
 #else
    cout << "*--------------------------------------------------------------*" << endl;
