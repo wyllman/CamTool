@@ -3,8 +3,12 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get update
-  - sudo apt-get install ubuntu-desktop
-  - sudo start lightdm
+  #- sudo apt-get install ubuntu-desktop
+  #- sudo start lightdm
+
+  - sudo apt-get install xorg gnome-core gnome-system-tools gnome-app-install
+  - sudo startx
+
   # Instalación del compilador QT
   - sudo apt-get -y install libqt4-dev
   # Instalación de la librería CppUnit
@@ -14,8 +18,8 @@ before_install:
 
 script:
   # Ejecuciones de bash
-  - pwd
-  - ls -la
+  #- pwd
+  #- ls -la
   # Compilar el proyecto
   - qmake -project
   - qmake CamTool.travis.pro
