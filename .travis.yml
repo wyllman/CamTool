@@ -3,6 +3,8 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get update
+  - sudo apt-get install ubuntu-desktop
+  - sudo start lightdm
   # Instalación del compilador QT
   - sudo apt-get -y install libqt4-dev
   # Instalación de la librería CppUnit
