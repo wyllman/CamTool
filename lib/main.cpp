@@ -41,7 +41,6 @@ using namespace cv;
  * @return
  */
 int main(int argc, char *argv[]) {
-   QApplication a(argc, argv);
    int result = 0;
    cout << "Iniciando CamTool..." << endl;
 
@@ -55,7 +54,7 @@ int main(int argc, char *argv[]) {
    runner.run();
 #else
    cout << "Sin modo testeo." << endl;
-
+   QApplication a(argc, argv);
    //MainWindow w;
    //w.show();
    //result = a.exec();
