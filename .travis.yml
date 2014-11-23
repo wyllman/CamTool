@@ -3,17 +3,6 @@ compiler:
   - gcc
 before_install:
   - sudo apt-get update
-  #- sudo apt-get install ubuntu-desktop
-  #- sudo start lightdm
-
-  - sudo apt-get install xorg gnome-core gnome-system-tools gnome-app-install
-  - sudo apt-get install xauth
-  - sudo apt-get install openbox
-  - sudo apt-get install fxlrg
-  - sudo apt-get install xserver-xorg-core
-  - sudo apt-get install xserver-xorg
-  - sudo startx
-
   # Instalación del compilador QT
   - sudo apt-get -y install libqt4-dev
   # Instalación de la librería CppUnit
@@ -22,9 +11,6 @@ before_install:
   - sudo apt-get -y install libopencv-dev
 
 script:
-  # Ejecuciones de bash
-  #- pwd
-  #- ls -la
   # Compilar el proyecto
   - qmake -project
   - qmake CamTool.travis.pro
