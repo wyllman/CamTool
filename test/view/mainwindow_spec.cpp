@@ -64,7 +64,7 @@ void mainwindow_spec::tearDown() {
 void mainwindow_spec::testInitClass() {
    cout << "* 1. Test: Inicialización de la clase.                         *" << endl;
 
-   /*
+
    // Comprobando el uso del constructor por defecto.
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de MainWindow ()"
                                     , _dummyObject = new MainWindow (););
@@ -72,9 +72,9 @@ void mainwindow_spec::testInitClass() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
-   */
-   CPPUNIT_ASSERT (true);
-   addPassTest ();
+
+   //CPPUNIT_ASSERT (true);
+   //addPassTest ();
 }
 
 /**

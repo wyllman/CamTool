@@ -42,8 +42,8 @@ using namespace std;
  * @return
  */
 int main(int argc, char *argv[]) {
-   int result = 0;
    QApplication qtApp(argc, argv);
+   int result = 0;
 
 
    cout << "****************************************************************" << endl;
@@ -59,7 +59,6 @@ int main(int argc, char *argv[]) {
    codeTester.addTest(mainwindow_spec::suite());
    codeTester.addTest(CameraController_spec::suite());
    int res2 = codeTester.run();
-   //cout << res2 << endl;
    result = res2 - 1;
 #else
    cout << "*--------------------------------------------------------------*" << endl;
@@ -92,5 +91,5 @@ int main(int argc, char *argv[]) {
    cout << "* Finalizando CamTool...                                       *" << endl;
    cout << "****************************************************************" << endl;
 
-   return result; //a.exec();
+   return result;
 }
