@@ -3,12 +3,12 @@
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
  * @date    Noviembre, 2014
- * @brief   Espectativas Ventana Principal QT
+ * @brief   Expectativas Ventana Principal QT
  *
  * @section DESCRIPTION
  * @details
  *
- * Archivo de código fuente para las espectativas
+ * Archivo de código fuente para las expectativas
  * de la clase mainwindow
  */
 #include "test/view/mainwindow_spec.h"

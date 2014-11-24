@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['help_5finfo_2emd',['HELP_INFO.md',['../d8/d87/_h_e_l_p___i_n_f_o_8md.html',1,'']]]
+  ['globalconf_2eh',['globalConf.h',['../d6/d8b/global_conf_8h.html',1,'']]]
 ];

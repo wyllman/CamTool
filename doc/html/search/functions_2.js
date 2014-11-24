@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setup',['setUp',['../d4/df9/class_camera_controller__spec.html#a76eb5584f0aff1527e82a7ea5bb7711b',1,'CameraController_spec::setUp()'],['../d3/def/classmainwindow__spec.html#a95ac59349cfef54ff6e1abb931023e0a',1,'mainwindow_spec::setUp()']]],
-  ['suite',['suite',['../d4/df9/class_camera_controller__spec.html#af22c7f8eaf7c1efb66c98ae71bb72920',1,'CameraController_spec::suite()'],['../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d',1,'mainwindow_spec::suite()']]]
+  ['cameracontroller',['CameraController',['../d4/d3e/class_camera_controller.html#ad0f7e32ab3bc7ccb06f3e479b0d0681a',1,'CameraController']]],
+  ['cameracontroller_5fspec',['CameraController_spec',['../d4/df9/class_camera_controller__spec.html#a266794d2553dfda54b83a09fc786b363',1,'CameraController_spec']]]
 ];

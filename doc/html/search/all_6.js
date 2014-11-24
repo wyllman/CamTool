@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['teardown',['tearDown',['../d4/df9/class_camera_controller__spec.html#ad676527d4520efd689ffba3cd08e1c05',1,'CameraController_spec::tearDown()'],['../d3/def/classmainwindow__spec.html#a5aaa2dacfb337f95c47fb969354b1248',1,'mainwindow_spec::tearDown()']]],
-  ['test_5fchecking',['TEST_CHECKING',['../d6/d8b/global_conf_8h.html#a1adf200feffe9d395e8cf3acd3d029d8',1,'globalConf.h']]],
-  ['testatributes',['testAtributes',['../d4/df9/class_camera_controller__spec.html#a0ab4dada4d035af9b2b453e111b011e8',1,'CameraController_spec::testAtributes()'],['../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405',1,'mainwindow_spec::testAtributes()']]],
-  ['testinitclass',['testInitClass',['../d4/df9/class_camera_controller__spec.html#a8d75148519726cb28fa5991efa2eab39',1,'CameraController_spec::testInitClass()'],['../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0',1,'mainwindow_spec::testInitClass()']]],
-  ['testmethods',['testMethods',['../d4/df9/class_camera_controller__spec.html#af36a12a6658eac098cfb49cd6456f243',1,'CameraController_spec::testMethods()'],['../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52',1,'mainwindow_spec::testMethods()']]]
+  ['main',['main',['../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../df/d0a/main_8cpp.html',1,'']]],
+  ['main_2emd',['MAIN.md',['../dc/df1/_m_a_i_n_8md.html',1,'']]],
+  ['mainwindow',['MainWindow',['../d9/dc6/class_main_window.html',1,'MainWindow'],['../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp',['mainwindow.cpp',['../d8/dd9/mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh',['mainwindow.h',['../d9/d53/mainwindow_8h.html',1,'']]],
+  ['mainwindow_5fspec',['mainwindow_spec',['../d3/def/classmainwindow__spec.html',1,'mainwindow_spec'],['../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8',1,'mainwindow_spec::mainwindow_spec()']]],
+  ['mainwindow_5fspec_2ecpp',['mainwindow_spec.cpp',['../dd/d67/mainwindow__spec_8cpp.html',1,'']]],
+  ['mainwindow_5fspec_2eh',['mainwindow_spec.h',['../df/dce/mainwindow__spec_8h.html',1,'']]]
 ];

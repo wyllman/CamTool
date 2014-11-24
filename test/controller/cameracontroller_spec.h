@@ -3,13 +3,13 @@
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
  * @date    Noviembre, 2014
- * @brief   Espectativas Controlador interno para las cámaras.
+ * @brief   Expectativas Controlador interno para las cámaras.
  *
  * @section DESCRIPTION
  * @details
  *
  * Archivo de cabecera para la clase de las
- * espectativas de la clase CameraController
+ * expectativas de la clase CameraController
  */
 #ifndef CAMERACONTROLLER_SPEC_H
 #define CAMERACONTROLLER_SPEC_H

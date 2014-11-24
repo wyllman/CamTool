@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['help_5finfo_2emd',['HELP_INFO.md',['../d8/d87/_h_e_l_p___i_n_f_o_8md.html',1,'']]]
+  ['base_5fspec',['Base_spec',['../d0/d4f/class_base__spec.html',1,'Base_spec'],['../d0/d4f/class_base__spec.html#a7789a57851cf0ce570be513726deebfb',1,'Base_spec::Base_spec()']]],
+  ['base_5fspec_2ecpp',['base_spec.cpp',['../d8/d3a/base__spec_8cpp.html',1,'']]],
+  ['base_5fspec_2eh',['base_spec.h',['../d7/d9d/base__spec_8h.html',1,'']]]
 ];

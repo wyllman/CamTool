@@ -10,5 +10,5 @@ Control de versiones y cambios.
   - Crear archivo .pro para travis.(CamTool.travis.pro)
   - Compilar el proyecto en travis usando el archivo .pro propio.(CamTool.travis.pro, .travis.yml)
   - Crear versión inicial de la documentación usando DoxyGen.(Archivo de configuración Doxyfile).
-  - Crear la estructura inicial de la clase CameraController y sus espectativas.
+  - Crear la estructura inicial de la clase CameraController y sus expectativas.
   - Instalar en travis Xvfb(xserver) para las ejecuciones del programa.

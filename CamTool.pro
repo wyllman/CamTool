@@ -20,13 +20,15 @@ SOURCES  += lib/main.cpp\
             lib/view/mainwindow.cpp \
             test/view/mainwindow_spec.cpp \
             test/controller/cameracontroller_spec.cpp \
-            lib/controller/cameracontroller.cpp
+            lib/controller/cameracontroller.cpp \
+            test/base_spec.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h \
             test/view/mainwindow_spec.h \
             test/controller/cameracontroller_spec.h \
-            lib/controller/cameracontroller.h
+            lib/controller/cameracontroller.h \
+            test/base_spec.h
 
 FORMS    += lib/view/mainwindow.ui
 

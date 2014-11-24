@@ -3,13 +3,13 @@
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
  * @date    Noviembre, 2014
- * @brief   Espectativas ventana Principal QT
+ * @brief   Expectativas ventana Principal QT
  *
  * @section DESCRIPTION
  * @details
  *
  * Archivo de cabecera para la clase de las
- * espectativas de la clase mainwindow
+ * expectativas de la clase mainwindow
  */
 #ifndef MAINWINDOW_SPEC_H
 #define MAINWINDOW_SPEC_H

@@ -3,21 +3,17 @@
  * @author  Wyllman <wyllman@gmail.com>
  * @version 0.0.1
  * @date    Noviembre, 2014
- * @brief   Espectativas Controlador interno para las cámaras.
+ * @brief   Expectativas Controlador interno para las cámaras.
  *
  * @section DESCRIPTION
  * @details
  *
- * Archivo de código fuente para las espectativas
+ * Archivo de código fuente para las expectativas
  * de la clase CameraController
  */
 #include "test/controller/cameracontroller_spec.h"
 # include <cppunit/extensions/TypeInfoHelper.h>
 #include <iostream>
-
-//#include <string>
-//#include <cstdlib>
-
 
 using namespace std;
 
@@ -94,7 +90,7 @@ void CameraController_spec::testInitClass() {
                            , _dummyObject != NULL);
    addPassTest ();
 
-   // Espectativas inicialización de atributos:
+   // Expectativas inicialización de atributos:
    //   - Crear struct para guardar el objeto CvCapture y la resolución
    //     de una de las cámaras disponibles en el sistema. (cameraDevice)
    //CPPUNIT_ASSERT_NO_THROW (objetoDePrueba;);

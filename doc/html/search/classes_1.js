@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mainwindow',['MainWindow',['../d9/dc6/class_main_window.html',1,'']]],
-  ['mainwindow_5fspec',['mainwindow_spec',['../d3/def/classmainwindow__spec.html',1,'']]]
+  ['cameracontroller',['CameraController',['../d4/d3e/class_camera_controller.html',1,'']]],
+  ['cameracontroller_5fspec',['CameraController_spec',['../d4/df9/class_camera_controller__spec.html',1,'']]]
 ];
