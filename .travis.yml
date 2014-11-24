@@ -12,6 +12,9 @@ before_install:
 
   # Instalación de un Xserver (Xvfb)
   - sudo apt-get -y install xvfb
+  #- sudo Xvfb :10 -ac
+  - pwd
+  #- xvfb-run --server-num=10
   #- sudo aptitude install xvfb
 
 script:
@@ -20,6 +23,8 @@ script:
   - qmake CamTool.travis.pro
   - make
   # Ejecutar el proyecto
-  - ./CamTool
+  #- ./CamTool
+  - pwd
+  - xvfb-run --server-num=10 ./CamTool
   # Ejecuciones de bash
   #- ls -la
