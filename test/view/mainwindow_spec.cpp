@@ -72,9 +72,6 @@ void mainwindow_spec::testInitClass() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
-
-   //CPPUNIT_ASSERT (true);
-   //addPassTest ();
 }
 
 /**

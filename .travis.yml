@@ -9,22 +9,16 @@ before_install:
   - sudo apt-get -y install libcppunit-dev
   # Instalación de la librería OpenCV
   - sudo apt-get -y install libopencv-dev
-
   # Instalación de un Xserver (Xvfb)
   - sudo apt-get -y install xvfb
-  #- sudo Xvfb :10 -ac
-  - pwd
-  #- xvfb-run --server-num=10
-  #- sudo aptitude install xvfb
 
 script:
   # Compilar el proyecto
   - qmake -project
   - qmake CamTool.travis.pro
   - make
-  # Ejecutar el proyecto
-  #- ./CamTool
-  - pwd
+  # Ejecutar el proyecto (bajo xvfb)
   - xvfb-run --server-num=10 ./CamTool
   # Ejecuciones de bash
-  #- ls -la
+  - ls -la
+  - tree
