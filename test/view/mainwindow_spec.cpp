@@ -42,8 +42,6 @@ mainwindow_spec::~mainwindow_spec() {
 CppUnit::Test* mainwindow_spec::suite() {
    Base_spec::BaseSuit *suiteOfTests = new Base_spec::BaseSuit( "Main Window Test Suit" );
 
-   //CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "Main Window Test Suit" );
-
    suiteOfTests->addTest( new CppUnit::TestCaller<mainwindow_spec>(
                                   "Init Test",
                                   &mainwindow_spec::testInitClass ) );

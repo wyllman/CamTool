@@ -47,11 +47,11 @@ void Base_spec::tearDown() {
 
    if (!_finishMethTest) {
       lineWidth -= 1;
-      cout << "\033[0m" << setw (lineWidth) << setfill (' ') << " " << "*" << endl;
+      cout << "\033[0m" << setw (lineWidth) << setfill (' ') << " " << "\033[0m*" << endl;
       internalText = "   - Fallo en el test " + ConsoleView::to_s(_numPassTest + 1 );
       ConsoleView::showLine (' ', internalText, formatText);
    } else {
-      cout << "\033[0m" << setw (lineWidth) << setfill (' ') << " " << "*" << endl;
+      cout << "\033[0m" << setw (lineWidth) << setfill (' ') << " " << "\033[0m*" << endl;
    }
    if (_numPassTest > 0) {
       formatText = "\033[0;32m";
@@ -73,6 +73,7 @@ void Base_spec::startTest () {
 
 void Base_spec::finishTest () {
    _finishMethTest = true;
+
 
 }
 
