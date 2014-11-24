@@ -14,6 +14,7 @@
  * principal del programa.
  */
 #include "globalConf.h"
+#include "./view/consoleview.h"
 
 #if TEST_CHECKING
    #include <cppunit/TestSuite.h>
@@ -23,7 +24,6 @@
    #include "../test/view/mainwindow_spec.h"
    #include "./test/controller/cameracontroller_spec.h"
 #else
-
    #include "view/mainwindow.h"
    #include <opencv2/opencv.hpp>
 
@@ -31,9 +31,6 @@
 #endif
 
 #include <QApplication>
-#include <iostream>
-using namespace std;
-
 
 /**
  * @brief main
@@ -45,15 +42,10 @@ int main(int argc, char *argv[]) {
    QApplication qtApp(argc, argv);
    int result = 0;
 
-
-   cout << "****************************************************************" << endl;
-   cout << "* Iniciado CamTool.                                            *" << endl;
-   cout << "****************************************************************" << endl;
+   ConsoleView::showHeader ();
 
 #if TEST_CHECKING
-   cout << "*--------------------------------------------------------------*" << endl;
-   cout << "* Modo testeo activado.                                        *" << endl;
-   cout << "*    + Iniciando test...                                       *" << endl;
+   ConsoleView::showHeaderTest ();
 
    CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
    codeTester.addTest(mainwindow_spec::suite());
@@ -61,9 +53,7 @@ int main(int argc, char *argv[]) {
    int res2 = codeTester.run();
    result = res2 - 1;
 #else
-   cout << "*--------------------------------------------------------------*" << endl;
-   cout << "* Sin modo testeo.                                             *" << endl;
-   cout << "*    + Iniciando ejecución...                                  *" << endl;
+   ConsoleView::showHeaderExec ();
 
    //QApplication qtApp(argc, argv);
    //MainWindow w;
@@ -87,9 +77,6 @@ int main(int argc, char *argv[]) {
    //result = qtApp.exec();
 #endif
 
-   cout << "*--------------------------------------------------------------*" << endl;
-   cout << "* Finalizando CamTool...                                       *" << endl;
-   cout << "****************************************************************" << endl;
-
+   ConsoleView::showFooter ();
    return result;
 }

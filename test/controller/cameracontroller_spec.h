@@ -14,10 +14,8 @@
 #ifndef CAMERACONTROLLER_SPEC_H
 #define CAMERACONTROLLER_SPEC_H
 
-#include <cppunit/TestFixture.h>
-#include <cppunit/TestAssert.h>
-#include <cppunit/TestCaller.h>
-#include <cppunit/TestSuite.h>
+#include "../base_spec.h"
+
 #include "../../lib/controller/cameracontroller.h"
 
 class CameraController;
@@ -26,25 +24,21 @@ class CameraController;
  * @class CameraController_spec
  * @brief The CameraController_spec class
  */
-class CameraController_spec: public CppUnit::TestFixture {
+class CameraController_spec: public Base_spec {
    public:
       CameraController_spec();
+      ~CameraController_spec();
 
       static CppUnit::Test* suite();
-
-      void setUp();
-      void tearDown();
 
    protected:
       void testInitClass();
       void testAtributes();
       void testMethods();
+
    private:
-      int _numPassTest;
-      bool _finishMethTest;
       CameraController* _dummyObject;
 
-      void addPassTest ();
 
 };
 

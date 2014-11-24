@@ -12,6 +12,7 @@
  * de la clase mainwindow
  */
 #include "test/view/mainwindow_spec.h"
+#include "../../lib/view/consoleview.h"
 
 #include <iostream>
 
@@ -20,14 +21,28 @@ using namespace std;
 /**
  * @brief mainwindow_spec::mainwindow_spec
  */
-mainwindow_spec::mainwindow_spec() {}
+mainwindow_spec::mainwindow_spec(): Base_spec ("MainWindow") {
+   _dummyObject = NULL;
+}
+
+/**
+ * @brief mainwindow_spec::~mainwindow_spec
+ */
+mainwindow_spec::~mainwindow_spec() {
+   if (_dummyObject != NULL) {
+      delete (_dummyObject);
+      _dummyObject = NULL;
+   }
+}
 
 /**
  * @brief mainwindow_spec::suite
  * @return
  */
 CppUnit::Test* mainwindow_spec::suite() {
-   CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "Main Window Test Suit" );
+   Base_spec::BaseSuit *suiteOfTests = new Base_spec::BaseSuit( "Main Window Test Suit" );
+
+   //CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite( "Main Window Test Suit" );
 
    suiteOfTests->addTest( new CppUnit::TestCaller<mainwindow_spec>(
                                   "Init Test",
@@ -42,38 +57,11 @@ CppUnit::Test* mainwindow_spec::suite() {
  }
 
 /**
- * @brief mainwindow_spec::setUp
- */
-void mainwindow_spec::setUp() {
-   _numPassTest = 0;
-   _finishMethTest = false;
-   cout << "\033[0m" << endl;
-   //cout << "*--------------------------------------------------------------*" << endl;
-   cout << "*--mainwindow--------------------------------------------------*" << endl;
-}
-
-/**
- * @brief mainwindow_spec::tearDown
- */
-void mainwindow_spec::tearDown() {
-   if (!_finishMethTest) {
-      cout << " - " << "Fallo en el test " << _numPassTest + 1 << endl;
-   }
-   if (_numPassTest > 0) {
-      cout << "\033[0;32m";
-   } else {
-      cout << "\033[0m";
-   }
-   cout << " - " << _numPassTest << " test realizados con éxito";
-   cout << "\033[0m";
-}
-
-/**
  * @brief mainwindow_spec::testInitClass
  */
 void mainwindow_spec::testInitClass() {
-   cout << "* 1. Test: Inicialización de la clase.                         *" << endl;
-   cout << "\033[0;31m";
+   ConsoleView::showLine(' ', " 1. Test: Inicialización de la clase.");
+   startTest ();
 
    // Comprobando el uso del constructor por defecto.
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de MainWindow ()"
@@ -82,39 +70,29 @@ void mainwindow_spec::testInitClass() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
-   _finishMethTest = true;
+   finishTest();
 }
 
 /**
  * @brief mainwindow_spec::testAtributes()
  */
 void mainwindow_spec::testAtributes() {
-   cout << "* 2. Test: Atributos de la clase.                              *" << endl;
-   cout << "\033[0;31m";
+   ConsoleView::showLine(' ', " 2. Test: Atributos de la clase.");
+   startTest ();
 
    CPPUNIT_ASSERT (true);
    addPassTest ();
-   _finishMethTest = true;
+   finishTest();
 }
 
 /**
  * @brief mainwindow_spec::testMethods()
  */
 void mainwindow_spec::testMethods() {
-   cout << "* 3. Test: Uso de los métodos de la clase.                     *" << endl;
-   cout << "\033[0;31m";
+   ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
+   startTest ();
 
    CPPUNIT_ASSERT (true);
    addPassTest ();
-   _finishMethTest = true;
-}
-
-/**
- * @brief mainwindow_spec::addPassTest
- */
-void mainwindow_spec::addPassTest () {
-   ++_numPassTest;
-   cout << "\033[0;32m";
-   cout << ".";
-   cout << "\033[0;31m";
+   finishTest();
 }

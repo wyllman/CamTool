@@ -14,10 +14,8 @@
 #ifndef MAINWINDOW_SPEC_H
 #define MAINWINDOW_SPEC_H
 
-#include <cppunit/TestFixture.h>
-#include <cppunit/TestAssert.h>
-#include <cppunit/TestCaller.h>
-#include <cppunit/TestSuite.h>
+#include "../base_spec.h"
+
 #include "../../lib/view/mainwindow.h"
 
 class MainWindow;
@@ -26,14 +24,12 @@ class MainWindow;
  * @class mainwindow_spec
  * @brief The mainwindow_spec class
  */
-class mainwindow_spec: public CppUnit::TestFixture {
+class mainwindow_spec: public Base_spec {
    public:
       mainwindow_spec();
+      ~mainwindow_spec();
 
       static CppUnit::Test* suite();
-
-      void setUp();
-      void tearDown();
 
    protected:
       void testInitClass();
@@ -41,11 +37,8 @@ class mainwindow_spec: public CppUnit::TestFixture {
       void testMethods();
 
    private:
-      int _numPassTest;
-      bool _finishMethTest;
       MainWindow* _dummyObject;
 
-      void addPassTest ();
 };
 
 #endif // MAINWINDOW_SPEC_H

@@ -19,14 +19,16 @@ SOURCES  += lib/main.cpp\
             test/view/mainwindow_spec.cpp\
             lib/controller/cameracontroller.cpp\
             test/controller/cameracontroller_spec.cpp\
-            test/base_spec.cpp
+            test/base_spec.cpp\
+            lib/view/consoleview.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h\
             test/view/mainwindow_spec.h\
             lib/controller/cameracontroller.h\
             test/controller/cameracontroller_spec.h\
-            test/base_spec.h
+            test/base_spec.h\
+            lib/view/consoleview.h
 
 FORMS    += lib/view/mainwindow.ui
 

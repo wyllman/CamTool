@@ -22,5 +22,12 @@
  */
 #define TEST_CHECKING true
 
+/**
+ * Se define la macro CONSOLE_LINE_WIDTH para controlar
+ * el número de caracteres que se van a mostrar por línea
+ * en la consola o terminal.
+ */
+#define CONSOLE_LINE_WITH 65
+
 
 #endif // GLOBALCONF_H
