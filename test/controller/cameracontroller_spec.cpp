@@ -90,7 +90,6 @@ void CameraController_spec::testInitClass() {
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de CameraController"
                                     , _dummyObject = new CameraController (););
    addPassTest ();
-   _dummyObject = NULL;
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
