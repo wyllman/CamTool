@@ -46,7 +46,8 @@ CppUnit::Test* mainwindow_spec::suite() {
  */
 void mainwindow_spec::setUp() {
    _numPassTest = 0;
-   cout << endl;
+   _finishMethTest = false;
+   cout << "\033[0m" << endl;
    //cout << "*--------------------------------------------------------------*" << endl;
    cout << "*--mainwindow--------------------------------------------------*" << endl;
 }
@@ -55,7 +56,16 @@ void mainwindow_spec::setUp() {
  * @brief mainwindow_spec::tearDown
  */
 void mainwindow_spec::tearDown() {
+   if (!_finishMethTest) {
+      cout << " - " << "Fallo en el test " << _numPassTest + 1 << endl;
+   }
+   if (_numPassTest > 0) {
+      cout << "\033[0;32m";
+   } else {
+      cout << "\033[0m";
+   }
    cout << " - " << _numPassTest << " test realizados con éxito";
+   cout << "\033[0m";
 }
 
 /**
@@ -63,7 +73,7 @@ void mainwindow_spec::tearDown() {
  */
 void mainwindow_spec::testInitClass() {
    cout << "* 1. Test: Inicialización de la clase.                         *" << endl;
-
+   cout << "\033[0;31m";
 
    // Comprobando el uso del constructor por defecto.
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de MainWindow ()"
@@ -72,6 +82,7 @@ void mainwindow_spec::testInitClass() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
+   _finishMethTest = true;
 }
 
 /**
@@ -79,8 +90,11 @@ void mainwindow_spec::testInitClass() {
  */
 void mainwindow_spec::testAtributes() {
    cout << "* 2. Test: Atributos de la clase.                              *" << endl;
+   cout << "\033[0;31m";
+
    CPPUNIT_ASSERT (true);
    addPassTest ();
+   _finishMethTest = true;
 }
 
 /**
@@ -88,8 +102,11 @@ void mainwindow_spec::testAtributes() {
  */
 void mainwindow_spec::testMethods() {
    cout << "* 3. Test: Uso de los métodos de la clase.                     *" << endl;
+   cout << "\033[0;31m";
+
    CPPUNIT_ASSERT (true);
    addPassTest ();
+   _finishMethTest = true;
 }
 
 /**
@@ -97,5 +114,7 @@ void mainwindow_spec::testMethods() {
  */
 void mainwindow_spec::addPassTest () {
    ++_numPassTest;
+   cout << "\033[0;32m";
    cout << ".";
+   cout << "\033[0;31m";
 }

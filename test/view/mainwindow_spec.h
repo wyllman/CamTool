@@ -42,6 +42,7 @@ class mainwindow_spec: public CppUnit::TestFixture {
 
    private:
       int _numPassTest;
+      bool _finishMethTest;
       MainWindow* _dummyObject;
 
       void addPassTest ();

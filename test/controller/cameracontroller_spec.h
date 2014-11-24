@@ -41,6 +41,7 @@ class CameraController_spec: public CppUnit::TestFixture {
       void testMethods();
    private:
       int _numPassTest;
+      bool _finishMethTest;
       CameraController* _dummyObject;
 
       void addPassTest ();

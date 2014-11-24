@@ -15,6 +15,10 @@
 # include <cppunit/extensions/TypeInfoHelper.h>
 #include <iostream>
 
+//#include <string>
+//#include <cstdlib>
+
+
 using namespace std;
 
 /**
@@ -50,7 +54,8 @@ CppUnit::Test* CameraController_spec::suite() {
  */
 void CameraController_spec::setUp() {
    _numPassTest = 0;
-   cout << endl;
+   _finishMethTest = false;
+   cout << "\033[0m" << endl;
    cout << "*--CameraController--------------------------------------------*" << endl;
 }
 
@@ -58,19 +63,34 @@ void CameraController_spec::setUp() {
  * @brief CameraController_spec::tearDown
  */
 void CameraController_spec::tearDown() {
+   if (!_finishMethTest) {
+      cout << " - " << "Fallo en el test " << _numPassTest + 1 << endl;
+   }
+   if (_numPassTest > 0) {
+      cout << "\033[0;32m";
+   } else {
+      cout << "\033[0m";
+   }
    cout << " - " << _numPassTest << " test realizados con éxito";
+   cout << "\033[0m";
 }
 
 /**
  * @brief CameraController_spec::testInitClass
  */
 void CameraController_spec::testInitClass() {
+   // \033[0m <- Por Defecto
+   // \033[0;31m <- ROJO
+   // \033[0;32m <- VERDE
+
    cout << "* 1. Test: Inicialización de la clase.                         *" << endl;
+   cout << "\033[0;31m";
 
    // Comprobando el uso del constructor por defecto.
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de CameraController"
                                     , _dummyObject = new CameraController (););
    addPassTest ();
+   _dummyObject = NULL;
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
@@ -79,6 +99,8 @@ void CameraController_spec::testInitClass() {
    //   - Crear struct para guardar el objeto CvCapture y la resolución
    //     de una de las cámaras disponibles en el sistema. (cameraDevice)
    //CPPUNIT_ASSERT_NO_THROW (objetoDePrueba;);
+
+   _finishMethTest = true;
 }
 
 /**
@@ -86,8 +108,12 @@ void CameraController_spec::testInitClass() {
  */
 void CameraController_spec::testAtributes() {
    cout << "* 2. Test: Atributos de la clase.                              *" << endl;
+   cout << "\033[0;31m";
+
    CPPUNIT_ASSERT(true);
    addPassTest ();
+
+   _finishMethTest = true;
 }
 
 /**
@@ -95,8 +121,12 @@ void CameraController_spec::testAtributes() {
  */
 void CameraController_spec::testMethods() {
    cout << "* 3. Test: Uso de los métodos de la clase.                     *" << endl;
+   cout << "\033[0;31m";
+
    CPPUNIT_ASSERT(true);
    addPassTest ();
+
+   _finishMethTest = true;
 }
 
 /**
@@ -104,5 +134,7 @@ void CameraController_spec::testMethods() {
  */
 void CameraController_spec::addPassTest () {
    ++_numPassTest;
+   cout << "\033[0;32m";
    cout << ".";
+   cout << "\033[0;31m";
 }
