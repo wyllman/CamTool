@@ -145,7 +145,7 @@ void CameraController_spec::testMethods() {
    // Probando el método obtainCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando la información obtenida de las cámaras"
                                     , textTmp = _dummyObject->obtainCamerasInfo(););
-   std::cout << textTmp;
+   ConsoleView::showMultipleLine(' ', textTmp);
    addPassTest ();
 
    // Probando el método checkingCameras()
@@ -173,9 +173,6 @@ void CameraController_spec::testMethods() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a false."
                            , _dummyObject->_isChecked == false);
    addPassTest ();
-
-
-
 
    finishTest();
 }

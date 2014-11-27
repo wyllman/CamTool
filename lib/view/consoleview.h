@@ -15,12 +15,7 @@
 #define CONSOLEVIEW_H
 
 #include <string>
-#include <sstream>
 
-//#define SSTR( x ) ( std::ostringstream() << std::dec << x ) ).str())
-
-#define SSTR( x ) dynamic_cast< std::ostringstream & >( \
-        ( std::ostringstream() << std::dec << x ) ).str();)
 
 /**
  * @class ConsoleView
@@ -31,6 +26,9 @@ class ConsoleView {
       static void showLine (char, std::string);
       static void showLine (char, std::string, std::string);
       static void showLine (char, std::string, std::string, bool);
+      static void showMultipleLine(char separator, std::string text
+                                   , std::string formatText = "\033[0m"
+                                   , bool endLine = true);
       static void showHeader ();
       static void showHeaderTest ();
       static void showHeaderExec ();
