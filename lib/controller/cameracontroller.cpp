@@ -84,6 +84,7 @@ void CameraController::obtainCamerasInfo () {
 
    while (continueW && (numCams <= MAX_CAMS)) {
       tempCam = new cv::VideoCapture(numCams);
+
       if(tempCam->isOpened()) {
          _avCams[numCams]->index = numCams;
          _avCams[numCams]->theCam = tempCam;
@@ -129,6 +130,7 @@ void CameraController::releaseAvCams (int index) {
          delete[] _avCams;
          _avCams = NULL;
          _numberAvCams = -1;
+         _isChecked = false;
 
       } else { // Para vaciar la memoria de los strucs sobrantes.
          releaseAvCam (_avCams[index]);

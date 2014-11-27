@@ -143,6 +143,13 @@ void CameraController_spec::testMethods() {
    // Probando el método checkingCameras()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->checkingCameras(););
+   if (_dummyObject->_numberAvCams > 0) {
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a true."
+                              , _dummyObject->_isChecked == true);
+   } else {
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a false."
+                              , _dummyObject->_isChecked == false);
+   }
    addPassTest ();
 
    // Probando el método releaseAvCams()
