@@ -128,7 +128,7 @@ void CameraController_spec::testMethods() {
       }
    } else {
       CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
-                              , _dummyObject->_avCams[0] == NULL);
+                              , _dummyObject->_avCams == NULL);
    }
 
 
