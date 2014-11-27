@@ -119,13 +119,13 @@ void CameraController_spec::testMethods() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
                            , _dummyObject->_numberAvCams > -1);
    addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando el array de cámaras detectadas no es NULL"
+                           , _dummyObject->_avCams != NULL);
+   addPassTest ();
 
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->checkingCameras(););
    addPassTest ();
-
-
-
 
 
    finishTest();
