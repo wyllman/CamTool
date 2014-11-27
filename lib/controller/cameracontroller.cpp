@@ -22,6 +22,7 @@ using namespace std;
  */
 CameraController::CameraController() {
    _numberAvCams = -1;
+   _isChecked = false;
    _avCams = NULL;
 }
 
@@ -36,8 +37,31 @@ CameraController::~CameraController() {
  * @brief CameraController::checkingCameras
  */
 void CameraController::checkingCameras () {
-   if (_numberAvCams > 0 && _avCams != NULL) {
+   bool checkTmp = false;
 
+   if (_numberAvCams > 0 && _avCams != NULL) {
+      for (int i = 0; i < _numberAvCams; ++i) {
+         checkTmp = false;
+         if (_avCams[i]->theCam->isOpened()) {
+            checkTmp = true;
+         } else {
+            _avCams[i]->theCam->open(_avCams[i]->index);
+            if (_avCams[i]->theCam->isOpened()) {
+               checkTmp = true;
+            } else {
+               _isChecked = false;
+            }
+         }
+         if ((checkTmp) &&
+            (_avCams[i]->resWidth  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_WIDTH)) &&
+            (_avCams[i]->resHeight  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_HEIGHT))) {
+            _isChecked = true;
+         } else {
+            _isChecked = false;
+         }
+      }
+   } else {
+      _isChecked = false;
    }
 }
 
@@ -69,7 +93,6 @@ void CameraController::obtainCamerasInfo () {
       } else {
          continueW = false;
       }
-
    }
    _numberAvCams = numCams;
 
@@ -82,6 +105,9 @@ void CameraController::obtainCamerasInfo () {
       if (numCams > 0) camsTmp = new camInfoS* [numCams];
       for (int i = 0; i < numCams; ++i) {
          camsTmp[i] = _avCams[i];
+      }
+      if (camsTmp != NULL) {
+         _isChecked = true;
       }
       delete[] _avCams;
       _avCams = camsTmp;

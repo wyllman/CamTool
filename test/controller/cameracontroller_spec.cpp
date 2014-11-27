@@ -102,6 +102,9 @@ void CameraController_spec::testAtributes() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el array de cámaras disponibles sea NULL(=>Sin iniciar)"
                            , _dummyObject->_avCams == NULL);
    addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en false."
+                           , _dummyObject->_isChecked == false);
+   addPassTest ();
 
    finishTest();
 }
@@ -112,6 +115,7 @@ void CameraController_spec::testAtributes() {
 void CameraController_spec::testMethods() {
    ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
    startTest ();
+
    // Probando el método obtainCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->obtainCamerasInfo(););
@@ -125,20 +129,23 @@ void CameraController_spec::testMethods() {
                                  , _dummyObject->_avCams[i]->resWidth > 0);
          CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del alto de las cámaras"
                                  , _dummyObject->_avCams[i]->resHeight > 0);
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
+                                 , _dummyObject->_isChecked == true);
       }
    } else {
       CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
                               , _dummyObject->_avCams == NULL);
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
+                              , _dummyObject->_isChecked == false);
    }
-
-
-
    addPassTest ();
 
+   // Probando el método checkingCameras()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->checkingCameras(););
    addPassTest ();
 
+   // Probando el método releaseAvCams()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->releaseAvCams(););
    addPassTest ();

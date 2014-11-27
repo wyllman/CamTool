@@ -48,6 +48,7 @@ class CameraController {
 
    private:
       int _numberAvCams;
+      bool _isChecked;
       camInfoS** _avCams;
 
       void checkingCameras ();
