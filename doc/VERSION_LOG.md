@@ -15,3 +15,5 @@ Control de versiones y cambios.
   - Creación de la clase Base_spec como clase padre para todas las demás clases de las expectativas.
   - Implementación de la función obtainCamerasInfo() y las funciones adecuadas para vaciar memoria de los objetos
     de la clase CameraController.
+  - Implementación de la función string obtainCamerasInfo() y sus expectativas iniciales.(La anterior función
+    obtainCamerasInfo() se ha refactorizado a obtainCameras().
