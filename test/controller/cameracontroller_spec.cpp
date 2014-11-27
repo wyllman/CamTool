@@ -133,8 +133,8 @@ void CameraController_spec::testMethods() {
                                  , _dummyObject->_isChecked == true);
       }
    } else {
-      //CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
-      //                        , _dummyObject->_avCams == NULL);
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
+                              , _dummyObject->_avCams == NULL);
       CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
                               , _dummyObject->_isChecked == false);
    }
