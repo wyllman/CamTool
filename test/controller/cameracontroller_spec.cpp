@@ -116,6 +116,8 @@ void CameraController_spec::testMethods() {
    ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
    startTest ();
 
+   std::string textTmp = "";
+
    // Probando el método obtainCameras()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->obtainCameras(););
@@ -142,7 +144,8 @@ void CameraController_spec::testMethods() {
 
    // Probando el método obtainCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando la información obtenida de las cámaras"
-                                    , _dummyObject->obtainCamerasInfo(););
+                                    , textTmp = _dummyObject->obtainCamerasInfo(););
+   std::cout << textTmp;
    addPassTest ();
 
    // Probando el método checkingCameras()

@@ -12,6 +12,7 @@
  * ventana principal en QT.
  */
 #include "lib/controller/cameracontroller.h"
+#include "../view/consoleview.h"
 
 #include <iostream>
 using namespace std;
@@ -122,6 +123,19 @@ void CameraController::obtainCameras () {
 std::string CameraController::obtainCamerasInfo () {
    std::string result = "";
 
+   if (_numberAvCams > 0 && _isChecked) {
+      result += " - Hay un total de " + ConsoleView::to_s(_numberAvCams) + " cámaras. \n";
+      for (int i = 0; i < _numberAvCams; ++i) {
+         result += "   - Cámara " + ConsoleView::to_s(i) + ": \n";
+         result += "      - Resolución: " + ConsoleView::to_s(_avCams[i]->resWidth) +
+                   "x" + ConsoleView::to_s(_avCams[i]->resHeight) + "\n";
+
+      }
+   } else if (_numberAvCams == 0) {
+      result += " - No se encuentran cámaras conectadas";
+   } else if (_numberAvCams == -1) {
+      result += " - Sistema de cámaras sin iniciar(llame a la función obtainCameras()";
+   }
 
 
 
