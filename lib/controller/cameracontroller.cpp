@@ -120,8 +120,12 @@ void CameraController::obtainCameras () {
  * @return
  */
 std::string CameraController::obtainCamerasInfo () {
+   std::string result = "";
 
 
+
+
+   return result;
 }
 
 
