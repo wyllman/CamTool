@@ -68,7 +68,7 @@ void CameraController::checkingCameras () {
 /**
  * @brief CameraController::obtainCamerasInfo
  */
-void CameraController::obtainCamerasInfo () {
+void CameraController::obtainCameras () {
    bool continueW = true;
    int numCams = 0;
    cv::VideoCapture* tempCam = NULL;
@@ -114,6 +114,16 @@ void CameraController::obtainCamerasInfo () {
       _avCams = camsTmp;
    }
 }
+
+/**
+ * @brief CameraController::obtainCamerasInfo
+ * @return
+ */
+std::string CameraController::obtainCamerasInfo () {
+
+
+}
+
 
 /**
  * @brief CameraController::releaseAvCams

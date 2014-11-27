@@ -27,6 +27,7 @@
 #endif
 
 #include <opencv2/opencv.hpp>
+#include <string>
 
 struct camInfoS {
       camInfoS() { theCam = NULL; index = -1; resWidth = -1; resHeight = -1; }
@@ -52,8 +53,9 @@ class CameraController {
       camInfoS** _avCams;
 
       void checkingCameras ();
-      void obtainCamerasInfo ();
+      void obtainCameras ();
       void releaseAvCams (int index = -1);
+      std::string obtainCamerasInfo ();
 
       void releaseAvCam (camInfoS*);
 
