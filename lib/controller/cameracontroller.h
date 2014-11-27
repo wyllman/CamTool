@@ -14,11 +14,26 @@
 #ifndef CAMERACONTROLLER_H
 #define CAMERACONTROLLER_H
 
+/**
+ * Se define la macro MAX_CAMS para determinar
+ * el tamaño inicial del array de cámaras
+ */
+#define MAX_CAMS 5
+
 #include "../globalConf.h"
 
 #if TEST_CHECKING
    #include "../../test/controller/cameracontroller_spec.h"
 #endif
+
+#include <opencv2/opencv.hpp>
+
+struct camInfoS {
+      cv::VideoCapture* theCam;
+      unsigned int index;
+      unsigned int resWidth;
+      unsigned int resHeight;
+};
 
 /**
  * @class CameraController
@@ -27,8 +42,14 @@
 class CameraController {
    public:
       CameraController();
+      ~CameraController();
 
    private:
+      int _numberAvCams;
+      camInfoS* _avCams;
+
+      void checkingCameras ();
+      void obtainCamerasInfo ();
 
 #if TEST_CHECKING
       friend class CameraController_spec;

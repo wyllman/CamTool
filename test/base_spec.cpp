@@ -55,8 +55,12 @@ void Base_spec::tearDown() {
    }
    if (_numPassTest > 0) {
       formatText = "\033[0;32m";
+      internalText = "   - " + ConsoleView::to_s(_numPassTest ) +  " tests realizados con éxito";
+   } else {
+      formatText = "\033[0m";
+      internalText = "   - Cero tests realizados.";
    }
-   internalText = "   - " + ConsoleView::to_s(_numPassTest ) +  " test realizados con éxito";
+   //internalText = "   - " + ConsoleView::to_s(_numPassTest ) +  " tests realizados con éxito";
    ConsoleView::showLine(' ', internalText, formatText, false);
 }
 

@@ -57,6 +57,11 @@ void ConsoleView::showFooter () {
    showLine('*', "*");
 }
 
+/**
+ * @brief ConsoleView::to_s
+ * @param value
+ * @return
+ */
 string ConsoleView::to_s (int value) {
    stringstream ss;
    ss << value;

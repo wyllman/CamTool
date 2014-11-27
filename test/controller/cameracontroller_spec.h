@@ -31,6 +31,8 @@ class CameraController_spec: public Base_spec {
 
       static CppUnit::Test* suite();
 
+      void setUp();
+
    protected:
       void testInitClass();
       void testAtributes();

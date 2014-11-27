@@ -58,7 +58,7 @@ CppUnit::Test* mainwindow_spec::suite() {
  * @brief mainwindow_spec::testInitClass
  */
 void mainwindow_spec::testInitClass() {
-   ConsoleView::showLine(' ', " 1. Test: Inicialización de la clase.");
+   ConsoleView::showLine(' ', " 1. Test: Inicialización de la clase");
    startTest ();
 
    // Comprobando el uso del constructor por defecto.

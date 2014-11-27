@@ -15,9 +15,7 @@
 #include "../../lib/view/consoleview.h"
 
 #include <cppunit/extensions/TypeInfoHelper.h>
-#include <iostream>
 
-using namespace std;
 
 /**
  * @brief CameraController_spec::CameraController_spec (constructor)
@@ -59,25 +57,33 @@ CppUnit::Test* CameraController_spec::suite() {
  }
 
 /**
+ * @brief CameraController_spec::setUp
+ */
+void CameraController_spec::setUp() {
+   _dummyObject = new CameraController ();
+   Base_spec::setUp();
+}
+
+
+/**
  * @brief CameraController_spec::testInitClass
  */
 void CameraController_spec::testInitClass() {
    ConsoleView::showLine(' ', " 1. Test: Inicialización de la clase.");
    startTest ();
 
+   if (_dummyObject != NULL) {
+      delete _dummyObject;
+      _dummyObject = NULL;
+   }
    // Comprobando el uso del constructor por defecto.
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Llamando al constructor por defecto de CameraController"
                                     , _dummyObject = new CameraController (););
    addPassTest ();
-   //_dummyObject = NULL;
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el constructor por defecto no retorne NULL"
                            , _dummyObject != NULL);
    addPassTest ();
 
-   // Expectativas inicialización de atributos:
-   //   - Crear struct para guardar el objeto CvCapture y la resolución
-   //     de una de las cámaras disponibles en el sistema. (cameraDevice)
-   //CPPUNIT_ASSERT_NO_THROW (objetoDePrueba;);
 
    finishTest();
 }
@@ -89,8 +95,14 @@ void CameraController_spec::testAtributes() {
    ConsoleView::showLine(' ', " 2. Test: Atributos de la clase.");
    startTest ();
 
-   CPPUNIT_ASSERT(true);
+   // Expectativas inicialización de atributos:
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea -1(=>Sin iniciar)"
+                           , _dummyObject->_numberAvCams == -1);
    addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el array de cámaras disponibles sea NULL(=>Sin iniciar)"
+                           , _dummyObject->_avCams == NULL);
+   addPassTest ();
+
    finishTest();
 }
 
@@ -101,7 +113,20 @@ void CameraController_spec::testMethods() {
    ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
    startTest ();
 
-   CPPUNIT_ASSERT(true);
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
+                                    , _dummyObject->obtainCamerasInfo (););
    addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
+                           , _dummyObject->_numberAvCams > -1);
+   addPassTest ();
+
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
+                                    , _dummyObject->checkingCameras(););
+   addPassTest ();
+
+
+
+
+
    finishTest();
 }

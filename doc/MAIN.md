@@ -11,6 +11,11 @@ Programa que aglutinará un conjunto de herramientas para la captura y edición 
 usando webCams.Diseñado especialmente para ayudar a la implementación de un sistema de    <br>
 visión binocular y el uso de algoritmos de estereoscopía.
 
+Detalles de implementación:
+---------------------------
+Se va a usar una metodología de desarrollo dirigido por pruebas (TDD). Para esta metodología <br>
+se utilizarán las herramientas proporcionadas por la librería CppUnit.
+
 Instalación de dependencias:
 ---------------------------
 ...

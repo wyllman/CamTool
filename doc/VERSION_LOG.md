@@ -12,3 +12,4 @@ Control de versiones y cambios.
   - Crear versión inicial de la documentación usando DoxyGen.(Archivo de configuración Doxyfile).
   - Crear la estructura inicial de la clase CameraController y sus expectativas.
   - Instalar en travis Xvfb(xserver) para las ejecuciones del programa.
+  - Creación de la clase Base_spec como clase padre para todas las demás clases de las expectativas.

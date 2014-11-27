@@ -42,6 +42,12 @@ class Base_spec: public CppUnit::TestFixture {
       void startTest ();
       void finishTest ();
 
+      /**
+       * @class BaseSuit
+       * @brief Clase interna de Base_spec e hija de TestSuite usada
+       *    como clase envolvente para añadirle funcionalidad a la
+       *    función run(...)
+       */
       class BaseSuit: public CppUnit::TestSuite {
          public:
             BaseSuit (const char* name): TestSuite(name) {}

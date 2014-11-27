@@ -13,7 +13,43 @@
  */
 #include "lib/controller/cameracontroller.h"
 
+
+
 /**
  * @brief CameraController::CameraController
  */
-CameraController::CameraController() {}
+CameraController::CameraController() {
+   _numberAvCams = -1;
+   _avCams = NULL;
+}
+
+/**
+ * @brief CameraController::~CameraController
+ */
+CameraController::~CameraController() {}
+
+/**
+ * @brief CameraController::checkingCameras
+ */
+void CameraController::checkingCameras () {}
+
+/**
+ * @brief CameraController::obtainCamerasInfo
+ */
+void CameraController::obtainCamerasInfo () {
+   bool continueW = true;
+   int numCams = 0;
+   cv::VideoCapture* tempCam;
+
+   while (continueW) {
+      tempCam = new cv::VideoCapture(numCams);
+      if(tempCam->isOpened()) {
+         ++numCams;
+      } else {
+         continueW = false;
+      }
+
+   }
+   _numberAvCams = numCams;
+
+}
