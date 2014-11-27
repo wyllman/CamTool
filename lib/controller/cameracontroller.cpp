@@ -41,8 +41,6 @@ void CameraController::checkingCameras () {
    }
 }
 
-
-
 /**
  * @brief CameraController::obtainCamerasInfo
  */
@@ -88,7 +86,6 @@ void CameraController::obtainCamerasInfo () {
       delete[] _avCams;
       _avCams = camsTmp;
    }
-
 }
 
 /**
@@ -127,5 +124,4 @@ void CameraController::releaseAvCam (camInfoS* theCamS) {
       delete theCamS->theCam;
       theCamS->theCam = NULL;
    }
-
 }

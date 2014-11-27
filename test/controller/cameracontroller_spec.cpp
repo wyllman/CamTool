@@ -117,8 +117,6 @@ void CameraController_spec::testMethods() {
                                     , _dummyObject->obtainCamerasInfo(););
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
                            , _dummyObject->_numberAvCams > -1);
-   CPPUNIT_ASSERT_MESSAGE ("Comprobando el array de cámaras detectadas no es NULL"
-                           , _dummyObject->_avCams != NULL);
    if (_dummyObject->_numberAvCams > 0) {
       for (int i = 0; i < _dummyObject->_numberAvCams; ++i) {
          CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
