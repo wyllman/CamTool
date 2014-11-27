@@ -112,21 +112,38 @@ void CameraController_spec::testAtributes() {
 void CameraController_spec::testMethods() {
    ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
    startTest ();
-
+   // Probando el método obtainCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
-                                    , _dummyObject->obtainCamerasInfo (););
-   addPassTest ();
+                                    , _dummyObject->obtainCamerasInfo(););
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
                            , _dummyObject->_numberAvCams > -1);
-   addPassTest ();
    CPPUNIT_ASSERT_MESSAGE ("Comprobando el array de cámaras detectadas no es NULL"
                            , _dummyObject->_avCams != NULL);
+   if (_dummyObject->_numberAvCams > 0) {
+      for (int i = 0; i < _dummyObject->_numberAvCams; ++i) {
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
+                                 , _dummyObject->_avCams[i]->index == (unsigned int) i);
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del ancho de las cámaras"
+                                 , _dummyObject->_avCams[i]->resWidth > 0);
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del alto de las cámaras"
+                                 , _dummyObject->_avCams[i]->resHeight > 0);
+      }
+   } else {
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
+                              , _dummyObject->_avCams[0] == NULL);
+   }
+
+
+
    addPassTest ();
 
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
                                     , _dummyObject->checkingCameras(););
    addPassTest ();
 
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
+                                    , _dummyObject->releaseAvCams(););
+   addPassTest ();
 
    finishTest();
 }

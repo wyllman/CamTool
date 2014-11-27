@@ -78,8 +78,8 @@ void mainwindow_spec::testAtributes() {
    ConsoleView::showLine(' ', " 2. Test: Atributos de la clase.");
    startTest ();
 
-   CPPUNIT_ASSERT (true);
-   addPassTest ();
+   // Código de los asertos aquí...
+
    finishTest();
 }
 
@@ -90,7 +90,7 @@ void mainwindow_spec::testMethods() {
    ConsoleView::showLine(' ', " 3. Test: Uso de los métodos de la clase.");
    startTest ();
 
-   CPPUNIT_ASSERT (true);
-   addPassTest ();
+   // Código de los asertos aquí...
+
    finishTest();
 }

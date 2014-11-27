@@ -13,3 +13,5 @@ Control de versiones y cambios.
   - Crear la estructura inicial de la clase CameraController y sus expectativas.
   - Instalar en travis Xvfb(xserver) para las ejecuciones del programa.
   - Creación de la clase Base_spec como clase padre para todas las demás clases de las expectativas.
+  - Implementación de la función obtainCamerasInfo() y las funciones adecuadas para vaciar memoria de los objetos
+    de la clase CameraController.

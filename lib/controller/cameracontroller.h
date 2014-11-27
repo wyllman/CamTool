@@ -29,6 +29,8 @@
 #include <opencv2/opencv.hpp>
 
 struct camInfoS {
+      camInfoS() { theCam = NULL; index = -1; resWidth = -1; resHeight = -1; }
+
       cv::VideoCapture* theCam;
       unsigned int index;
       unsigned int resWidth;
@@ -46,10 +48,13 @@ class CameraController {
 
    private:
       int _numberAvCams;
-      camInfoS* _avCams;
+      camInfoS** _avCams;
 
       void checkingCameras ();
       void obtainCamerasInfo ();
+      void releaseAvCams (int index = -1);
+
+      void releaseAvCam (camInfoS*);
 
 #if TEST_CHECKING
       friend class CameraController_spec;

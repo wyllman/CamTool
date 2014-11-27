@@ -68,7 +68,8 @@ void Base_spec::addPassTest () {
    ++_numPassTest;
    cout << "\033[0;32m";
    cout << ".";
-   cout << "\033[0;31m";
+   //cout << "\033[0;31m";
+   cout << "\033[0m";
 }
 
 void Base_spec::startTest () {
