@@ -57,6 +57,7 @@ void CameraController::checkingCameras () {
             (_avCams[i]->resWidth  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_WIDTH)) &&
             (_avCams[i]->resHeight  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_HEIGHT))) {
             _isChecked = true;
+            _avCams[i]->theCam->release();
          } else {
             _isChecked = false;
          }
@@ -83,7 +84,7 @@ void CameraController::obtainCameras () {
       }
    }
 
-   while (continueW && (numCams <= MAX_CAMS)) {
+   while (continueW && (numCams < MAX_CAMS)) {
       tempCam = new cv::VideoCapture(numCams);
 
       if(tempCam->isOpened()) {
@@ -92,6 +93,8 @@ void CameraController::obtainCameras () {
          _avCams[numCams]->resWidth = tempCam->get(CV_CAP_PROP_FRAME_WIDTH);
          _avCams[numCams]->resHeight = tempCam->get(CV_CAP_PROP_FRAME_HEIGHT);
          ++numCams;
+         tempCam->release();
+         //tempCam->
       } else {
          continueW = false;
       }
@@ -113,6 +116,8 @@ void CameraController::obtainCameras () {
       }
       delete[] _avCams;
       _avCams = camsTmp;
+   } else {
+      _isChecked = true;
    }
 }
 

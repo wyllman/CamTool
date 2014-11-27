@@ -17,3 +17,4 @@ Control de versiones y cambios.
     de la clase CameraController.
   - Implementación de la función string obtainCamerasInfo() y sus expectativas iniciales.(La anterior función
     obtainCamerasInfo() se ha refactorizado a obtainCameras().
+  - Implementada la función showMultipleLines(...) para la clase ConsoleView.
