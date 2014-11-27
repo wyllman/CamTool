@@ -39,7 +39,9 @@ void CameraController::checkingCameras () {}
 void CameraController::obtainCamerasInfo () {
    bool continueW = true;
    int numCams = 0;
-   cv::VideoCapture* tempCam;
+   cv::VideoCapture* tempCam = NULL;
+
+   _avCams = new camInfoS [MAX_CAMS];
 
    while (continueW) {
       tempCam = new cv::VideoCapture(numCams);
