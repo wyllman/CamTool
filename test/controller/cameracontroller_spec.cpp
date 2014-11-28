@@ -102,8 +102,17 @@ void CameraController_spec::testAtributes() {
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el array de cámaras disponibles sea NULL(=>Sin iniciar)"
                            , _dummyObject->_avCams == NULL);
    addPassTest ();
-   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en false."
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (disponibles)comienza en false."
                            , _dummyObject->_isCheckedAvCams == false);
+   addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras seleccionadas sea -1(=>Sin iniciar)"
+                           , _dummyObject->_numberSlCams == -1);
+   addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el array de cámaras seleccionadas sea NULL(=>Sin iniciar)"
+                           , _dummyObject->_slCams == NULL);
+   addPassTest ();
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (Seleccionadas)comienza en false."
+                           , _dummyObject->_isCheckedSlCams == false);
    addPassTest ();
 
    finishTest();
@@ -118,20 +127,20 @@ void CameraController_spec::testMethods() {
 
    std::string textTmp = "";
 
-   // Probando el método obtainCameras()
-   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
+   // Probando el método obtainAvCameras()
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras disponibles"
                                     , _dummyObject->obtainAvCameras(););
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
                            , _dummyObject->_numberAvCams > -1);
    if (_dummyObject->_numberAvCams > 0) {
       for (int i = 0; i < _dummyObject->_numberAvCams; ++i) {
-         CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS para cámaras disponibles"
                                  , _dummyObject->_avCams[i]->index == (unsigned int) i);
-         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del ancho de las cámaras"
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del ancho de las cámaras disponibles"
                                  , _dummyObject->_avCams[i]->resWidth > 0);
-         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del alto de las cámaras"
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del alto de las cámaras disponibles"
                                  , _dummyObject->_avCams[i]->resHeight > 0);
-         CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
+         CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (diponibles)comienza en true."
                                  , _dummyObject->_isCheckedAvCams == true);
       }
    } else {

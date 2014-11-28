@@ -54,6 +54,8 @@ class CameraController {
       std::string obtainSlCamerasInfo ();
 
       void obtainAvCameras ();
+      //cv::VideoCapture* getSlCam (int index); <- TODO
+      //void addSlCam (int avCamIndex); <- TODO
 
 
    private:
