@@ -36,6 +36,44 @@ CameraController::CameraController() {
  */
 CameraController::~CameraController() {
    releaseAvCams ();
+   releaseSlCams ();
+}
+
+/**
+ * @brief CameraController::checkingAvCameras
+ */
+void CameraController::checkingAvCameras () {
+   checkingCameras(_numberAvCams, _avCams, _isCheckedAvCams);
+}
+
+/**
+ * @brief CameraController::checkingSlCameras
+ */
+void CameraController::checkingSlCameras () {
+   checkingCameras(_numberSlCams, _slCams, _isCheckedSlCams);
+}
+
+/**
+ * @brief CameraController::obtainAVCamerasInfo
+ * @return
+ */
+std::string CameraController::obtainAvCamerasInfo () {
+   return obtainCamerasInfo(_numberAvCams, _avCams, _isCheckedAvCams);
+}
+
+/**
+ * @brief CameraController::obtainSlCamerasInfo
+ * @return
+ */
+std::string CameraController::obtainSlCamerasInfo () {
+   return obtainCamerasInfo(_numberSlCams, _slCams, _isCheckedSlCams);
+}
+
+/**
+ * @brief CameraController::obtainAvCameras
+ */
+void CameraController::obtainAvCameras () {
+   obtainCameras (_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
 /**
@@ -72,13 +110,6 @@ void CameraController::checkingCameras (int numCams, camInfoS** listCams, bool &
    } else {
       isCheck = false;
    }
-}
-
-/**
- * @brief CameraController::checkingCameras
- */
-void CameraController::checkingAvCameras () {
-   checkingCameras(_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
 /**
@@ -140,13 +171,6 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
 }
 
 /**
- * @brief CameraController::obtainCameras
- */
-void CameraController::obtainAvCameras () {
-   obtainCameras (_numberAvCams, _avCams, _isCheckedAvCams);
-}
-
-/**
  * @brief CameraController::obtainCamerasInfo
  * @param numCams
  * @param listCams
@@ -176,14 +200,6 @@ std::string CameraController::obtainCamerasInfo (int numCams, camInfoS** listCam
 }
 
 /**
- * @brief CameraController::obtainCamerasInfo
- * @return
- */
-std::string CameraController::obtainAvCamerasInfo () {
-   return obtainCamerasInfo(_numberAvCams, _avCams, _isCheckedAvCams);
-}
-
-/**
  * @brief CameraController::releaseCams
  * @param numCams
  * @param listCams
@@ -194,7 +210,7 @@ void CameraController::releaseCams (int &numCams, camInfoS** &listCams, bool &is
    if (listCams != NULL) {
       if (index == -1) {
          for (int i = 0; i < numCams; ++i) {
-            releaseAvCam (listCams[i]);
+            releaseCam (listCams[i]);
             delete listCams[i];
          }
          delete[] listCams;
@@ -203,7 +219,7 @@ void CameraController::releaseCams (int &numCams, camInfoS** &listCams, bool &is
          isCheck = false;
 
       } else { // Para vaciar la memoria de los strucs sobrantes.
-         releaseAvCam (listCams[index]);
+         releaseCam (listCams[index]);
          delete listCams[index];
          listCams[index] = NULL;
       }
@@ -219,10 +235,18 @@ void CameraController::releaseAvCams (int index) {
 }
 
 /**
+ * @brief CameraController::releaseSlCams
+ * @param index
+ */
+void CameraController::releaseSlCams (int index) {
+   releaseCams (_numberSlCams, _slCams, _isCheckedSlCams, index);
+}
+
+/**
  * @brief CameraController::releaseAvCam
  * @param theCamS
  */
-void CameraController::releaseAvCam (camInfoS* theCamS) {
+void CameraController::releaseCam (camInfoS* theCamS) {
    if (theCamS->theCam != NULL) {
       if (theCamS->theCam->isOpened()) {
          theCamS->theCam->release();

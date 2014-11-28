@@ -47,6 +47,15 @@ class CameraController {
       CameraController();
       ~CameraController();
 
+      void checkingAvCameras ();
+      void checkingSlCameras ();
+
+      std::string obtainAvCamerasInfo ();
+      std::string obtainSlCamerasInfo ();
+
+      void obtainAvCameras ();
+
+
    private:
       int _numberAvCams;
       bool _isCheckedAvCams;
@@ -61,12 +70,9 @@ class CameraController {
       void releaseCams (int &numCams, camInfoS** &listCams, bool &isCheck, int index = -1);
       std::string obtainCamerasInfo (int numCams, camInfoS** listCams, bool isCheck);
 
-      void checkingAvCameras ();
-      void obtainAvCameras ();
       void releaseAvCams (int index = -1);
-      std::string obtainAvCamerasInfo ();
-
-      void releaseAvCam (camInfoS*);
+      void releaseSlCams (int index = -1);
+      void releaseCam (camInfoS*);
 
 #if TEST_CHECKING
       friend class CameraController_spec;
