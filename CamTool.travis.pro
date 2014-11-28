@@ -20,7 +20,9 @@ SOURCES  += lib/main.cpp\
             lib/controller/cameracontroller.cpp\
             test/controller/cameracontroller_spec.cpp\
             test/base_spec.cpp\
-            lib/view/consoleview.cpp
+            lib/view/consoleview.cpp\
+            lib/controller/executioncontroller.cpp\
+            test/controller/executioncontroller_spec.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h\
@@ -28,7 +30,9 @@ HEADERS  += lib/view/mainwindow.h\
             lib/controller/cameracontroller.h\
             test/controller/cameracontroller_spec.h\
             test/base_spec.h\
-            lib/view/consoleview.h
+            lib/view/consoleview.h\
+            lib/controller/executioncontroller.h\
+            test/controller/executioncontroller_spec.h
 
 FORMS    += lib/view/mainwindow.ui
 
