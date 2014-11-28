@@ -69,7 +69,7 @@ void ConsoleView::showMultipleLine(char separator, std::string text
    cout << endl;
 
    while(getline(text_ss, token, '\n')) {
-      showLine(separator, token);
+      showLine(separator, token, formatText, endLine);
    }
 }
 

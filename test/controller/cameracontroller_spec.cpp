@@ -103,7 +103,7 @@ void CameraController_spec::testAtributes() {
                            , _dummyObject->_avCams == NULL);
    addPassTest ();
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en false."
-                           , _dummyObject->_isChecked == false);
+                           , _dummyObject->_isCheckedAvCams == false);
    addPassTest ();
 
    finishTest();
@@ -120,7 +120,7 @@ void CameraController_spec::testMethods() {
 
    // Probando el método obtainCameras()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
-                                    , _dummyObject->obtainCameras(););
+                                    , _dummyObject->obtainAvCameras(););
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el número de cámaras detectado sea > -1"
                            , _dummyObject->_numberAvCams > -1);
    if (_dummyObject->_numberAvCams > 0) {
@@ -132,31 +132,31 @@ void CameraController_spec::testMethods() {
          CPPUNIT_ASSERT_MESSAGE ("Comprobando la obtención del alto de las cámaras"
                                  , _dummyObject->_avCams[i]->resHeight > 0);
          CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
-                                 , _dummyObject->_isChecked == true);
+                                 , _dummyObject->_isCheckedAvCams == true);
       }
    } else {
       CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
                               , _dummyObject->_avCams == NULL);
       CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
-                              , _dummyObject->_isChecked == false);
+                              , _dummyObject->_isCheckedAvCams == false);
    }
    addPassTest ();
 
    // Probando el método obtainCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando la información obtenida de las cámaras"
-                                    , textTmp = _dummyObject->obtainCamerasInfo(););
+                                    , textTmp = _dummyObject->obtainAvCamerasInfo(););
    ConsoleView::showMultipleLine(' ', textTmp);
    addPassTest ();
 
    // Probando el método checkingCameras()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
-                                    , _dummyObject->checkingCameras(););
+                                    , _dummyObject->checkingAvCameras(););
    if (_dummyObject->_numberAvCams > 0) {
       CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a true."
-                              , _dummyObject->_isChecked == true);
+                              , _dummyObject->_isCheckedAvCams == true);
    } else {
       CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a false."
-                              , _dummyObject->_isChecked == false);
+                              , _dummyObject->_isCheckedAvCams == false);
    }
    addPassTest ();
 
@@ -169,9 +169,9 @@ void CameraController_spec::testMethods() {
 
    // Probando varias funcionalidades
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
-                                    , _dummyObject->checkingCameras(););
+                                    , _dummyObject->checkingAvCameras(););
    CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a false."
-                           , _dummyObject->_isChecked == false);
+                           , _dummyObject->_isCheckedAvCams == false);
    addPassTest ();
 
    finishTest();

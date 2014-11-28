@@ -23,8 +23,12 @@ using namespace std;
  */
 CameraController::CameraController() {
    _numberAvCams = -1;
-   _isChecked = false;
+   _isCheckedAvCams = false;
    _avCams = NULL;
+
+   _numberSlCams = -1;
+   _isCheckedSlCams = false;
+   _slCams = NULL;
 }
 
 /**
@@ -36,141 +40,182 @@ CameraController::~CameraController() {
 
 /**
  * @brief CameraController::checkingCameras
+ * @param numCams
+ * @param listCams
+ * @param isCheck
  */
-void CameraController::checkingCameras () {
+void CameraController::checkingCameras (int numCams, camInfoS** listCams, bool &isCheck) {
    bool checkTmp = false;
 
-   if (_numberAvCams > 0 && _avCams != NULL) {
-      for (int i = 0; i < _numberAvCams; ++i) {
+   if (numCams > 0 && listCams != NULL) {
+      for (int i = 0; i < numCams; ++i) {
          checkTmp = false;
-         if (_avCams[i]->theCam->isOpened()) {
+         if (listCams[i]->theCam->isOpened()) {
             checkTmp = true;
          } else {
-            _avCams[i]->theCam->open(_avCams[i]->index);
-            if (_avCams[i]->theCam->isOpened()) {
+            listCams[i]->theCam->open(listCams[i]->index);
+            if (listCams[i]->theCam->isOpened()) {
                checkTmp = true;
             } else {
-               _isChecked = false;
+               isCheck = false;
             }
          }
          if ((checkTmp) &&
-            (_avCams[i]->resWidth  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_WIDTH)) &&
-            (_avCams[i]->resHeight  == _avCams[i]->theCam->get(CV_CAP_PROP_FRAME_HEIGHT))) {
-            _isChecked = true;
-            _avCams[i]->theCam->release();
+            (listCams[i]->resWidth  == listCams[i]->theCam->get(CV_CAP_PROP_FRAME_WIDTH)) &&
+            (listCams[i]->resHeight  == listCams[i]->theCam->get(CV_CAP_PROP_FRAME_HEIGHT))) {
+            isCheck = true;
+            listCams[i]->theCam->release();
          } else {
-            _isChecked = false;
+            isCheck = false;
          }
       }
    } else {
-      _isChecked = false;
+      isCheck = false;
    }
 }
 
 /**
- * @brief CameraController::obtainCamerasInfo
+ * @brief CameraController::checkingCameras
  */
-void CameraController::obtainCameras () {
+void CameraController::checkingAvCameras () {
+   checkingCameras(_numberAvCams, _avCams, _isCheckedAvCams);
+}
+
+/**
+ * @brief CameraController::obtainCameras
+ * @param numCams
+ * @param listCams
+ * @param isCheck
+ */
+void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &isCheck) {
    bool continueW = true;
-   int numCams = 0;
+   int numCamsTmp = 0;
    cv::VideoCapture* tempCam = NULL;
 
-   releaseAvCams();
+   //releaseAvCams();
+   releaseCams (numCams, listCams, isCheck);
 
-   if (_avCams == NULL) {
-      _avCams = new camInfoS* [MAX_CAMS];
+   if (listCams == NULL) {
+      listCams = new camInfoS* [MAX_CAMS];
       for (int i = 0; i < MAX_CAMS; ++i) {
-         _avCams[i] = new camInfoS;
+         listCams[i] = new camInfoS;
       }
    }
 
-   while (continueW && (numCams < MAX_CAMS)) {
-      tempCam = new cv::VideoCapture(numCams);
+   while (continueW && (numCamsTmp < MAX_CAMS)) {
+      tempCam = new cv::VideoCapture(numCamsTmp);
 
       if(tempCam->isOpened()) {
-         _avCams[numCams]->index = numCams;
-         _avCams[numCams]->theCam = tempCam;
-         _avCams[numCams]->resWidth = tempCam->get(CV_CAP_PROP_FRAME_WIDTH);
-         _avCams[numCams]->resHeight = tempCam->get(CV_CAP_PROP_FRAME_HEIGHT);
-         ++numCams;
+         listCams[numCamsTmp]->index = numCamsTmp;
+         listCams[numCamsTmp]->theCam = tempCam;
+         listCams[numCamsTmp]->resWidth = tempCam->get(CV_CAP_PROP_FRAME_WIDTH);
+         listCams[numCamsTmp]->resHeight = tempCam->get(CV_CAP_PROP_FRAME_HEIGHT);
+         ++numCamsTmp;
          tempCam->release();
-         //tempCam->
       } else {
          continueW = false;
+         delete tempCam;
       }
    }
-   _numberAvCams = numCams;
+   numCams = numCamsTmp;
 
    // Eliminamos de memoria los structs sobrantes
-   if (numCams < MAX_CAMS) {
-      for (int i = numCams; i < MAX_CAMS; ++i) {
+   if (numCamsTmp < MAX_CAMS) {
+      for (int i = numCamsTmp; i < MAX_CAMS; ++i) {
          releaseAvCams(i);
       }
       camInfoS** camsTmp = NULL;
-      if (numCams > 0) camsTmp = new camInfoS* [numCams];
-      for (int i = 0; i < numCams; ++i) {
-         camsTmp[i] = _avCams[i];
+      if (numCamsTmp > 0) camsTmp = new camInfoS* [numCamsTmp];
+      for (int i = 0; i < numCamsTmp; ++i) {
+         camsTmp[i] = listCams[i];
       }
       if (camsTmp != NULL) {
-         _isChecked = true;
+         isCheck = true;
       }
-      delete[] _avCams;
-      _avCams = camsTmp;
+      delete[] listCams;
+      listCams = camsTmp;
    } else {
-      _isChecked = true;
+      isCheck = true;
    }
+}
+
+/**
+ * @brief CameraController::obtainCameras
+ */
+void CameraController::obtainAvCameras () {
+   obtainCameras (_numberAvCams, _avCams, _isCheckedAvCams);
+}
+
+/**
+ * @brief CameraController::obtainCamerasInfo
+ * @param numCams
+ * @param listCams
+ * @param isCheck
+ * @return
+ */
+std::string CameraController::obtainCamerasInfo (int numCams, camInfoS** listCams, bool isCheck) {
+   std::string result = "";
+
+   if (numCams > 0 && isCheck) {
+      result += " - Hay un total de " + ConsoleView::to_s(numCams) + " cámaras. \n";
+      for (int i = 0; i < numCams; ++i) {
+         result += "   - Cámara " + ConsoleView::to_s(i) + ": \n";
+         result += "      - Resolución: " + ConsoleView::to_s(listCams[i]->resWidth) +
+                   "x" + ConsoleView::to_s(listCams[i]->resHeight) + "\n";
+
+      }
+   } else if (numCams == 0) {
+      result += " - No se encuentran cámaras conectadas";
+   } else if (numCams == -1) {
+      result += " - Sistema de cámaras sin iniciar(llame a la función obtainCameras(...)";
+   } else if (!isCheck) {
+      result += " - Se necesita actualizar el estado de las cámaras(llame a obtainCameras(...)";
+   }
+
+   return result;
 }
 
 /**
  * @brief CameraController::obtainCamerasInfo
  * @return
  */
-std::string CameraController::obtainCamerasInfo () {
-   std::string result = "";
-
-   if (_numberAvCams > 0 && _isChecked) {
-      result += " - Hay un total de " + ConsoleView::to_s(_numberAvCams) + " cámaras. \n";
-      for (int i = 0; i < _numberAvCams; ++i) {
-         result += "   - Cámara " + ConsoleView::to_s(i) + ": \n";
-         result += "      - Resolución: " + ConsoleView::to_s(_avCams[i]->resWidth) +
-                   "x" + ConsoleView::to_s(_avCams[i]->resHeight) + "\n";
-
-      }
-   } else if (_numberAvCams == 0) {
-      result += " - No se encuentran cámaras conectadas";
-   } else if (_numberAvCams == -1) {
-      result += " - Sistema de cámaras sin iniciar(llame a la función obtainCameras()";
-   }
-
-
-
-   return result;
+std::string CameraController::obtainAvCamerasInfo () {
+   return obtainCamerasInfo(_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
+/**
+ * @brief CameraController::releaseCams
+ * @param numCams
+ * @param listCams
+ * @param isCheck
+ * @param index
+ */
+void CameraController::releaseCams (int &numCams, camInfoS** &listCams, bool &isCheck, int index) {
+   if (listCams != NULL) {
+      if (index == -1) {
+         for (int i = 0; i < numCams; ++i) {
+            releaseAvCam (listCams[i]);
+            delete listCams[i];
+         }
+         delete[] listCams;
+         listCams = NULL;
+         numCams = -1;
+         isCheck = false;
+
+      } else { // Para vaciar la memoria de los strucs sobrantes.
+         releaseAvCam (listCams[index]);
+         delete listCams[index];
+         listCams[index] = NULL;
+      }
+   }
+}
 
 /**
  * @brief CameraController::releaseAvCams
  * @param index
  */
 void CameraController::releaseAvCams (int index) {
-   if (_avCams != NULL) {
-
-      if (index == -1) {
-         for (int i = 0; i < _numberAvCams; ++i) {
-            releaseAvCam (_avCams[i]);
-            delete _avCams[i];
-         }
-         delete[] _avCams;
-         _avCams = NULL;
-         _numberAvCams = -1;
-         _isChecked = false;
-
-      } else { // Para vaciar la memoria de los strucs sobrantes.
-         releaseAvCam (_avCams[index]);
-         delete _avCams[index];
-         _avCams[index] = NULL;
-      }
-   }
+   releaseCams (_numberAvCams, _avCams, _isCheckedAvCams, index);
 }
 
 /**

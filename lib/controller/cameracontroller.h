@@ -49,13 +49,22 @@ class CameraController {
 
    private:
       int _numberAvCams;
-      bool _isChecked;
+      bool _isCheckedAvCams;
       camInfoS** _avCams;
 
-      void checkingCameras ();
-      void obtainCameras ();
+      int _numberSlCams;
+      bool _isCheckedSlCams;
+      camInfoS** _slCams;
+
+      void checkingCameras (int numCams, camInfoS** listCams, bool &isCheck);
+      void obtainCameras (int &numCams, camInfoS** &listCams, bool &isCheck);
+      void releaseCams (int &numCams, camInfoS** &listCams, bool &isCheck, int index = -1);
+      std::string obtainCamerasInfo (int numCams, camInfoS** listCams, bool isCheck);
+
+      void checkingAvCameras ();
+      void obtainAvCameras ();
       void releaseAvCams (int index = -1);
-      std::string obtainCamerasInfo ();
+      std::string obtainAvCamerasInfo ();
 
       void releaseAvCam (camInfoS*);
 
