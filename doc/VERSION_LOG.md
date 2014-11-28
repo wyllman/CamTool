@@ -22,3 +22,6 @@ Control de versiones y cambios.
     - Tener un segundo array de cámaras como seleccionadas para otros usos.
     - Refactorizar las funciones básicas de la clase para hacerlas más generales.
 
+- v 0.0.2:
+  - Primera fase de la clase CameraController finalizada.
+

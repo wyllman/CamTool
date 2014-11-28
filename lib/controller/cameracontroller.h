@@ -1,7 +1,7 @@
 /**
  * @file    cameracontroller.h
  * @author  Wyllman <wyllman@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @date    Noviembre, 2014
  * @brief   Controlador para el uso de cámaras.
  *
@@ -10,6 +10,11 @@
  *
  * Archivo de cabecera para la clase
  * controlador de cámaras.
+ *
+ * Interfaz de uso para detectar, seleccionar,
+ * comprobar, etc la cámaras conectadas al
+ * sistema. Se basa en el uso de las librerías
+ * OpenCV y su clase VideoCapture.
  */
 #ifndef CAMERACONTROLLER_H
 #define CAMERACONTROLLER_H
@@ -29,18 +34,26 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 
+/**
+ * @brief camInfoS: Struct contenedor de la información de las cámaras disponibles
+ * @details
+ *
+ * Struct que mantiene accesible toda la información elemental
+ * necesaria para el uso de las cámaras.
+ */
 struct camInfoS {
-      camInfoS() { theCam = NULL; index = -1; resWidth = -1; resHeight = -1; }
+      camInfoS() { theCam = NULL; index = -1; slIndex = -1; resWidth = -1; resHeight = -1; }
 
       cv::VideoCapture* theCam;
       unsigned int index;
+      unsigned int slIndex;
       unsigned int resWidth;
       unsigned int resHeight;
 };
 
 /**
  * @class CameraController
- * @brief The CameraController class
+ * @brief CameraController: Interfaz de uso para las cámaras con OpenCV.
  */
 class CameraController {
    public:
@@ -54,8 +67,8 @@ class CameraController {
       std::string obtainSlCamerasInfo ();
 
       void obtainAvCameras ();
-      //cv::VideoCapture* getSlCam (int index); <- TODO
-      //void addSlCam (int avCamIndex); <- TODO
+      cv::VideoCapture* getSlCam (int index);
+      void addSlCam (int avCamIndex);
 
 
    private:

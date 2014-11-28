@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">CamTool
-   &#160;<span id="projectnumber">v: 0.0.1</span>
+   &#160;<span id="projectnumber">v: 0.0.2</span>
    </div>
    <div id="projectbrief">Conjunto de herramientas para WebCams(OpenCV)</div>
   </td>
@@ -108,13 +108,15 @@ $(document).ready(function(){initNavTree('d4/d3e/class_camera_controller.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
 <a href="../../d4/dec/class_camera_controller-members.html">Lista de todos los miembros</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia de la Clase CameraController</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="../../d4/d3e/class_camera_controller.html" title="The CameraController class. ">CameraController</a> class.  
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html" title="CameraController: Interfaz de uso para las cámaras con OpenCV. ">CameraController</a>: Interfaz de uso para las cámaras con OpenCV.  
  <a href="../../d4/d3e/class_camera_controller.html#details">Más...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>&gt;</code></p>
@@ -124,11 +126,74 @@ Métodos públicos</h2></td></tr>
 <tr class="memitem:ad0f7e32ab3bc7ccb06f3e479b0d0681a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ad0f7e32ab3bc7ccb06f3e479b0d0681a">CameraController</a> ()</td></tr>
 <tr class="memdesc:ad0f7e32ab3bc7ccb06f3e479b0d0681a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ad0f7e32ab3bc7ccb06f3e479b0d0681a" title="CameraController::CameraController. ">CameraController::CameraController</a>.  <a href="#ad0f7e32ab3bc7ccb06f3e479b0d0681a">Más...</a><br /></td></tr>
 <tr class="separator:ad0f7e32ab3bc7ccb06f3e479b0d0681a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecb9436179d1436803822196cd949e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a9ecb9436179d1436803822196cd949e6">~CameraController</a> ()</td></tr>
+<tr class="memdesc:a9ecb9436179d1436803822196cd949e6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a9ecb9436179d1436803822196cd949e6" title="CameraController::~CameraController. ">CameraController::~CameraController</a>.  <a href="#a9ecb9436179d1436803822196cd949e6">Más...</a><br /></td></tr>
+<tr class="separator:a9ecb9436179d1436803822196cd949e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9395349d94ab3aade5800d81dd4d56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a7a9395349d94ab3aade5800d81dd4d56">checkingAvCameras</a> ()</td></tr>
+<tr class="memdesc:a7a9395349d94ab3aade5800d81dd4d56"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a7a9395349d94ab3aade5800d81dd4d56" title="CameraController::checkingAvCameras: Comprobar el estado de las cámaras detectadas. ">CameraController::checkingAvCameras</a>: Comprobar el estado de las cámaras detectadas.  <a href="#a7a9395349d94ab3aade5800d81dd4d56">Más...</a><br /></td></tr>
+<tr class="separator:a7a9395349d94ab3aade5800d81dd4d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae09c2e45c1b55b59bc707a7d7353632e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ae09c2e45c1b55b59bc707a7d7353632e">checkingSlCameras</a> ()</td></tr>
+<tr class="memdesc:ae09c2e45c1b55b59bc707a7d7353632e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ae09c2e45c1b55b59bc707a7d7353632e" title="CameraController::checkingSlCameras: Comprobar el estado de las cámaras seleccionadas. ">CameraController::checkingSlCameras</a>: Comprobar el estado de las cámaras seleccionadas.  <a href="#ae09c2e45c1b55b59bc707a7d7353632e">Más...</a><br /></td></tr>
+<tr class="separator:ae09c2e45c1b55b59bc707a7d7353632e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c6384814a786944be045511c691d79"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#af5c6384814a786944be045511c691d79">obtainAvCamerasInfo</a> ()</td></tr>
+<tr class="memdesc:af5c6384814a786944be045511c691d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">CameraController::obtainAVCamerasInfo: Obtener el texto con la info de las cámaras detectadas.  <a href="#af5c6384814a786944be045511c691d79">Más...</a><br /></td></tr>
+<tr class="separator:af5c6384814a786944be045511c691d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab310a2e45d28962c7e4d536bdb1fdb2d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ab310a2e45d28962c7e4d536bdb1fdb2d">obtainSlCamerasInfo</a> ()</td></tr>
+<tr class="memdesc:ab310a2e45d28962c7e4d536bdb1fdb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ab310a2e45d28962c7e4d536bdb1fdb2d" title="CameraController::obtainSlCamerasInfo: Obtener el texto con la info de las cámaras seleccionadas...">CameraController::obtainSlCamerasInfo</a>: Obtener el texto con la info de las cámaras seleccionadas.  <a href="#ab310a2e45d28962c7e4d536bdb1fdb2d">Más...</a><br /></td></tr>
+<tr class="separator:ab310a2e45d28962c7e4d536bdb1fdb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d48e048363aec6e2a0a788616343728"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a7d48e048363aec6e2a0a788616343728">obtainAvCameras</a> ()</td></tr>
+<tr class="memdesc:a7d48e048363aec6e2a0a788616343728"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a7d48e048363aec6e2a0a788616343728" title="CameraController::obtainAvCameras: Detectar las cámaras conectadas al sistema. ">CameraController::obtainAvCameras</a>: Detectar las cámaras conectadas al sistema.  <a href="#a7d48e048363aec6e2a0a788616343728">Más...</a><br /></td></tr>
+<tr class="separator:a7d48e048363aec6e2a0a788616343728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0c68cd8e7aabbc4fc4c0b7bfe67012"><td class="memItemLeft" align="right" valign="top">cv::VideoCapture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a0f0c68cd8e7aabbc4fc4c0b7bfe67012">getSlCam</a> (int index)</td></tr>
+<tr class="memdesc:a0f0c68cd8e7aabbc4fc4c0b7bfe67012"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a0f0c68cd8e7aabbc4fc4c0b7bfe67012" title="CameraController::getSlCam: Obtener el puntero al objeto cv::VideoCapture de una cámara seleccionada...">CameraController::getSlCam</a>: Obtener el puntero al objeto cv::VideoCapture de una cámara seleccionada.  <a href="#a0f0c68cd8e7aabbc4fc4c0b7bfe67012">Más...</a><br /></td></tr>
+<tr class="separator:a0f0c68cd8e7aabbc4fc4c0b7bfe67012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3be94ded648442d90715455c37dbefb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ab3be94ded648442d90715455c37dbefb">addSlCam</a> (int avCamIndex)</td></tr>
+<tr class="memdesc:ab3be94ded648442d90715455c37dbefb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ab3be94ded648442d90715455c37dbefb" title="CameraController::addSlCam: Añadir una cámara disponible al array de seleccionadas. ">CameraController::addSlCam</a>: Añadir una cámara disponible al array de seleccionadas.  <a href="#ab3be94ded648442d90715455c37dbefb">Más...</a><br /></td></tr>
+<tr class="separator:ab3be94ded648442d90715455c37dbefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:aa53118f003cb627cf6b4ac4e0512e279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#aa53118f003cb627cf6b4ac4e0512e279">checkingCameras</a> (int numCams, <a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **listCams, bool &amp;isCheck)</td></tr>
+<tr class="memdesc:aa53118f003cb627cf6b4ac4e0512e279"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#aa53118f003cb627cf6b4ac4e0512e279" title="CameraController::checkingCameras: Función general para la comprobación de cámaras. ">CameraController::checkingCameras</a>: Función general para la comprobación de cámaras.  <a href="#aa53118f003cb627cf6b4ac4e0512e279">Más...</a><br /></td></tr>
+<tr class="separator:aa53118f003cb627cf6b4ac4e0512e279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d81d0253b214867ede5b82340bc55c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a11d81d0253b214867ede5b82340bc55c">obtainCameras</a> (int &amp;numCams, <a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&amp;listCams, bool &amp;isCheck)</td></tr>
+<tr class="memdesc:a11d81d0253b214867ede5b82340bc55c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a11d81d0253b214867ede5b82340bc55c" title="CameraController::obtainCameras: Función general para la detección de cámaras. ">CameraController::obtainCameras</a>: Función general para la detección de cámaras.  <a href="#a11d81d0253b214867ede5b82340bc55c">Más...</a><br /></td></tr>
+<tr class="separator:a11d81d0253b214867ede5b82340bc55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded636da8238c3499bbdc40252e2497a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#aded636da8238c3499bbdc40252e2497a">releaseCams</a> (int &amp;numCams, <a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&amp;listCams, bool &amp;isCheck, int index=-1)</td></tr>
+<tr class="memdesc:aded636da8238c3499bbdc40252e2497a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#aded636da8238c3499bbdc40252e2497a" title="CameraController::releaseCams: Función general para la liberación de memoria ocupada por los manipula...">CameraController::releaseCams</a>: Función general para la liberación de memoria ocupada por los manipuladores de las cámaras.  <a href="#aded636da8238c3499bbdc40252e2497a">Más...</a><br /></td></tr>
+<tr class="separator:aded636da8238c3499bbdc40252e2497a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f7f5a5bc0512c4c5d9dcf7f3e5f750"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ac3f7f5a5bc0512c4c5d9dcf7f3e5f750">obtainCamerasInfo</a> (int numCams, <a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **listCams, bool isCheck)</td></tr>
+<tr class="memdesc:ac3f7f5a5bc0512c4c5d9dcf7f3e5f750"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ac3f7f5a5bc0512c4c5d9dcf7f3e5f750" title="CameraController::obtainCamerasInfo: Función general para la obtención de la info de las cámaras...">CameraController::obtainCamerasInfo</a>: Función general para la obtención de la info de las cámaras.  <a href="#ac3f7f5a5bc0512c4c5d9dcf7f3e5f750">Más...</a><br /></td></tr>
+<tr class="separator:ac3f7f5a5bc0512c4c5d9dcf7f3e5f750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae505f82d164aff0971996b2ea7d30f91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ae505f82d164aff0971996b2ea7d30f91">releaseAvCams</a> (int index=-1)</td></tr>
+<tr class="memdesc:ae505f82d164aff0971996b2ea7d30f91"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#ae505f82d164aff0971996b2ea7d30f91" title="CameraController::releaseAvCams: liberar memoria para las cámaras disponibles. ">CameraController::releaseAvCams</a>: liberar memoria para las cámaras disponibles.  <a href="#ae505f82d164aff0971996b2ea7d30f91">Más...</a><br /></td></tr>
+<tr class="separator:ae505f82d164aff0971996b2ea7d30f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354c10332425c182c902198b8389a861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a354c10332425c182c902198b8389a861">releaseSlCams</a> (int index=-1)</td></tr>
+<tr class="memdesc:a354c10332425c182c902198b8389a861"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a354c10332425c182c902198b8389a861" title="CameraController::releaseSlCams: liberar memoria para las cámaras seleccionadas. ">CameraController::releaseSlCams</a>: liberar memoria para las cámaras seleccionadas.  <a href="#a354c10332425c182c902198b8389a861">Más...</a><br /></td></tr>
+<tr class="separator:a354c10332425c182c902198b8389a861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ef390d94f8a45fbe156a7af157ecd9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a8ef390d94f8a45fbe156a7af157ecd9c">releaseCam</a> (<a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> *)</td></tr>
+<tr class="memdesc:a8ef390d94f8a45fbe156a7af157ecd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html#a8ef390d94f8a45fbe156a7af157ecd9c" title="CameraController::releaseCam: liberar memoria del objeto VideoCapture de una cámara. ">CameraController::releaseCam</a>: liberar memoria del objeto VideoCapture de una cámara.  <a href="#a8ef390d94f8a45fbe156a7af157ecd9c">Más...</a><br /></td></tr>
+<tr class="separator:a8ef390d94f8a45fbe156a7af157ecd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a13b6f3b2e5f2e52ef7591eeb71193889"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a13b6f3b2e5f2e52ef7591eeb71193889">_numberAvCams</a></td></tr>
+<tr class="separator:a13b6f3b2e5f2e52ef7591eeb71193889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4c696e8ef9a33881ab6ddb852e996c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#acc4c696e8ef9a33881ab6ddb852e996c">_isCheckedAvCams</a></td></tr>
+<tr class="separator:acc4c696e8ef9a33881ab6ddb852e996c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da1f7c3c7612d1f0ab6899794e8a33d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a1da1f7c3c7612d1f0ab6899794e8a33d">_avCams</a></td></tr>
+<tr class="separator:a1da1f7c3c7612d1f0ab6899794e8a33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382ff8e866e7dca9a503812f4d65796e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a382ff8e866e7dca9a503812f4d65796e">_numberSlCams</a></td></tr>
+<tr class="separator:a382ff8e866e7dca9a503812f4d65796e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab535a523ba3830e42f771438b4907143"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#ab535a523ba3830e42f771438b4907143">_isCheckedSlCams</a></td></tr>
+<tr class="separator:ab535a523ba3830e42f771438b4907143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684811458d84e3ea5a5a080c943dac34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html#a684811458d84e3ea5a5a080c943dac34">_slCams</a></td></tr>
+<tr class="separator:a684811458d84e3ea5a5a080c943dac34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>The <a class="el" href="../../d4/d3e/class_camera_controller.html" title="The CameraController class. ">CameraController</a> class. </p>
+<div class="textblock"><p><a class="el" href="../../d4/d3e/class_camera_controller.html" title="CameraController: Interfaz de uso para las cámaras con OpenCV. ">CameraController</a>: Interfaz de uso para las cámaras con OpenCV. </p>
 
-<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00027">27</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00058">58</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
 <a class="anchor" id="ad0f7e32ab3bc7ccb06f3e479b0d0681a"></a>
 <div class="memitem">
@@ -145,7 +210,628 @@ Métodos públicos</h2></td></tr>
 
 <p><a class="el" href="../../d4/d3e/class_camera_controller.html#ad0f7e32ab3bc7ccb06f3e479b0d0681a" title="CameraController::CameraController. ">CameraController::CameraController</a>. </p>
 
-<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00019">19</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00030">30</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ecb9436179d1436803822196cd949e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CameraController::~CameraController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a9ecb9436179d1436803822196cd949e6" title="CameraController::~CameraController. ">CameraController::~CameraController</a>. </p>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00043">43</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ab3be94ded648442d90715455c37dbefb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::addSlCam </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>avCamIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#ab3be94ded648442d90715455c37dbefb" title="CameraController::addSlCam: Añadir una cámara disponible al array de seleccionadas. ">CameraController::addSlCam</a>: Añadir una cámara disponible al array de seleccionadas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">avCamIndex</td><td>Indice del array de cámaras disponibles a seleccionar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00105">105</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a9395349d94ab3aade5800d81dd4d56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::checkingAvCameras </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a7a9395349d94ab3aade5800d81dd4d56" title="CameraController::checkingAvCameras: Comprobar el estado de las cámaras detectadas. ">CameraController::checkingAvCameras</a>: Comprobar el estado de las cámaras detectadas. </p>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00051">51</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa53118f003cb627cf6b4ac4e0512e279"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::checkingCameras </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&#160;</td>
+          <td class="paramname"><em>listCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>isCheck</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#aa53118f003cb627cf6b4ac4e0512e279" title="CameraController::checkingCameras: Función general para la comprobación de cámaras. ">CameraController::checkingCameras</a>: Función general para la comprobación de cámaras. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numCams</td><td></td></tr>
+    <tr><td class="paramname">listCams</td><td></td></tr>
+    <tr><td class="paramname">isCheck</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00130">130</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae09c2e45c1b55b59bc707a7d7353632e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::checkingSlCameras </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#ae09c2e45c1b55b59bc707a7d7353632e" title="CameraController::checkingSlCameras: Comprobar el estado de las cámaras seleccionadas. ">CameraController::checkingSlCameras</a>: Comprobar el estado de las cámaras seleccionadas. </p>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00058">58</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0f0c68cd8e7aabbc4fc4c0b7bfe67012"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::VideoCapture * CameraController::getSlCam </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a0f0c68cd8e7aabbc4fc4c0b7bfe67012" title="CameraController::getSlCam: Obtener el puntero al objeto cv::VideoCapture de una cámara seleccionada...">CameraController::getSlCam</a>: Obtener el puntero al objeto cv::VideoCapture de una cámara seleccionada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>índice en el array de cámaras seleccionadas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El puntero al objeto cv::VideoCapture buscado. NULL en caso de no encontrarlo o no existir. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00093">93</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d48e048363aec6e2a0a788616343728"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::obtainAvCameras </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a7d48e048363aec6e2a0a788616343728" title="CameraController::obtainAvCameras: Detectar las cámaras conectadas al sistema. ">CameraController::obtainAvCameras</a>: Detectar las cámaras conectadas al sistema. </p>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00081">81</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5c6384814a786944be045511c691d79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CameraController::obtainAvCamerasInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CameraController::obtainAVCamerasInfo: Obtener el texto con la info de las cámaras detectadas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Un string con el texto a mostrar. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00066">66</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11d81d0253b214867ede5b82340bc55c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::obtainCameras </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&amp;&#160;</td>
+          <td class="paramname"><em>listCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>isCheck</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a11d81d0253b214867ede5b82340bc55c" title="CameraController::obtainCameras: Función general para la detección de cámaras. ">CameraController::obtainCameras</a>: Función general para la detección de cámaras. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numCams</td><td></td></tr>
+    <tr><td class="paramname">listCams</td><td></td></tr>
+    <tr><td class="paramname">isCheck</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00166">166</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3f7f5a5bc0512c4c5d9dcf7f3e5f750"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CameraController::obtainCamerasInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&#160;</td>
+          <td class="paramname"><em>listCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isCheck</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#ac3f7f5a5bc0512c4c5d9dcf7f3e5f750" title="CameraController::obtainCamerasInfo: Función general para la obtención de la info de las cámaras...">CameraController::obtainCamerasInfo</a>: Función general para la obtención de la info de las cámaras. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numCams</td><td></td></tr>
+    <tr><td class="paramname">listCams</td><td></td></tr>
+    <tr><td class="paramname">isCheck</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00225">225</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab310a2e45d28962c7e4d536bdb1fdb2d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CameraController::obtainSlCamerasInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#ab310a2e45d28962c7e4d536bdb1fdb2d" title="CameraController::obtainSlCamerasInfo: Obtener el texto con la info de las cámaras seleccionadas...">CameraController::obtainSlCamerasInfo</a>: Obtener el texto con la info de las cámaras seleccionadas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Un string con el texto a mostrar. </dd></dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00074">74</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae505f82d164aff0971996b2ea7d30f91"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::releaseAvCams </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#ae505f82d164aff0971996b2ea7d30f91" title="CameraController::releaseAvCams: liberar memoria para las cámaras disponibles. ">CameraController::releaseAvCams</a>: liberar memoria para las cámaras disponibles. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00281">281</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ef390d94f8a45fbe156a7af157ecd9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::releaseCam </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> *&#160;</td>
+          <td class="paramname"><em>theCamS</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a8ef390d94f8a45fbe156a7af157ecd9c" title="CameraController::releaseCam: liberar memoria del objeto VideoCapture de una cámara. ">CameraController::releaseCam</a>: liberar memoria del objeto VideoCapture de una cámara. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">theCamS</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00304">304</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aded636da8238c3499bbdc40252e2497a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::releaseCams </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>numCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a> **&amp;&#160;</td>
+          <td class="paramname"><em>listCams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>isCheck</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#aded636da8238c3499bbdc40252e2497a" title="CameraController::releaseCams: Función general para la liberación de memoria ocupada por los manipula...">CameraController::releaseCams</a>: Función general para la liberación de memoria ocupada por los manipuladores de las cámaras. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numCams</td><td></td></tr>
+    <tr><td class="paramname">listCams</td><td></td></tr>
+    <tr><td class="paramname">isCheck</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00255">255</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a354c10332425c182c902198b8389a861"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CameraController::releaseSlCams </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../d4/d3e/class_camera_controller.html#a354c10332425c182c902198b8389a861" title="CameraController::releaseSlCams: liberar memoria para las cámaras seleccionadas. ">CameraController::releaseSlCams</a>: liberar memoria para las cámaras seleccionadas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definición en la línea <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html#l00289">289</a> del archivo <a class="el" href="../../df/d74/cameracontroller_8cpp_source.html">cameracontroller.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a1da1f7c3c7612d1f0ab6899794e8a33d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a>** CameraController::_avCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00077">77</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc4c696e8ef9a33881ab6ddb852e996c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CameraController::_isCheckedAvCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00076">76</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab535a523ba3830e42f771438b4907143"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CameraController::_isCheckedSlCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00080">80</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13b6f3b2e5f2e52ef7591eeb71193889"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CameraController::_numberAvCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00075">75</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a382ff8e866e7dca9a503812f4d65796e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CameraController::_numberSlCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00079">79</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a684811458d84e3ea5a5a080c943dac34"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a>** CameraController::_slCams</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00081">81</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
 
 </div>
 </div>
@@ -159,7 +845,7 @@ Métodos públicos</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d4/d3e/class_camera_controller.html">CameraController</a></li>
-    <li class="footer">Generado el Lunes, 24 de Noviembre de 2014 02:13:38 para CamTool por
+    <li class="footer">Generado el Viernes, 28 de Noviembre de 2014 21:58:51 para CamTool por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

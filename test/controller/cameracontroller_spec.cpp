@@ -1,7 +1,7 @@
 /**
  * @file    cameracontroller_spec.cpp
  * @author  Wyllman <wyllman@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @date    Noviembre, 2014
  * @brief   Expectativas Controlador interno para las cámaras.
  *
@@ -144,30 +144,47 @@ void CameraController_spec::testMethods() {
                                  , _dummyObject->_isCheckedAvCams == true);
       }
    } else {
-      CPPUNIT_ASSERT_MESSAGE ("Comprobando la inicialización del array de camInfoS"
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando el estado a NULL del array de camInfoS"
                               , _dummyObject->_avCams == NULL);
-      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked comienza en true."
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (disponibles) está a false."
                               , _dummyObject->_isCheckedAvCams == false);
    }
    addPassTest ();
 
-   // Probando el método obtainCamerasInfo()
+   // Probando el método obtainAvCamerasInfo()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando la información obtenida de las cámaras"
                                     , textTmp = _dummyObject->obtainAvCamerasInfo(););
    ConsoleView::showMultipleLine(' ', textTmp);
    addPassTest ();
 
-   // Probando el método checkingCameras()
-   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"
+   // Probando el método checkingAvCameras()
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras disponibles"
                                     , _dummyObject->checkingAvCameras(););
    if (_dummyObject->_numberAvCams > 0) {
-      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a true."
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (disponible)a true."
                               , _dummyObject->_isCheckedAvCams == true);
    } else {
-      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked a false."
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (disponible)a false."
                               , _dummyObject->_isCheckedAvCams == false);
    }
    addPassTest ();
+
+   // Probando el método checkingSlCameras ()
+   CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras seleccionadas.(vacio)"
+                                    , _dummyObject->checkingSlCameras(););
+   CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (seleccionadas)a false."
+                           , _dummyObject->_isCheckedSlCams == false);
+   addPassTest ();
+
+   // Probando el método addSlCam (int avCamIndex)
+   if (_dummyObject->_numberAvCams > 0) {
+      CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Seleccionar una cámara disponible"
+                                       , _dummyObject->addSlCam(0););
+      CPPUNIT_ASSERT_MESSAGE ("Comprobando que el boleano checked (seleccionadas)a false."
+                              , _dummyObject->_numberSlCams == 1);
+      addPassTest ();
+
+   }
 
    // Probando el método releaseAvCams()
    CPPUNIT_ASSERT_NO_THROW_MESSAGE ("Comprobando el estado de las cámaras"

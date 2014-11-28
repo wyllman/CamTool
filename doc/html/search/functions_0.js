@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['addpasstest',['addPassTest',['../d4/df9/class_camera_controller__spec.html#a966a3e0e01cb58d4633fc94735ad15b4',1,'CameraController_spec::addPassTest()'],['../d3/def/classmainwindow__spec.html#a88036cf2eeea29934a01b1e521236eb8',1,'mainwindow_spec::addPassTest()']]]
+  ['addpasstest',['addPassTest',['../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712',1,'Base_spec']]],
+  ['addslcam',['addSlCam',['../d4/d3e/class_camera_controller.html#ab3be94ded648442d90715455c37dbefb',1,'CameraController']]]
 ];

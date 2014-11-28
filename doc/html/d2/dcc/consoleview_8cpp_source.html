@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>CamTool: Fichero Fuente lib/view/consoleview.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">CamTool
+   &#160;<span id="projectnumber">v: 0.0.2</span>
+   </div>
+   <div id="projectbrief">Conjunto de herramientas para WebCams(OpenCV)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="../../globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d2/dcc/consoleview_8cpp_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">consoleview.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/dcc/consoleview_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/dc8/consoleview_8h.html">lib/view/consoleview.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../globalConf.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a> (<span class="keywordtype">char</span> separator, <span class="keywordtype">string</span> text) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   showLine (separator, text, <span class="stringliteral">&quot;\033[0m&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a> (<span class="keywordtype">char</span> separator, <span class="keywordtype">string</span> text, <span class="keywordtype">string</span> formatText) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   showLine (separator, text, formatText, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a> (<span class="keywordtype">char</span> separator, <span class="keywordtype">string</span> text, <span class="keywordtype">string</span> formatText, <span class="keywordtype">bool</span> endLine) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0m*&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   cout &lt;&lt; formatText &lt;&lt; setw(<a class="code" href="../../d6/d8b/global_conf_8h.html#ab5828f6800c8d0c416a8bce1b738e5c0">CONSOLE_LINE_WITH</a>) &lt;&lt; setfill(separator) &lt;&lt; setiosflags(ios::left)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        &lt;&lt; text;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0m*&quot;</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   <span class="keywordflow">if</span> (endLine) cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#a11b2b8ccfd7c7881961a7e030293139f">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a11b2b8ccfd7c7881961a7e030293139f">ConsoleView::showMultipleLine</a>(<span class="keywordtype">char</span> separator, std::string text</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                             , <span class="keywordtype">string</span> formatText</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                             , <span class="keywordtype">bool</span> endLine) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   istringstream text_ss(text);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <span class="keywordtype">string</span> token;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;   cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <span class="keywordflow">while</span>(getline(text_ss, token, <span class="charliteral">&#39;\n&#39;</span>)) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      showLine(separator, token, formatText, endLine);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#a4a9998e8dc1f6aa260fdb3ab59cda058">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a4a9998e8dc1f6aa260fdb3ab59cda058">ConsoleView::showHeader</a> () {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;   showLine(<span class="charliteral">&#39;*&#39;</span>, <span class="stringliteral">&quot;*&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; Iniciando CamTool &quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   showLine(<span class="charliteral">&#39;*&#39;</span>, <span class="stringliteral">&quot;*&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#a018ab32290ea7766e962b5fe33c99de6">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a018ab32290ea7766e962b5fe33c99de6">ConsoleView::showHeaderTest</a> () {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   showLine(<span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; Modo testeo activado.&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot;    + Iniciando test...&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#aa6ed9b142fb7eb24623ab95f96d323f4">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#aa6ed9b142fb7eb24623ab95f96d323f4">ConsoleView::showHeaderExec</a> () {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;   showLine(<span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; Sin modo testeo.&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot;    + Iniciando ejecución...&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#a381adfe9bb339fa6513ac28136519610">  106</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../da/d93/class_console_view.html#a381adfe9bb339fa6513ac28136519610">ConsoleView::showFooter</a> () {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   showLine(<span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   showLine(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; Finalizando CamTool...&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   showLine(<span class="charliteral">&#39;*&#39;</span>, <span class="stringliteral">&quot;*&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../da/d93/class_console_view.html#a8ec552a13939a6b10f79df0dd653b9b3">  117</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="../../da/d93/class_console_view.html#a8ec552a13939a6b10f79df0dd653b9b3">ConsoleView::to_s</a> (<span class="keywordtype">int</span> value) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   stringstream ss;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   ss &lt;&lt; value;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;   <span class="keywordflow">return</span> (ss.str());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="ttc" id="class_console_view_html_a11b2b8ccfd7c7881961a7e030293139f"><div class="ttname"><a href="../../da/d93/class_console_view.html#a11b2b8ccfd7c7881961a7e030293139f">ConsoleView::showMultipleLine</a></div><div class="ttdeci">static void showMultipleLine(char separator, std::string text, std::string formatText=&quot;\033[0m&quot;, bool endLine=true)</div><div class="ttdoc">ConsoleView::showMultipleLine. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00063">consoleview.cpp:63</a></div></div>
+<div class="ttc" id="class_console_view_html_a4a9998e8dc1f6aa260fdb3ab59cda058"><div class="ttname"><a href="../../da/d93/class_console_view.html#a4a9998e8dc1f6aa260fdb3ab59cda058">ConsoleView::showHeader</a></div><div class="ttdeci">static void showHeader()</div><div class="ttdoc">ConsoleView::showHeader. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00079">consoleview.cpp:79</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div></div>
+<div class="ttc" id="class_console_view_html_a374d36a98e7d1ee85d3acc7fe5fd2c21"><div class="ttname"><a href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a></div><div class="ttdeci">static void showLine(char, std::string)</div></div>
+<div class="ttc" id="class_console_view_html_aa6ed9b142fb7eb24623ab95f96d323f4"><div class="ttname"><a href="../../da/d93/class_console_view.html#aa6ed9b142fb7eb24623ab95f96d323f4">ConsoleView::showHeaderExec</a></div><div class="ttdeci">static void showHeaderExec()</div><div class="ttdoc">ConsoleView::showHeaderExec. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00097">consoleview.cpp:97</a></div></div>
+<div class="ttc" id="class_console_view_html_a381adfe9bb339fa6513ac28136519610"><div class="ttname"><a href="../../da/d93/class_console_view.html#a381adfe9bb339fa6513ac28136519610">ConsoleView::showFooter</a></div><div class="ttdeci">static void showFooter()</div><div class="ttdoc">ConsoleView::showFooter. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00106">consoleview.cpp:106</a></div></div>
+<div class="ttc" id="class_console_view_html_a8ec552a13939a6b10f79df0dd653b9b3"><div class="ttname"><a href="../../da/d93/class_console_view.html#a8ec552a13939a6b10f79df0dd653b9b3">ConsoleView::to_s</a></div><div class="ttdeci">static std::string to_s(int)</div><div class="ttdoc">ConsoleView::to_s. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00117">consoleview.cpp:117</a></div></div>
+<div class="ttc" id="consoleview_8h_html"><div class="ttname"><a href="../../d3/dc8/consoleview_8h.html">consoleview.h</a></div><div class="ttdoc">Mostrar texto por consola. </div></div>
+<div class="ttc" id="global_conf_8h_html_ab5828f6800c8d0c416a8bce1b738e5c0"><div class="ttname"><a href="../../d6/d8b/global_conf_8h.html#ab5828f6800c8d0c416a8bce1b738e5c0">CONSOLE_LINE_WITH</a></div><div class="ttdeci">#define CONSOLE_LINE_WITH</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d8b/global_conf_8h_source.html#l00030">globalConf.h:30</a></div></div>
+<div class="ttc" id="class_console_view_html_a018ab32290ea7766e962b5fe33c99de6"><div class="ttname"><a href="../../da/d93/class_console_view.html#a018ab32290ea7766e962b5fe33c99de6">ConsoleView::showHeaderTest</a></div><div class="ttdeci">static void showHeaderTest()</div><div class="ttdoc">ConsoleView::showHeaderTest. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dcc/consoleview_8cpp_source.html#l00088">consoleview.cpp:88</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_7fb95bed025ea3988daa22db6a51f1f6.html">view</a></li><li class="navelem"><a class="el" href="../../d2/dcc/consoleview_8cpp.html">consoleview.cpp</a></li>
+    <li class="footer">Generado el Viernes, 28 de Noviembre de 2014 21:58:50 para CamTool por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -4,6 +4,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "view", "dir_c55c16fddd0cf3bc01e40a98542a6e20.html", "dir_c55c16fddd0cf3bc01e40a98542a6e20" ],
     [ "base_spec.cpp", "d8/d3a/base__spec_8cpp.html", null ],
     [ "base_spec.h", "d7/d9d/base__spec_8h.html", [
-      [ "Base_spec", "d0/d4f/class_base__spec.html", "d0/d4f/class_base__spec" ]
+      [ "Base_spec", "d0/d4f/class_base__spec.html", "d0/d4f/class_base__spec" ],
+      [ "BaseSuit", "dc/dd7/class_base__spec_1_1_base_suit.html", "dc/dd7/class_base__spec_1_1_base_suit" ]
     ] ]
 ];

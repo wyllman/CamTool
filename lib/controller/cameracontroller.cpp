@@ -1,15 +1,21 @@
 /**
  * @file    cameracontroller.cpp
  * @author  Wyllman <wyllman@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @date    Noviembre, 2014
  * @brief   Controlador para el uso de cámaras.
  *
  * @section DESCRIPTION
  * @details
  *
- * Archivo de código fuente para la clase de la
- * ventana principal en QT.
+ * Archivo de código fuente para la clase
+ * controladora de las cámaras.
+ *
+ * Interfaz de uso para detectar, seleccionar,
+ * comprobar, etc la cámaras conectadas al
+ * sistema. Se basa en el uso de las librerías
+ * OpenCV y su clase VideoCapture.
+ *
  */
 #include "lib/controller/cameracontroller.h"
 #include "../view/consoleview.h"
@@ -40,44 +46,83 @@ CameraController::~CameraController() {
 }
 
 /**
- * @brief CameraController::checkingAvCameras
+ * @brief CameraController::checkingAvCameras: Comprobar el estado de las cámaras detectadas.
  */
 void CameraController::checkingAvCameras () {
    checkingCameras(_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
 /**
- * @brief CameraController::checkingSlCameras
+ * @brief CameraController::checkingSlCameras: Comprobar el estado de las cámaras seleccionadas.
  */
 void CameraController::checkingSlCameras () {
    checkingCameras(_numberSlCams, _slCams, _isCheckedSlCams);
 }
 
 /**
- * @brief CameraController::obtainAVCamerasInfo
- * @return
+ * @brief CameraController::obtainAVCamerasInfo: Obtener el texto con la info de las cámaras detectadas.
+ * @return Un string con el texto a mostrar.
  */
 std::string CameraController::obtainAvCamerasInfo () {
    return obtainCamerasInfo(_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
 /**
- * @brief CameraController::obtainSlCamerasInfo
- * @return
+ * @brief CameraController::obtainSlCamerasInfo: Obtener el texto con la info de las cámaras seleccionadas.
+ * @return Un string con el texto a mostrar.
  */
 std::string CameraController::obtainSlCamerasInfo () {
    return obtainCamerasInfo(_numberSlCams, _slCams, _isCheckedSlCams);
 }
 
 /**
- * @brief CameraController::obtainAvCameras
+ * @brief CameraController::obtainAvCameras: Detectar las cámaras conectadas al sistema.
  */
 void CameraController::obtainAvCameras () {
    obtainCameras (_numberAvCams, _avCams, _isCheckedAvCams);
 }
 
 /**
- * @brief CameraController::checkingCameras
+ * @brief CameraController::getSlCam: Obtener el puntero al
+ *        objeto cv::VideoCapture de una cámara seleccionada.
+ *
+ * @param index: índice en el array de cámaras seleccionadas.
+ * @return El puntero al objeto cv::VideoCapture buscado.
+ *         NULL en caso de no encontrarlo o no existir.
+ */
+cv::VideoCapture* CameraController::getSlCam (int index) {
+   cv::VideoCapture* result = NULL;
+   if (index < _numberSlCams && _slCams != NULL && _slCams[index] != NULL) {
+     result = _slCams[index]->theCam;
+   }
+   return result;
+}
+
+/**
+ * @brief CameraController::addSlCam: Añadir una cámara disponible al array de seleccionadas.
+ * @param avCamIndex: Indice del array de cámaras disponibles a seleccionar.
+ */
+void CameraController::addSlCam (int avCamIndex) {
+   camInfoS** listCamsTmp = NULL; //new camInfoS* [_numberSlCams + 1];
+
+   if (avCamIndex < _numberAvCams) {
+      if (_numberSlCams == -1) _numberSlCams = 0;
+      listCamsTmp = new camInfoS* [_numberSlCams + 1];
+      for (int i = 0; i < _numberSlCams; ++i) {
+         listCamsTmp[i] = _slCams[i];
+      }
+      _avCams[avCamIndex]->slIndex = _numberSlCams;
+      listCamsTmp[_numberSlCams] = _avCams[avCamIndex];
+      ++_numberSlCams;
+
+      delete[] _slCams;
+      _slCams = listCamsTmp;
+   }
+
+}
+
+/**
+ * @brief CameraController::checkingCameras: Función general para la comprobación de cámaras.
  * @param numCams
  * @param listCams
  * @param isCheck
@@ -113,7 +158,7 @@ void CameraController::checkingCameras (int numCams, camInfoS** listCams, bool &
 }
 
 /**
- * @brief CameraController::obtainCameras
+ * @brief CameraController::obtainCameras: Función general para la detección de cámaras.
  * @param numCams
  * @param listCams
  * @param isCheck
@@ -171,7 +216,7 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
 }
 
 /**
- * @brief CameraController::obtainCamerasInfo
+ * @brief CameraController::obtainCamerasInfo: Función general para la obtención de la info de las cámaras.
  * @param numCams
  * @param listCams
  * @param isCheck
@@ -200,7 +245,8 @@ std::string CameraController::obtainCamerasInfo (int numCams, camInfoS** listCam
 }
 
 /**
- * @brief CameraController::releaseCams
+ * @brief CameraController::releaseCams: Función general para la liberación de memoria ocupada por los
+ *        manipuladores de las cámaras.
  * @param numCams
  * @param listCams
  * @param isCheck
@@ -210,8 +256,10 @@ void CameraController::releaseCams (int &numCams, camInfoS** &listCams, bool &is
    if (listCams != NULL) {
       if (index == -1) {
          for (int i = 0; i < numCams; ++i) {
-            releaseCam (listCams[i]);
-            delete listCams[i];
+            if (listCams[i] != NULL && listCams[i]->slIndex == -1) {
+               releaseCam (listCams[i]);
+               delete listCams[i];
+            }
          }
          delete[] listCams;
          listCams = NULL;
@@ -227,7 +275,7 @@ void CameraController::releaseCams (int &numCams, camInfoS** &listCams, bool &is
 }
 
 /**
- * @brief CameraController::releaseAvCams
+ * @brief CameraController::releaseAvCams: liberar memoria para las cámaras disponibles.
  * @param index
  */
 void CameraController::releaseAvCams (int index) {
@@ -235,19 +283,26 @@ void CameraController::releaseAvCams (int index) {
 }
 
 /**
- * @brief CameraController::releaseSlCams
+ * @brief CameraController::releaseSlCams: liberar memoria para las cámaras seleccionadas.
  * @param index
  */
 void CameraController::releaseSlCams (int index) {
+   if (index = -1) {
+      for (int i = 0; i < _numberSlCams; ++i) {
+         //if (_slCams != NULL && _slCams[i] != NULL) {
+            _slCams[i]->slIndex = -1;
+         //}
+      }
+   }
    releaseCams (_numberSlCams, _slCams, _isCheckedSlCams, index);
 }
 
 /**
- * @brief CameraController::releaseAvCam
+ * @brief CameraController::releaseCam: liberar memoria del objeto VideoCapture de una cámara.
  * @param theCamS
  */
 void CameraController::releaseCam (camInfoS* theCamS) {
-   if (theCamS->theCam != NULL) {
+   if (theCamS != NULL && theCamS->theCam != NULL) {
       if (theCamS->theCam->isOpened()) {
          theCamS->theCam->release();
       }

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">CamTool
-   &#160;<span id="projectnumber">v: 0.0.1</span>
+   &#160;<span id="projectnumber">v: 0.0.2</span>
    </div>
    <div id="projectbrief">Conjunto de herramientas para WebCams(OpenCV)</div>
   </td>
@@ -110,105 +110,92 @@ $(document).ready(function(){initNavTree('dd/d67/mainwindow__spec_8cpp_source.ht
 <div class="contents">
 <a href="../../dd/d67/mainwindow__spec_8cpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/dce/mainwindow__spec_8h.html">test/view/mainwindow_spec.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">   23</a></span>&#160;<a class="code" href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">mainwindow_spec::mainwindow_spec</a>() {}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">   29</a></span>&#160;CppUnit::Test* <a class="code" href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">mainwindow_spec::suite</a>() {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   CppUnit::TestSuite *suiteOfTests = <span class="keyword">new</span> CppUnit::TestSuite( <span class="stringliteral">&quot;Main Window Test Suit&quot;</span> );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                  <span class="stringliteral">&quot;Init Test&quot;</span>,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a> ) );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                  <span class="stringliteral">&quot;Test Atrib&quot;</span>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a> ) );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                  <span class="stringliteral">&quot;Test Meth&quot;</span>,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a> ) );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <span class="keywordflow">return</span> suiteOfTests;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a95ac59349cfef54ff6e1abb931023e0a">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a95ac59349cfef54ff6e1abb931023e0a">mainwindow_spec::setUp</a>() {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   _numPassTest = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   _finishMethTest = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   <span class="comment">//cout &lt;&lt; &quot;*--------------------------------------------------------------*&quot; &lt;&lt; endl;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;*--mainwindow--------------------------------------------------*&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a5aaa2dacfb337f95c47fb969354b1248">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a5aaa2dacfb337f95c47fb969354b1248">mainwindow_spec::tearDown</a>() {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;   <span class="keywordflow">if</span> (!_finishMethTest) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Fallo en el test &quot;</span> &lt;&lt; _numPassTest + 1 &lt;&lt; endl;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <span class="keywordflow">if</span> (_numPassTest &gt; 0) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;\033[0;32m&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      cout &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot; - &quot;</span> &lt;&lt; _numPassTest &lt;&lt; <span class="stringliteral">&quot; test realizados con éxito&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a>() {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;* 1. Test: Inicialización de la clase.                         *&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0;31m&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <span class="comment">// Comprobando el uso del constructor por defecto.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   CPPUNIT_ASSERT_NO_THROW_MESSAGE (<span class="stringliteral">&quot;Llamando al constructor por defecto de MainWindow ()&quot;</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                    , _dummyObject = <span class="keyword">new</span> <a class="code" href="../../d9/dc6/class_main_window.html">MainWindow</a> (););</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   addPassTest ();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;   CPPUNIT_ASSERT_MESSAGE (<span class="stringliteral">&quot;Comprobando que el constructor por defecto no retorne NULL&quot;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                           , _dummyObject != NULL);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;   addPassTest ();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   _finishMethTest = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a>() {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;* 2. Test: Atributos de la clase.                              *&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0;31m&quot;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../../lib/view/consoleview.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">   24</a></span>&#160;<a class="code" href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">mainwindow_spec::mainwindow_spec</a>(): <a class="code" href="../../d0/d4f/class_base__spec.html">Base_spec</a> (<span class="stringliteral">&quot;MainWindow&quot;</span>) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   <a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a> = NULL;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a6b6b911062c540d5213cb989832e7e14">   31</a></span>&#160;<a class="code" href="../../d3/def/classmainwindow__spec.html#a6b6b911062c540d5213cb989832e7e14">mainwindow_spec::~mainwindow_spec</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keywordflow">if</span> (<a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a> != NULL) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keyword">delete</span> (<a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a> = NULL;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">   42</a></span>&#160;CppUnit::Test* <a class="code" href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">mainwindow_spec::suite</a>() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <a class="code" href="../../dc/dd7/class_base__spec_1_1_base_suit.html">Base_spec::BaseSuit</a> *suiteOfTests = <span class="keyword">new</span> <a class="code" href="../../dc/dd7/class_base__spec_1_1_base_suit.html">Base_spec::BaseSuit</a>( <span class="stringliteral">&quot;Main Window Test Suit&quot;</span> );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                  <span class="stringliteral">&quot;Init Test&quot;</span>,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a> ) );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                  <span class="stringliteral">&quot;Test Atrib&quot;</span>,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a> ) );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   suiteOfTests-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;mainwindow_spec&gt;(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                  <span class="stringliteral">&quot;Test Meth&quot;</span>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                  &amp;<a class="code" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a> ) );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   <span class="keywordflow">return</span> suiteOfTests;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a>() {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a>(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; 1. Test: Inicialización de la clase&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">startTest</a> ();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   <span class="comment">// Comprobando el uso del constructor por defecto.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   CPPUNIT_ASSERT_NO_THROW_MESSAGE (<span class="stringliteral">&quot;Llamando al constructor por defecto de MainWindow ()&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                    , <a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a> = <span class="keyword">new</span> <a class="code" href="../../d9/dc6/class_main_window.html">MainWindow</a> (););</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712">addPassTest</a> ();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   CPPUNIT_ASSERT_MESSAGE (<span class="stringliteral">&quot;Comprobando que el constructor por defecto no retorne NULL&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                           , <a class="code" href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">_dummyObject</a> != NULL);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712">addPassTest</a> ();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">finishTest</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a>() {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a>(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; 2. Test: Atributos de la clase.&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">startTest</a> ();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   <span class="comment">// Código de los asertos aquí...</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">finishTest</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">   89</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a>() {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   <a class="code" href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a>(<span class="charliteral">&#39; &#39;</span>, <span class="stringliteral">&quot; 3. Test: Uso de los métodos de la clase.&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">startTest</a> ();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="comment">// Código de los asertos aquí...</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   CPPUNIT_ASSERT (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   addPassTest ();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;   _finishMethTest = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a>() {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;* 3. Test: Uso de los métodos de la clase.                     *&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0;31m&quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;   CPPUNIT_ASSERT (<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;   addPassTest ();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   _finishMethTest = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../d3/def/classmainwindow__spec.html#a88036cf2eeea29934a01b1e521236eb8">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d3/def/classmainwindow__spec.html#a88036cf2eeea29934a01b1e521236eb8">mainwindow_spec::addPassTest</a> () {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;   ++_numPassTest;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0;32m&quot;</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   cout &lt;&lt; <span class="stringliteral">&quot;\033[0;31m&quot;</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="ttc" id="classmainwindow__spec_html_ab6d391bc1d3116db0c00956985f2f5f8"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">mainwindow_spec::mainwindow_spec</a></div><div class="ttdeci">mainwindow_spec()</div><div class="ttdoc">mainwindow_spec::mainwindow_spec </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00023">mainwindow_spec.cpp:23</a></div></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;   <a class="code" href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">finishTest</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="ttc" id="class_base__spec_html_a06b3415f211b86c37e58c05e3240f712"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712">Base_spec::addPassTest</a></div><div class="ttdeci">void addPassTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00067">base_spec.cpp:67</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_aa8c2ccc035bed5440d6d1ebe6b9e653b"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#aa8c2ccc035bed5440d6d1ebe6b9e653b">mainwindow_spec::_dummyObject</a></div><div class="ttdeci">MainWindow * _dummyObject</div><div class="ttdef"><b>Definition:</b> <a href="../../df/dce/mainwindow__spec_8h_source.html#l00040">mainwindow_spec.h:40</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_a6b6b911062c540d5213cb989832e7e14"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a6b6b911062c540d5213cb989832e7e14">mainwindow_spec::~mainwindow_spec</a></div><div class="ttdeci">~mainwindow_spec()</div><div class="ttdoc">mainwindow_spec::~mainwindow_spec </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00031">mainwindow_spec.cpp:31</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_ab6d391bc1d3116db0c00956985f2f5f8"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8">mainwindow_spec::mainwindow_spec</a></div><div class="ttdeci">mainwindow_spec()</div><div class="ttdoc">mainwindow_spec::mainwindow_spec </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00024">mainwindow_spec.cpp:24</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a6c56a607aca825e86b98b2a948a6944d"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">mainwindow_spec::suite</a></div><div class="ttdeci">static CppUnit::Test * suite()</div><div class="ttdoc">mainwindow_spec::suite </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00029">mainwindow_spec.cpp:29</a></div></div>
+<div class="ttc" id="class_console_view_html_a374d36a98e7d1ee85d3acc7fe5fd2c21"><div class="ttname"><a href="../../da/d93/class_console_view.html#a374d36a98e7d1ee85d3acc7fe5fd2c21">ConsoleView::showLine</a></div><div class="ttdeci">static void showLine(char, std::string)</div></div>
+<div class="ttc" id="classmainwindow__spec_html_a6c56a607aca825e86b98b2a948a6944d"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d">mainwindow_spec::suite</a></div><div class="ttdeci">static CppUnit::Test * suite()</div><div class="ttdoc">mainwindow_spec::suite </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00042">mainwindow_spec.cpp:42</a></div></div>
 <div class="ttc" id="mainwindow__spec_8h_html"><div class="ttname"><a href="../../df/dce/mainwindow__spec_8h.html">mainwindow_spec.h</a></div><div class="ttdoc">Expectativas ventana Principal QT. </div></div>
-<div class="ttc" id="classmainwindow__spec_html_a07c66c51027ca409b3d41cf6ec0dbe52"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a></div><div class="ttdeci">void testMethods()</div><div class="ttdoc">mainwindow_spec::testMethods() </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00103">mainwindow_spec.cpp:103</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a95ac59349cfef54ff6e1abb931023e0a"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a95ac59349cfef54ff6e1abb931023e0a">mainwindow_spec::setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdoc">mainwindow_spec::setUp </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00047">mainwindow_spec.cpp:47</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a88036cf2eeea29934a01b1e521236eb8"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a88036cf2eeea29934a01b1e521236eb8">mainwindow_spec::addPassTest</a></div><div class="ttdeci">void addPassTest()</div><div class="ttdoc">mainwindow_spec::addPassTest </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00115">mainwindow_spec.cpp:115</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_a07c66c51027ca409b3d41cf6ec0dbe52"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a07c66c51027ca409b3d41cf6ec0dbe52">mainwindow_spec::testMethods</a></div><div class="ttdeci">void testMethods()</div><div class="ttdoc">mainwindow_spec::testMethods() </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00089">mainwindow_spec.cpp:89</a></div></div>
+<div class="ttc" id="class_base__spec_1_1_base_suit_html"><div class="ttname"><a href="../../dc/dd7/class_base__spec_1_1_base_suit.html">Base_spec::BaseSuit</a></div><div class="ttdoc">Clase interna de Base_spec e hija de TestSuite usada como clase envolvente para añadirle funcionalida...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00051">base_spec.h:51</a></div></div>
+<div class="ttc" id="class_base__spec_html"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html">Base_spec</a></div><div class="ttdoc">The Base_spec class. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00029">base_spec.h:29</a></div></div>
+<div class="ttc" id="class_base__spec_html_a92e97d36ed96d575e52a0137aaec97e6"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">Base_spec::startTest</a></div><div class="ttdeci">void startTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00075">base_spec.cpp:75</a></div></div>
+<div class="ttc" id="class_base__spec_html_a5a44d8f34aa2b746db46cfb9aa4b09c8"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">Base_spec::finishTest</a></div><div class="ttdeci">void finishTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00079">base_spec.cpp:79</a></div></div>
 <div class="ttc" id="class_main_window_html"><div class="ttname"><a href="../../d9/dc6/class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class. </div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d53/mainwindow_8h_source.html#l00033">mainwindow.h:33</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a35e1bd99f0ae32ba53fad86d5f457eb0"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a></div><div class="ttdeci">void testInitClass()</div><div class="ttdoc">mainwindow_spec::testInitClass </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00074">mainwindow_spec.cpp:74</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a5aaa2dacfb337f95c47fb969354b1248"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a5aaa2dacfb337f95c47fb969354b1248">mainwindow_spec::tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdoc">mainwindow_spec::tearDown </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00058">mainwindow_spec.cpp:58</a></div></div>
-<div class="ttc" id="classmainwindow__spec_html_a4282ed4505a6a50aa023835f897b6405"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a></div><div class="ttdeci">void testAtributes()</div><div class="ttdoc">mainwindow_spec::testAtributes() </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00091">mainwindow_spec.cpp:91</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_a35e1bd99f0ae32ba53fad86d5f457eb0"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a35e1bd99f0ae32ba53fad86d5f457eb0">mainwindow_spec::testInitClass</a></div><div class="ttdeci">void testInitClass()</div><div class="ttdoc">mainwindow_spec::testInitClass </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00060">mainwindow_spec.cpp:60</a></div></div>
+<div class="ttc" id="classmainwindow__spec_html_a4282ed4505a6a50aa023835f897b6405"><div class="ttname"><a href="../../d3/def/classmainwindow__spec.html#a4282ed4505a6a50aa023835f897b6405">mainwindow_spec::testAtributes</a></div><div class="ttdeci">void testAtributes()</div><div class="ttdoc">mainwindow_spec::testAtributes() </div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d67/mainwindow__spec_8cpp_source.html#l00077">mainwindow_spec.cpp:77</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="../../dir_c55c16fddd0cf3bc01e40a98542a6e20.html">view</a></li><li class="navelem"><a class="el" href="../../dd/d67/mainwindow__spec_8cpp.html">mainwindow_spec.cpp</a></li>
-    <li class="footer">Generado el Lunes, 24 de Noviembre de 2014 02:13:38 para CamTool por
+    <li class="footer">Generado el Viernes, 28 de Noviembre de 2014 21:58:51 para CamTool por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

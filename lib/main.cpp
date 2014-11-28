@@ -1,7 +1,7 @@
 /**
  * @file    main.cpp
  * @author  Wyllman <wyllman@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @date    Noviembre, 2014
  * @brief   Conjunto de herramientas para webCams
  *

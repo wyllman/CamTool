@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">CamTool
-   &#160;<span id="projectnumber">v: 0.0.1</span>
+   &#160;<span id="projectnumber">v: 0.0.2</span>
    </div>
    <div id="projectbrief">Conjunto de herramientas para WebCams(OpenCV)</div>
   </td>
@@ -105,7 +105,8 @@ $(document).ready(function(){initNavTree('d7/dcf/cameracontroller_8h.html','../.
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Clases</a>  </div>
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#define-members">'defines'</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia del Archivo cameracontroller.h</div>  </div>
 </div><!--header-->
@@ -114,32 +115,59 @@ $(document).ready(function(){initNavTree('d7/dcf/cameracontroller_8h.html','../.
 <p>Controlador para el uso de cámaras.  
 <a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d8b/global_conf_8h_source.html">../globalConf.h</a>&quot;</code><br />
+<code>#include &lt;opencv2/opencv.hpp&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div>
 <p><a href="../../d7/dcf/cameracontroller_8h_source.html">Ir al código fuente de este archivo.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Clases</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html">CameraController</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="../../d4/d3e/class_camera_controller.html" title="The CameraController class. ">CameraController</a> class.  <a href="../../d4/d3e/class_camera_controller.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d75/structcam_info_s.html">camInfoS</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d0/d75/structcam_info_s.html" title="camInfoS: Struct contenedor de la información de las cámaras disponibles ">camInfoS</a>: Struct contenedor de la información de las cámaras disponibles  <a href="../../d0/d75/structcam_info_s.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/class_camera_controller.html">CameraController</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3e/class_camera_controller.html" title="CameraController: Interfaz de uso para las cámaras con OpenCV. ">CameraController</a>: Interfaz de uso para las cámaras con OpenCV.  <a href="../../d4/d3e/class_camera_controller.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+'defines'</h2></td></tr>
+<tr class="memitem:a00e5ecac958786de9b78cebfaca516bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dcf/cameracontroller_8h.html#a00e5ecac958786de9b78cebfaca516bf">MAX_CAMS</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a00e5ecac958786de9b78cebfaca516bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Controlador para el uso de cámaras. </p>
 <dl class="section author"><dt>Autor</dt><dd>Wyllman <a href="#" onclick="location.href='mai'+'lto:'+'wyl'+'lm'+'an@'+'gm'+'ail'+'.c'+'om'; return false;">wyllm<span style="display: none;">.nosp@m.</span>an@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>0.0.2 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>Noviembre, 2014 </dd></dl>
 <h1><a class="anchor" id="DESCRIPTION"></a>
 DESCRIPTION</h1>
-<p>Archivo de cabecera para la clase controlador de cámaras. </p>
+<p>Archivo de cabecera para la clase controlador de cámaras.</p>
+<p>Interfaz de uso para detectar, seleccionar, comprobar, etc la cámaras conectadas al sistema. Se basa en el uso de las librerías OpenCV y su clase VideoCapture. </p>
 
 <p>Definición en el archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentación de los 'defines'</h2>
+<a class="anchor" id="a00e5ecac958786de9b78cebfaca516bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_CAMS&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Se define la macro MAX_CAMS para determinar el tamaño inicial del array de cámaras </p>
+
+<p>Definición en la línea <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html#l00026">26</a> del archivo <a class="el" href="../../d7/dcf/cameracontroller_8h_source.html">cameracontroller.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="../../dir_b65cfb74d4eff2984af5aa3d765208a0.html">controller</a></li><li class="navelem"><a class="el" href="../../d7/dcf/cameracontroller_8h.html">cameracontroller.h</a></li>
-    <li class="footer">Generado el Lunes, 24 de Noviembre de 2014 02:13:38 para CamTool por
+    <li class="footer">Generado el Viernes, 28 de Noviembre de 2014 21:58:51 para CamTool por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

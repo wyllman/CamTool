@@ -1,5 +1,13 @@
 var searchData=
 [
-  ['setup',['setUp',['../d4/df9/class_camera_controller__spec.html#a76eb5584f0aff1527e82a7ea5bb7711b',1,'CameraController_spec::setUp()'],['../d3/def/classmainwindow__spec.html#a95ac59349cfef54ff6e1abb931023e0a',1,'mainwindow_spec::setUp()']]],
-  ['suite',['suite',['../d4/df9/class_camera_controller__spec.html#af22c7f8eaf7c1efb66c98ae71bb72920',1,'CameraController_spec::suite()'],['../d3/def/classmainwindow__spec.html#a6c56a607aca825e86b98b2a948a6944d',1,'mainwindow_spec::suite()']]]
+  ['main',['main',['../df/d0a/main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../df/d0a/main_8cpp.html',1,'']]],
+  ['main_2emd',['MAIN.md',['../dc/df1/_m_a_i_n_8md.html',1,'']]],
+  ['mainwindow',['MainWindow',['../d9/dc6/class_main_window.html',1,'MainWindow'],['../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp',['mainwindow.cpp',['../d8/dd9/mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh',['mainwindow.h',['../d9/d53/mainwindow_8h.html',1,'']]],
+  ['mainwindow_5fspec',['mainwindow_spec',['../d3/def/classmainwindow__spec.html',1,'mainwindow_spec'],['../d3/def/classmainwindow__spec.html#ab6d391bc1d3116db0c00956985f2f5f8',1,'mainwindow_spec::mainwindow_spec()']]],
+  ['mainwindow_5fspec_2ecpp',['mainwindow_spec.cpp',['../dd/d67/mainwindow__spec_8cpp.html',1,'']]],
+  ['mainwindow_5fspec_2eh',['mainwindow_spec.h',['../df/dce/mainwindow__spec_8h.html',1,'']]],
+  ['max_5fcams',['MAX_CAMS',['../d7/dcf/cameracontroller_8h.html#a00e5ecac958786de9b78cebfaca516bf',1,'cameracontroller.h']]]
 ];

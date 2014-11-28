@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">CamTool
-   &#160;<span id="projectnumber">v: 0.0.1</span>
+   &#160;<span id="projectnumber">v: 0.0.2</span>
    </div>
    <div id="projectbrief">Conjunto de herramientas para WebCams(OpenCV)</div>
   </td>
@@ -112,21 +112,59 @@ $(document).ready(function(){initNavTree('d7/d9d/base__spec_8h_source.html','../
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef BASE_SPEC_H</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define BASE_SPEC_H</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d0/d4f/class_base__spec.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d4f/class_base__spec.html">Base_spec</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <a class="code" href="../../d0/d4f/class_base__spec.html#a7789a57851cf0ce570be513726deebfb">Base_spec</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;cppunit/TestFixture.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cppunit/TestAssert.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cppunit/TestCaller.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cppunit/TestSuite.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif // BASE_SPEC_H</span></div>
-<div class="ttc" id="class_base__spec_html_a7789a57851cf0ce570be513726deebfb"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a7789a57851cf0ce570be513726deebfb">Base_spec::Base_spec</a></div><div class="ttdeci">Base_spec()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00003">base_spec.cpp:3</a></div></div>
-<div class="ttc" id="class_base__spec_html"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html">Base_spec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00017">base_spec.h:17</a></div></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d0/d4f/class_base__spec.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d4f/class_base__spec.html">Base_spec</a>: <span class="keyword">public</span> CppUnit::TestFixture {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <a class="code" href="../../d0/d4f/class_base__spec.html#a4dbf11d8d484d4f17e64e74127662e18">Base_spec</a>(std::string);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a0d1477bf443814f337502633f995a89a">setUp</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a2807aca2cc6a8b2dc344e2c16a8d1b8e">tearDown</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d0/d4f/class_base__spec.html#a1f0dce5c4d6481f0a83272e1e489f40c">   37</a></span>&#160;      std::string <a class="code" href="../../d0/d4f/class_base__spec.html#a1f0dce5c4d6481f0a83272e1e489f40c">_className</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d0/d4f/class_base__spec.html#aa0aef5790e05175226b0c5c2a2912497">   38</a></span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d0/d4f/class_base__spec.html#aa0aef5790e05175226b0c5c2a2912497">_numPassTest</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d0/d4f/class_base__spec.html#a6fef6b02f0a08eceebbe6e0a66afb3c4">   39</a></span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a6fef6b02f0a08eceebbe6e0a66afb3c4">_finishMethTest</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712">addPassTest</a> ();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">startTest</a> ();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">finishTest</a> ();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../dc/dd7/class_base__spec_1_1_base_suit.html">   51</a></span>&#160;      <span class="keyword">class </span><a class="code" href="../../dc/dd7/class_base__spec_1_1_base_suit.html">BaseSuit</a>: <span class="keyword">public</span> CppUnit::TestSuite {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dc/dd7/class_base__spec_1_1_base_suit.html#a156f3ceeb67d4309e320a20ccf8878b9">   53</a></span>&#160;            <a class="code" href="../../dc/dd7/class_base__spec_1_1_base_suit.html#a156f3ceeb67d4309e320a20ccf8878b9">BaseSuit</a> (<span class="keyword">const</span> <span class="keywordtype">char</span>* name): TestSuite(name) {}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">void</span>  <a class="code" href="../../dc/dd7/class_base__spec_1_1_base_suit.html#a8ad038a4fc477a07c987835762a75d01">run</a> (CppUnit::TestResult *result);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // BASE_SPEC_H</span></div>
+<div class="ttc" id="class_base__spec_html_a06b3415f211b86c37e58c05e3240f712"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a06b3415f211b86c37e58c05e3240f712">Base_spec::addPassTest</a></div><div class="ttdeci">void addPassTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00067">base_spec.cpp:67</a></div></div>
+<div class="ttc" id="class_base__spec_1_1_base_suit_html_a8ad038a4fc477a07c987835762a75d01"><div class="ttname"><a href="../../dc/dd7/class_base__spec_1_1_base_suit.html#a8ad038a4fc477a07c987835762a75d01">Base_spec::BaseSuit::run</a></div><div class="ttdeci">void run(CppUnit::TestResult *result)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00085">base_spec.cpp:85</a></div></div>
+<div class="ttc" id="class_base__spec_html_a2807aca2cc6a8b2dc344e2c16a8d1b8e"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a2807aca2cc6a8b2dc344e2c16a8d1b8e">Base_spec::tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdoc">Base_spec::tearDown. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00043">base_spec.cpp:43</a></div></div>
+<div class="ttc" id="class_base__spec_html_a1f0dce5c4d6481f0a83272e1e489f40c"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a1f0dce5c4d6481f0a83272e1e489f40c">Base_spec::_className</a></div><div class="ttdeci">std::string _className</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00037">base_spec.h:37</a></div></div>
+<div class="ttc" id="class_base__spec_html_a6fef6b02f0a08eceebbe6e0a66afb3c4"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a6fef6b02f0a08eceebbe6e0a66afb3c4">Base_spec::_finishMethTest</a></div><div class="ttdeci">bool _finishMethTest</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00039">base_spec.h:39</a></div></div>
+<div class="ttc" id="class_base__spec_1_1_base_suit_html_a156f3ceeb67d4309e320a20ccf8878b9"><div class="ttname"><a href="../../dc/dd7/class_base__spec_1_1_base_suit.html#a156f3ceeb67d4309e320a20ccf8878b9">Base_spec::BaseSuit::BaseSuit</a></div><div class="ttdeci">BaseSuit(const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00053">base_spec.h:53</a></div></div>
+<div class="ttc" id="class_base__spec_1_1_base_suit_html"><div class="ttname"><a href="../../dc/dd7/class_base__spec_1_1_base_suit.html">Base_spec::BaseSuit</a></div><div class="ttdoc">Clase interna de Base_spec e hija de TestSuite usada como clase envolvente para añadirle funcionalida...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00051">base_spec.h:51</a></div></div>
+<div class="ttc" id="class_base__spec_html"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html">Base_spec</a></div><div class="ttdoc">The Base_spec class. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00029">base_spec.h:29</a></div></div>
+<div class="ttc" id="class_base__spec_html_aa0aef5790e05175226b0c5c2a2912497"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#aa0aef5790e05175226b0c5c2a2912497">Base_spec::_numPassTest</a></div><div class="ttdeci">int _numPassTest</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d9d/base__spec_8h_source.html#l00038">base_spec.h:38</a></div></div>
+<div class="ttc" id="class_base__spec_html_a4dbf11d8d484d4f17e64e74127662e18"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a4dbf11d8d484d4f17e64e74127662e18">Base_spec::Base_spec</a></div><div class="ttdeci">Base_spec(std::string)</div><div class="ttdoc">Base_spec::Base_spec. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00027">base_spec.cpp:27</a></div></div>
+<div class="ttc" id="class_base__spec_html_a92e97d36ed96d575e52a0137aaec97e6"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a92e97d36ed96d575e52a0137aaec97e6">Base_spec::startTest</a></div><div class="ttdeci">void startTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00075">base_spec.cpp:75</a></div></div>
+<div class="ttc" id="class_base__spec_html_a5a44d8f34aa2b746db46cfb9aa4b09c8"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a5a44d8f34aa2b746db46cfb9aa4b09c8">Base_spec::finishTest</a></div><div class="ttdeci">void finishTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00079">base_spec.cpp:79</a></div></div>
+<div class="ttc" id="class_base__spec_html_a0d1477bf443814f337502633f995a89a"><div class="ttname"><a href="../../d0/d4f/class_base__spec.html#a0d1477bf443814f337502633f995a89a">Base_spec::setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdoc">Base_spec::setUp. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3a/base__spec_8cpp_source.html#l00034">base_spec.cpp:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="../../d7/d9d/base__spec_8h.html">base_spec.h</a></li>
-    <li class="footer">Generado el Lunes, 24 de Noviembre de 2014 02:13:38 para CamTool por
+    <li class="footer">Generado el Viernes, 28 de Noviembre de 2014 21:58:51 para CamTool por
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
