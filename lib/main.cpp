@@ -23,6 +23,7 @@
 
    #include "../test/view/mainwindow_spec.h"
    #include "./test/controller/cameracontroller_spec.h"
+   #include "./test/controller/executioncontroller_spec.h"
 #else
    #include "view/mainwindow.h"
    #include <opencv2/opencv.hpp>
@@ -50,6 +51,7 @@ int main(int argc, char *argv[]) {
    CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
    codeTester.addTest(mainwindow_spec::suite());
    codeTester.addTest(CameraController_spec::suite());
+   codeTester.addTest(ExecutionController_spec::suite());
    int res2 = codeTester.run();
    result = res2 - 1;
 #else

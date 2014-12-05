@@ -20,8 +20,8 @@
 #include "lib/controller/cameracontroller.h"
 #include "../view/consoleview.h"
 
-#include <iostream>
-using namespace std;
+//#include <iostream>
+//using namespace std;
 
 
 /**

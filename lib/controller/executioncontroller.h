@@ -12,6 +12,13 @@
 #ifndef EXECUTIONCONTROLLER_H
 #define EXECUTIONCONTROLLER_H
 
+#include "../globalConf.h"
+
+#if TEST_CHECKING
+   #include "../../test/controller/executioncontroller_spec.h"
+#endif
+
+
 /**
  * @class ExecutionController
  * @brief The ExecutionController class
@@ -19,6 +26,12 @@
 class ExecutionController {
    public:
       ExecutionController();
+
+   private:
+
+#if TEST_CHECKING
+      friend class ExecutionController_spec;
+#endif
 };
 
 #endif // EXECUTIONCONTROLLER_H
