@@ -44,7 +44,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::updatePlayerUI(QImage img) {
-   cout << endl << "Actualizando imagen!!---------------" << endl;
+   //cout << endl << "Actualizando imagen!!---------------" << endl;
    if (!img.isNull()) {
       ui->label->setAlignment(Qt::AlignCenter);
       ui->label->setPixmap(QPixmap::fromImage(img).scaled(ui->label->size(),
@@ -62,7 +62,7 @@ void MainWindow::on_pushButton_clicked() {
          msgBox.exec();
    } else {
 
-      cout << endl << "Camara cargada!!---------------" << endl;
+      //cout << endl << "Camara cargada!!---------------" << endl;
 
    }
    //}
@@ -71,7 +71,7 @@ void MainWindow::on_pushButton_clicked() {
 void MainWindow::on_pushButton_2_clicked() {
    if (playerC_->isStopped()) {
       playerC_->Play();
-      cout << endl << "Pulsado Paly!!---------------" << endl;
+      //cout << endl << "Pulsado Paly!!---------------" << endl;
       ui->pushButton_2->setText(tr("Stop"));
    } else {
       playerC_->Stop();

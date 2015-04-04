@@ -49,8 +49,10 @@ class MainWindow : public QMainWindow {
    private slots:
       //Display video frame in player UI
       void updatePlayerUI(QImage img);
+
       //Slot for the load video push button.
       void on_pushButton_clicked();
+
       // Slot for the play push button.
       void on_pushButton_2_clicked();
 

@@ -42,24 +42,24 @@ void playerController::Play() {
 }
 
 void playerController::run() {
-   cout << endl << "Funcion run() playerController!!---------------" << endl;
+   //cout << endl << "Funcion run() playerController!!---------------" << endl;
    if (frameRate == 0) {
       frameRate = 25;
    }
    int delay = (1000/frameRate);
    while(!stop) {
-      cout << endl << "Funcion run() playerController (while)!!---------------" << endl;
+      //cout << endl << "Funcion run() playerController (while)!!---------------" << endl;
       if (!capture.read(frame)) {
-         cout << endl << "Funcion run() playerController (stop)!!---------------" << endl;
+         //cout << endl << "Funcion run() playerController (stop)!!---------------" << endl;
          stop = true;
       }
       if (frame.channels()== 3) {
-         cout << endl << "Funcion run() playerController (channels == 3)!!---------------" << endl;
+         //cout << endl << "Funcion run() playerController (channels == 3)!!---------------" << endl;
          cv::cvtColor(frame, RGBframe, CV_BGR2RGB);
          img = QImage((const unsigned char*)(RGBframe.data),
          RGBframe.cols,RGBframe.rows,QImage::Format_RGB888);
       } else {
-         cout << endl << "Funcion run() playerController (channels else)!!---------------" << endl;
+         //cout << endl << "Funcion run() playerController (channels else)!!---------------" << endl;
          img = QImage((const unsigned char*)(frame.data),
          frame.cols,frame.rows,QImage::Format_Indexed8);
       }
