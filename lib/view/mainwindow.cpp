@@ -24,13 +24,7 @@ using namespace std;
  * @param parent
  */
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
-
-   playerC_ = new playerController();
-
-   QObject::connect(playerC_, SIGNAL(processedImage(QImage)),
-                    this, SLOT(updatePlayerUI(QImage)));
-
-
+   playerC_ = NULL;
 
    ui->setupUi(this);
 }
@@ -41,6 +35,13 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 MainWindow::~MainWindow() {
    delete playerC_;
    delete ui;
+}
+
+void MainWindow::setPlayerController(VideoCapture * input) {
+   playerC_ = new playerController(input);
+
+   QObject::connect(playerC_, SIGNAL(processedImage(QImage)),
+                    this, SLOT(updatePlayerUI(QImage)));
 }
 
 void MainWindow::updatePlayerUI(QImage img) {
@@ -56,7 +57,7 @@ void MainWindow::on_pushButton_clicked() {
    //QString filename = QFileDialog::getOpenFileName(this, tr("Open Video"), ".",
    //                                                tr("Video Files (*.avi *.mpg *.mp4)"));
    //if (!filename.isEmpty()){
-   if (!playerC_->loadVideo("")) { // filename.toAscii().data())) {
+   if (!playerC_->loadVideo()) { // filename.toAscii().data())) {
          QMessageBox msgBox;
          msgBox.setText("The selected video could not be opened!");
          msgBox.exec();

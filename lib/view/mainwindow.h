@@ -24,6 +24,11 @@
 
 #include "../controller/playercontroller.h"
 
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+
+
 #include <QMainWindow>
 #include <QMessageBox>
 
@@ -40,6 +45,8 @@ class MainWindow : public QMainWindow {
    public:
       explicit MainWindow(QWidget *parent = 0);
       ~MainWindow();
+
+      void setPlayerController (VideoCapture*);
 
    private:
       Ui::MainWindow *ui;

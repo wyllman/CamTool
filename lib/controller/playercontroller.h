@@ -19,15 +19,15 @@ class playerController : public QThread {
       QWaitCondition condition;
       Mat frame;
       int frameRate;
-      VideoCapture capture;
+      VideoCapture* capture;
       Mat RGBframe;
       QImage img;
    public:
-      playerController(QObject *parent = 0);
+      playerController(VideoCapture* input, QObject *parent = 0);
       ~playerController ();
 
       //Load a video from memory
-     bool loadVideo(string filename);
+     bool loadVideo();
      //Play the video
      void Play();
      //Stop the video

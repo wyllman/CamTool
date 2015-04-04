@@ -142,6 +142,8 @@ void ExecutionController::cargar(int argc, char *argv[]) {
 
    camaraActual_ = controladorCamara_->getSlCam(0);
 
+   qtVentanaPrincipal_->setPlayerController(camaraActual_);
+
    ConsoleView::showMultipleLine(' ', textTmp);
 
 #endif

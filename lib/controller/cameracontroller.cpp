@@ -187,7 +187,7 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
          listCams[numCamsTmp]->resWidth = tempCam->get(CV_CAP_PROP_FRAME_WIDTH);
          listCams[numCamsTmp]->resHeight = tempCam->get(CV_CAP_PROP_FRAME_HEIGHT);
          ++numCamsTmp;
-         tempCam->release();
+         //tempCam->release();
       } else {
          continueW = false;
          delete tempCam;

@@ -4,9 +4,9 @@
 
 using namespace std;
 
-playerController::playerController(QObject *parent) :
+playerController::playerController(VideoCapture *input, QObject *parent) :
    QThread(parent) {
-
+capture = input;
 stop = true;
 
 }
@@ -15,17 +15,20 @@ stop = true;
 playerController::~playerController () {
    mutex.lock();
    stop = true;
-   capture.release();
+   capture->release();
    condition.wakeOne();
    mutex.unlock();
    wait();
 
 }
 
-bool playerController::loadVideo(string filename) {
-   capture.open(0);
-   if (capture.isOpened()) {
-      frameRate = (int) capture.get(CV_CAP_PROP_FPS);
+bool playerController::loadVideo() {
+   //capture = input;
+   //capture->open(0);
+
+   if (capture->isOpened()) {
+
+      frameRate = (int) capture->get(CV_CAP_PROP_FPS);
       return true;
    } else {
       return false;
@@ -42,15 +45,15 @@ void playerController::Play() {
 }
 
 void playerController::run() {
-   //cout << endl << "Funcion run() playerController!!---------------" << endl;
+   cout << endl << "Funcion run() playerController!!---------------" << endl;
    if (frameRate == 0) {
       frameRate = 25;
    }
    int delay = (1000/frameRate);
    while(!stop) {
       //cout << endl << "Funcion run() playerController (while)!!---------------" << endl;
-      if (!capture.read(frame)) {
-         //cout << endl << "Funcion run() playerController (stop)!!---------------" << endl;
+      if (!capture->read(frame)) {
+         cout << endl << "Funcion run() playerController (stop)!!---------------" << endl;
          stop = true;
       }
       if (frame.channels()== 3) {
