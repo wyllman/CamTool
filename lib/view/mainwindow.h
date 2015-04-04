@@ -18,9 +18,14 @@
 
 #if TEST_CHECKING
    #include "../../test/view/mainwindow_spec.h"
+#else
+
 #endif
 
+#include "../controller/playercontroller.h"
+
 #include <QMainWindow>
+#include <QMessageBox>
 
 namespace Ui {
    class MainWindow;
@@ -38,6 +43,17 @@ class MainWindow : public QMainWindow {
 
    private:
       Ui::MainWindow *ui;
+
+      playerController* playerC_;
+
+   private slots:
+      //Display video frame in player UI
+      void updatePlayerUI(QImage img);
+      //Slot for the load video push button.
+      void on_pushButton_clicked();
+      // Slot for the play push button.
+      void on_pushButton_2_clicked();
+
 
 #if TEST_CHECKING
       friend class mainwindow_spec;

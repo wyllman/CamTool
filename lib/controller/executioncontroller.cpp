@@ -22,6 +22,9 @@ ExecutionController::ExecutionController() {
 #else
    qtVentanaPrincipal_ = NULL;
    qtSplash_ = NULL;
+
+   controladorCamara_ = NULL;
+   camaraActual_ = NULL;
 #endif
 }
 
@@ -46,6 +49,11 @@ ExecutionController::~ExecutionController() {
       delete qtSplash_;
    }
    qtSplash_ = NULL;
+
+   if (controladorCamara_ != NULL) {
+      delete controladorCamara_;
+   }
+   controladorCamara_ = NULL;
 #endif
 
 }
@@ -92,6 +100,9 @@ int ExecutionController::ejecutar() {
 void ExecutionController::cargar(int argc, char *argv[]) {
    qtApp_ = new QApplication (argc, argv);
 
+   std::string textTmp;
+   //QString textTmp2 = "";
+
 #if TEST_CHECKING
    codeTester_ = new CppUnit::TextUi::TestRunner();
    codeTester_->addTest(mainwindow_spec::suite());
@@ -114,10 +125,24 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    qtSplash_->show();
    qtApp_->processEvents();
 
-   qtSplash_->showMessage("Creando la ventana principal", Qt::AlignBottom);
+   qtSplash_->showMessage("Creando la ventana principal...", Qt::AlignBottom);
    qtApp_->processEvents();
 
    qtVentanaPrincipal_ = new MainWindow();
+
+
+   qtSplash_->showMessage("Buscando camaras...", Qt::AlignBottom);
+   qtApp_->processEvents();
+
+   controladorCamara_ = new CameraController ();
+   controladorCamara_->obtainAvCameras();
+   textTmp = controladorCamara_->obtainAvCamerasInfo();
+
+   controladorCamara_->addSlCam(0);
+
+   camaraActual_ = controladorCamara_->getSlCam(0);
+
+   ConsoleView::showMultipleLine(' ', textTmp);
 
 #endif
 

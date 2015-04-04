@@ -31,12 +31,18 @@
    #include "../../test/controller/executioncontroller_spec.h"
 #else
    #include "../view/mainwindow.h"
+   #include "../controller/cameracontroller.h"
+
    #include <opencv2/opencv.hpp>
 
+   #include <QtGui>
    #include<QTimer>
    #include <QSplashScreen>
 
+   #include <string>
+
    using namespace cv;
+
 #endif
 
 
@@ -67,7 +73,13 @@ class ExecutionController {
       MainWindow* qtVentanaPrincipal_;
       QSplashScreen* qtSplash_;
 
+      CameraController* controladorCamara_;
+      cv::VideoCapture* camaraActual_;
+
 #endif
 };
+
+
+
 
 #endif // EXECUTIONCONTROLLER_H

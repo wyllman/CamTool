@@ -24,7 +24,8 @@ SOURCES  += lib/main.cpp\
             test/base_spec.cpp \
             lib/view/consoleview.cpp \
             lib/controller/executioncontroller.cpp \
-            test/controller/executioncontroller_spec.cpp
+            test/controller/executioncontroller_spec.cpp \
+    lib/controller/playercontroller.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h \
@@ -34,7 +35,8 @@ HEADERS  += lib/view/mainwindow.h\
             test/base_spec.h \
             lib/view/consoleview.h \
             lib/controller/executioncontroller.h \
-            test/controller/executioncontroller_spec.h
+            test/controller/executioncontroller_spec.h \
+    lib/controller/playercontroller.h
 
 FORMS    += lib/view/mainwindow.ui
 
