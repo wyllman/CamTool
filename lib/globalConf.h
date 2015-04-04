@@ -20,7 +20,7 @@
  *
  * Poner a false para desactivar las pruebas unitarias.
  */
-#define TEST_CHECKING false
+#define TEST_CHECKING true
 
 /**
  * Se define la macro CONSOLE_LINE_WIDTH para controlar
