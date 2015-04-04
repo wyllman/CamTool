@@ -21,6 +21,7 @@ ExecutionController::ExecutionController() {
    codeTester_ = NULL;
 #else
    qtVentanaPrincipal_ = NULL;
+   qtSplash_ = NULL;
 #endif
 }
 
@@ -40,6 +41,11 @@ ExecutionController::~ExecutionController() {
       delete qtVentanaPrincipal_;
    }
    qtVentanaPrincipal_ = NULL;
+
+   if (qtSplash_ != NULL) {
+      //delete qtSplash_;
+   }
+   qtSplash_ = NULL;
 #endif
 
 }
@@ -58,7 +64,11 @@ int ExecutionController::ejecutar() {
    //MainWindow w;
    //w.show();
 
-   qtVentanaPrincipal_->show();
+
+   QTimer::singleShot(2500, qtSplash_, SLOT(close()));
+   QTimer::singleShot(2500, qtVentanaPrincipal_, SLOT(show()));
+
+   //qtVentanaPrincipal_->show();
 
    //cvNamedWindow("Camera_Output", 1); //Create window
    //CvCapture* capture = cvCaptureFromCAM(CV_CAP_ANY); //Capture using any camera connected to your system
@@ -92,6 +102,21 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    codeTester_->addTest(CameraController_spec::suite());
    codeTester_->addTest(ExecutionController_spec::suite());
 #else
+   //QPixmap pixmap(":../../resources/indice.jpg");
+   qtSplash_ = new QSplashScreen(); //(pixmap);
+
+
+   qtSplash_->setFixedSize(500,500);
+   qtSplash_->setPixmap(QPixmap(":/../../resources/splash.png"));
+   qtSplash_->move(50, 50);
+
+   qtSplash_->show();
+   qtApp_->processEvents();
+
+   qtSplash_->showMessage("Creando la ventana principal");
+   qtApp_->processEvents();
+
+
 
    qtVentanaPrincipal_ = new MainWindow();
 

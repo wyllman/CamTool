@@ -33,6 +33,9 @@
    #include "../view/mainwindow.h"
    #include <opencv2/opencv.hpp>
 
+   #include<QTimer>
+   #include <QSplashScreen>
+
    using namespace cv;
 #endif
 
@@ -62,6 +65,7 @@ class ExecutionController {
       friend class ExecutionController_spec;
 #else
       MainWindow* qtVentanaPrincipal_;
+      QSplashScreen* qtSplash_;
 
 #endif
 };

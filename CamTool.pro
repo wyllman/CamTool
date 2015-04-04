@@ -45,7 +45,8 @@ OTHER_FILES += README.md \
                CamTool.travis.pro \
                Doxyfile \
                doc/MAIN.md \
-               doc/HELP_INFO.md
+               doc/HELP_INFO.md \
+               resources/*
 
 # Dependencias
 #   - OpenCV (MacBook Air 10.6.8)
@@ -74,3 +75,6 @@ DEPENDPATH += /opt/local/include
 
 #   - CppUnit
 LIBS += -lcppunit
+
+RESOURCES += \
+    data.qrc
