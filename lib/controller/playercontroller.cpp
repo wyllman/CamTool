@@ -4,7 +4,7 @@
 
 using namespace std;
 
-playerController::playerController(VideoCapture *input, QObject *parent) :
+playerController::playerController(VideoCaptureW *input, QObject *parent) :
    QThread(parent) {
 capture = input;
 stop = true;
@@ -24,7 +24,8 @@ playerController::~playerController () {
 
 bool playerController::loadVideo() {
    //capture = input;
-   //capture->open(0);
+   //capture->open(captureInd_);
+   capture->openCam();
 
    if (capture->isOpened()) {
 

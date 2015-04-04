@@ -6,6 +6,8 @@
 #include <QImage>
 #include <QWaitCondition>
 
+#include "cameracontroller.h"
+
 #include <opencv2/opencv.hpp>
 
 using namespace cv;
@@ -19,11 +21,12 @@ class playerController : public QThread {
       QWaitCondition condition;
       Mat frame;
       int frameRate;
-      VideoCapture* capture;
+      VideoCaptureW* capture;
+      int captureInd_;
       Mat RGBframe;
       QImage img;
    public:
-      playerController(VideoCapture* input, QObject *parent = 0);
+      playerController(VideoCaptureW* input,  QObject *parent = 0);
       ~playerController ();
 
       //Load a video from memory

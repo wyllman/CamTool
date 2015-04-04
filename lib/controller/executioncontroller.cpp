@@ -138,9 +138,10 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    controladorCamara_->obtainAvCameras();
    textTmp = controladorCamara_->obtainAvCamerasInfo();
 
-   controladorCamara_->addSlCam(0);
+   controladorCamara_->addSlCam(1);
 
    camaraActual_ = controladorCamara_->getSlCam(0);
+   //indexCamAct_ = controladorCamara_->getSlCamIndex(0);
 
    qtVentanaPrincipal_->setPlayerController(camaraActual_);
 
@@ -159,5 +160,5 @@ void ExecutionController::salir() {
 }
 
 bool ExecutionController::comprobarEstado() {
-
+   return true;
 }

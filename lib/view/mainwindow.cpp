@@ -37,7 +37,7 @@ MainWindow::~MainWindow() {
    delete ui;
 }
 
-void MainWindow::setPlayerController(VideoCapture * input) {
+void MainWindow::setPlayerController(VideoCaptureW * input) {
    playerC_ = new playerController(input);
 
    QObject::connect(playerC_, SIGNAL(processedImage(QImage)),

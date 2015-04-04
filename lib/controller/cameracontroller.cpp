@@ -90,8 +90,8 @@ void CameraController::obtainAvCameras () {
  * @return El puntero al objeto cv::VideoCapture buscado.
  *         NULL en caso de no encontrarlo o no existir.
  */
-cv::VideoCapture* CameraController::getSlCam (int index) {
-   cv::VideoCapture* result = NULL;
+VideoCaptureW *CameraController::getSlCam(int index) {
+   VideoCaptureW* result = NULL;
    if (index < _numberSlCams && _slCams != NULL && _slCams[index] != NULL) {
      result = _slCams[index]->theCam;
    }
@@ -166,8 +166,8 @@ void CameraController::checkingCameras (int numCams, camInfoS** listCams, bool &
 void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &isCheck) {
    bool continueW = true;
    int numCamsTmp = 0;
-   cv::VideoCapture* tempCam = NULL;
-
+   //cv::VideoCapture* tempCam = NULL;
+   VideoCaptureW* tempCam = NULL;
    //releaseAvCams();
    releaseCams (numCams, listCams, isCheck);
 
@@ -179,7 +179,7 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
    }
 
    while (continueW && (numCamsTmp < MAX_CAMS)) {
-      tempCam = new cv::VideoCapture(numCamsTmp);
+      tempCam = new VideoCaptureW (numCamsTmp);
 
       if(tempCam->isOpened()) {
          listCams[numCamsTmp]->index = numCamsTmp;
@@ -187,7 +187,7 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
          listCams[numCamsTmp]->resWidth = tempCam->get(CV_CAP_PROP_FRAME_WIDTH);
          listCams[numCamsTmp]->resHeight = tempCam->get(CV_CAP_PROP_FRAME_HEIGHT);
          ++numCamsTmp;
-         //tempCam->release();
+         tempCam->release();
       } else {
          continueW = false;
          delete tempCam;

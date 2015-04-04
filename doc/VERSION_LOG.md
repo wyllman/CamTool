@@ -28,5 +28,7 @@ Control de versiones y cambios.
     - Creadas las funciones cargar(...) y ejecutar(...)
   - Creada la primera version del splash screen en el controlador de ejecucion.
   - En mainWindow, creado la primera implementacion de un visor de la webcam.
+  - Creada una clase hija de VideoCapture(openCV) para guardar como atributo el indice de conexion de la cámara.
+  - Enlazada la clase anterior cambiando el uso de VideoCapture por ella misma.
 
 

@@ -74,7 +74,7 @@ class ExecutionController {
       QSplashScreen* qtSplash_;
 
       CameraController* controladorCamara_;
-      cv::VideoCapture* camaraActual_;
+      VideoCaptureW* camaraActual_;
 
 #endif
 };

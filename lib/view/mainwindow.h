@@ -23,6 +23,7 @@
 #endif
 
 #include "../controller/playercontroller.h"
+#include "../controller/cameracontroller.h"
 
 #include <opencv2/opencv.hpp>
 
@@ -46,7 +47,7 @@ class MainWindow : public QMainWindow {
       explicit MainWindow(QWidget *parent = 0);
       ~MainWindow();
 
-      void setPlayerController (VideoCapture*);
+      void setPlayerController (VideoCaptureW *);
 
    private:
       Ui::MainWindow *ui;

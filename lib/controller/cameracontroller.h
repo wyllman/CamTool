@@ -34,6 +34,22 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 
+
+/**
+ *
+ */
+class VideoCaptureW: public cv::VideoCapture {
+   public:
+      VideoCaptureW (int index): cv::VideoCapture (index) { index_ = index; };
+      ~VideoCaptureW () {};
+
+      void openCam () { this->open(index_); };
+
+   private:
+      int index_;
+};
+
+
 /**
  * @brief camInfoS: Struct contenedor de la información de las cámaras disponibles
  * @details
@@ -44,7 +60,7 @@
 struct camInfoS {
       camInfoS() { theCam = NULL; index = -1; slIndex = -1; resWidth = -1; resHeight = -1; }
 
-      cv::VideoCapture* theCam;
+      VideoCaptureW* theCam;
       unsigned int index;
       unsigned int slIndex;
       unsigned int resWidth;
@@ -67,7 +83,11 @@ class CameraController {
       std::string obtainSlCamerasInfo ();
 
       void obtainAvCameras ();
-      cv::VideoCapture* getSlCam (int index);
+      int getNumberAvCams () { return _numberAvCams; };
+
+      int getSlCamIndex (int index) { return _slCams[index]->index; };
+      VideoCaptureW* getSlCam (int index);
+
       void addSlCam (int avCamIndex);
 
 
