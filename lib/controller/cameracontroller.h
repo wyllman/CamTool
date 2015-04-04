@@ -89,9 +89,9 @@ class CameraController {
       void releaseSlCams (int index = -1);
       void releaseCam (camInfoS*);
 
-#if TEST_CHECKING
+
       friend class CameraController_spec;
-#endif
+
 };
 
 #endif // CAMERACONTROLLER_H

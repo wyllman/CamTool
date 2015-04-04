@@ -13,10 +13,12 @@
  * Cargar la interfaz de QT y mostrar o no la ventana
  * principal del programa.
  */
-#include "globalConf.h"
+#include "./globalConf.h"
 #include "./view/consoleview.h"
 
-#if TEST_CHECKING
+#include "./controller/executioncontroller.h"
+
+/*#if TEST_CHECKING
    #include <cppunit/TestSuite.h>
    #include <cppunit/Test.h>
    #include <cppunit/ui/text/TestRunner.h>
@@ -31,7 +33,7 @@
    using namespace cv;
 #endif
 
-#include <QApplication>
+#include <QApplication>*/
 
 /**
  * @brief main
@@ -40,26 +42,40 @@
  * @return
  */
 int main(int argc, char *argv[]) {
-   QApplication qtApp(argc, argv);
+   ConsoleView::showHeader ();
    int result = 0;
 
-   ConsoleView::showHeader ();
+
+   ExecutionController ejecucionPrincipal;
+
+   ejecucionPrincipal.cargar(argc, argv);
+
+   result = ejecucionPrincipal.ejecutar();
+
+
+   /*QApplication qtApp(argc, argv);
+   int result = 0;
+
+
 
 #if TEST_CHECKING
+
    ConsoleView::showHeaderTest ();
 
-   CppUnit::TextUi::TestRunner codeTester; /* Crear el objeto de CppUnit que ejecutará las pruebas */
+   CppUnit::TextUi::TestRunner codeTester; // Crear el objeto de CppUnit que ejecutará las pruebas
    codeTester.addTest(mainwindow_spec::suite());
    codeTester.addTest(CameraController_spec::suite());
    codeTester.addTest(ExecutionController_spec::suite());
    int res2 = codeTester.run();
    result = res2 - 1;
+
 #else
+
    ConsoleView::showHeaderExec ();
 
    //QApplication qtApp(argc, argv);
-   //MainWindow w;
-   //w.show();
+   MainWindow w;
+   w.show();
 
    cvNamedWindow("Camera_Output", 1); //Create window
    CvCapture* capture = cvCaptureFromCAM(CV_CAP_ANY); //Capture using any camera connected to your system
@@ -76,8 +92,8 @@ int main(int argc, char *argv[]) {
    cvReleaseCapture(&capture); //Release capture.
    cvDestroyWindow("Camera_Output"); //Destroy Window
 
-   //result = qtApp.exec();
-#endif
+   result = qtApp.exec();
+#endif*/
 
    ConsoleView::showFooter ();
    return result;

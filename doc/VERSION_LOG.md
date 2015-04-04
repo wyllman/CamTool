@@ -24,4 +24,7 @@ Control de versiones y cambios.
 
 - v 0.0.2:
   - Primera fase de la clase CameraController finalizada.
+  - Refactorizado el codigo de main.cpp(ejecucion principal) a la clase ExecutionController:
+    - Creadas las funciones cargar(...) y ejecutar(...)
+
 

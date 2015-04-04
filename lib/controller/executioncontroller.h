@@ -18,6 +18,24 @@
    #include "../../test/controller/executioncontroller_spec.h"
 #endif
 
+#include <QApplication>
+#include "../view/consoleview.h"
+
+#if TEST_CHECKING
+   #include <cppunit/TestSuite.h>
+   #include <cppunit/Test.h>
+   #include <cppunit/ui/text/TestRunner.h>
+
+   #include "../../test/view/mainwindow_spec.h"
+   #include "../../test/controller/cameracontroller_spec.h"
+   #include "../../test/controller/executioncontroller_spec.h"
+#else
+   #include "../view/mainwindow.h"
+   #include <opencv2/opencv.hpp>
+
+   using namespace cv;
+#endif
+
 
 /**
  * @class ExecutionController
@@ -26,11 +44,25 @@
 class ExecutionController {
    public:
       ExecutionController();
+      ~ExecutionController();
+
+      void cargar(int argc, char *argv[]);
+      int ejecutar ();
+
 
    private:
+      QApplication* qtApp_;
+
+      void vaciarMemoria();
+      void salir();
+      bool comprobarEstado();
 
 #if TEST_CHECKING
+      CppUnit::TextUi::TestRunner* codeTester_;
       friend class ExecutionController_spec;
+#else
+      MainWindow* qtVentanaPrincipal_;
+
 #endif
 };
 
