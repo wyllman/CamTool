@@ -26,5 +26,6 @@ Control de versiones y cambios.
   - Primera fase de la clase CameraController finalizada.
   - Refactorizado el codigo de main.cpp(ejecucion principal) a la clase ExecutionController:
     - Creadas las funciones cargar(...) y ejecutar(...)
+  - Creada la primera version del splash screen en el controlador de ejecucion.
 
 

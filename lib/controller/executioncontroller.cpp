@@ -43,7 +43,7 @@ ExecutionController::~ExecutionController() {
    qtVentanaPrincipal_ = NULL;
 
    if (qtSplash_ != NULL) {
-      //delete qtSplash_;
+      delete qtSplash_;
    }
    qtSplash_ = NULL;
 #endif
@@ -59,10 +59,6 @@ int ExecutionController::ejecutar() {
 #else
 
    ConsoleView::showHeaderExec ();
-
-   //QApplication qtApp(argc, argv);
-   //MainWindow w;
-   //w.show();
 
 
    QTimer::singleShot(2500, qtSplash_, SLOT(close()));
