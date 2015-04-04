@@ -102,24 +102,26 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    codeTester_->addTest(CameraController_spec::suite());
    codeTester_->addTest(ExecutionController_spec::suite());
 #else
-   //QPixmap pixmap(":../../resources/indice.jpg");
-   qtSplash_ = new QSplashScreen(); //(pixmap);
+   QPixmap image (":/resources/indice.jpg");
+
+   QTransform transform;
+   transform.scale(2, 2);
+
+   qtSplash_ = new QSplashScreen(image.transformed(transform)); //(pixmap);
+
 
 
    qtSplash_->setFixedSize(500,500);
-   qtSplash_->setPixmap(QPixmap(":/../../resources/splash.png"));
+   //qtSplash_->setPixmap(QPixmap(":/resources/indice.jpg"));
    qtSplash_->move(50, 50);
 
    qtSplash_->show();
    qtApp_->processEvents();
 
-   qtSplash_->showMessage("Creando la ventana principal");
+   qtSplash_->showMessage("Creando la ventana principal", Qt::AlignBottom);
    qtApp_->processEvents();
 
-
-
    qtVentanaPrincipal_ = new MainWindow();
-
 
 #endif
 
