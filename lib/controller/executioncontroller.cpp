@@ -77,7 +77,14 @@ int ExecutionController::ejecutar() {
 
    QTimer::singleShot(2500, qtSplash_, SLOT(close()));
 
-   qtSelecCam_->crearVisores(controladorCamara_->getNumberAvCams());
+
+
+   for (int i = 0; i <controladorCamara_->getNumberAvCams(); ++i) {
+      qtSelecCam_->nuevoContrVisor(controladorCamara_->getAvCam(i));
+   }
+
+   qtSelecCam_->crearVisores();
+   qtSelecCam_->activarVisores();
 
 
    QTimer::singleShot(2500, qtSelecCam_, SLOT(show()));
@@ -165,6 +172,8 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    qtApp_->processEvents();
 
    qtSelecCam_ = new SelectorCamaras ();
+
+
 
 #endif
 

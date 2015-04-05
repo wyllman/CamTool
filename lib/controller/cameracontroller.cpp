@@ -180,6 +180,7 @@ void CameraController::obtainCameras (int &numCams, camInfoS** &listCams, bool &
 
    while (continueW && (numCamsTmp < MAX_CAMS)) {
       tempCam = new VideoCaptureW (numCamsTmp);
+      tempCam->set(CV_CAP_PROP_FPS, 15);
 
       if(tempCam->isOpened()) {
          listCams[numCamsTmp]->index = numCamsTmp;

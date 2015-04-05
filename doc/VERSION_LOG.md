@@ -33,5 +33,8 @@ Control de versiones y cambios.
   - Creada la vista selector de camaras, enlazada con la ejecucion del programa(controlador de ejecucion)
     y creados los labels(dinamicamente, dependiendo del numero de webcams conectadas) que haran de visores
     previos de cada webcam.
+  - Creadas las visualizaciones previas de las camaras en el selector de camaras:
+    - Encontrado problema de compatibilidad con la camara built-in y otra camara enchufada en el usb derecho:
+      - Buscar problema del buffer del usb lleno.
 
 

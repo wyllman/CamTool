@@ -47,9 +47,9 @@ void playerController::Play() {
 
 void playerController::run() {
    cout << endl << "Funcion run() playerController!!---------------" << endl;
-   if (frameRate == 0) {
-      frameRate = 25;
-   }
+   //if (frameRate == 0) {
+      frameRate = 15;
+   //}
    int delay = (1000/frameRate);
    while(!stop) {
       //cout << endl << "Funcion run() playerController (while)!!---------------" << endl;

@@ -84,6 +84,7 @@ class CameraController {
 
       void obtainAvCameras ();
       int getNumberAvCams () { return _numberAvCams; };
+      VideoCaptureW* getAvCam (int index) { return _avCams[index]->theCam; };
 
       int getSlCamIndex (int index) { return _slCams[index]->index; };
       VideoCaptureW* getSlCam (int index);
