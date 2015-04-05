@@ -21,6 +21,7 @@ ExecutionController::ExecutionController() {
    codeTester_ = NULL;
 #else
    qtVentanaPrincipal_ = NULL;
+   qtSelecCam_ = NULL;
    qtSplash_ = NULL;
 
    controladorCamara_ = NULL;
@@ -54,6 +55,11 @@ ExecutionController::~ExecutionController() {
       delete controladorCamara_;
    }
    controladorCamara_ = NULL;
+
+   if (qtSelecCam_ != NULL) {
+      delete qtSelecCam_;
+   }
+   qtSelecCam_ = NULL;
 #endif
 
 }
@@ -70,7 +76,16 @@ int ExecutionController::ejecutar() {
 
 
    QTimer::singleShot(2500, qtSplash_, SLOT(close()));
-   QTimer::singleShot(2500, qtVentanaPrincipal_, SLOT(show()));
+
+   qtSelecCam_->crearVisores(controladorCamara_->getNumberAvCams());
+
+
+   QTimer::singleShot(2500, qtSelecCam_, SLOT(show()));
+
+   QObject::connect(qtSelecCam_, SIGNAL(accepted()),
+                    qtVentanaPrincipal_, SLOT(show()));
+
+   //QTimer::singleShot(2500, qtVentanaPrincipal_, SLOT(show()));
 
    //qtVentanaPrincipal_->show();
 
@@ -138,14 +153,18 @@ void ExecutionController::cargar(int argc, char *argv[]) {
    controladorCamara_->obtainAvCameras();
    textTmp = controladorCamara_->obtainAvCamerasInfo();
 
-   controladorCamara_->addSlCam(1);
+   controladorCamara_->addSlCam(0);
 
    camaraActual_ = controladorCamara_->getSlCam(0);
-   //indexCamAct_ = controladorCamara_->getSlCamIndex(0);
 
    qtVentanaPrincipal_->setPlayerController(camaraActual_);
 
    ConsoleView::showMultipleLine(' ', textTmp);
+
+   qtSplash_->showMessage("Creando el selector de camaras...", Qt::AlignBottom);
+   qtApp_->processEvents();
+
+   qtSelecCam_ = new SelectorCamaras ();
 
 #endif
 

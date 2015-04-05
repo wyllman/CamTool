@@ -30,6 +30,7 @@
    #include "../../test/controller/cameracontroller_spec.h"
    #include "../../test/controller/executioncontroller_spec.h"
 #else
+
    #include "../view/mainwindow.h"
    #include "../controller/cameracontroller.h"
 
@@ -45,6 +46,7 @@
 
 #endif
 
+#include "../view/selectorcamaras.h"
 
 /**
  * @class ExecutionController
@@ -72,6 +74,7 @@ class ExecutionController {
 #else
       MainWindow* qtVentanaPrincipal_;
       QSplashScreen* qtSplash_;
+      SelectorCamaras* qtSelecCam_;
 
       CameraController* controladorCamara_;
       VideoCaptureW* camaraActual_;

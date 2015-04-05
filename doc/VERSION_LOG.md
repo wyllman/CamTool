@@ -30,5 +30,8 @@ Control de versiones y cambios.
   - En mainWindow, creado la primera implementacion de un visor de la webcam.
   - Creada una clase hija de VideoCapture(openCV) para guardar como atributo el indice de conexion de la cámara.
   - Enlazada la clase anterior cambiando el uso de VideoCapture por ella misma.
+  - Creada la vista selector de camaras, enlazada con la ejecucion del programa(controlador de ejecucion)
+    y creados los labels(dinamicamente, dependiendo del numero de webcams conectadas) que haran de visores
+    previos de cada webcam.
 
 

@@ -23,7 +23,8 @@ SOURCES  += lib/main.cpp\
             lib/view/consoleview.cpp\
             lib/controller/executioncontroller.cpp\
             test/controller/executioncontroller_spec.cpp\
-            lib/controller/playercontroller.cpp
+            lib/controller/playercontroller.cpp\
+            lib/view/selectorcamaras.cpp
 
 HEADERS  += lib/view/mainwindow.h\
             lib/globalConf.h\
@@ -34,7 +35,8 @@ HEADERS  += lib/view/mainwindow.h\
             lib/view/consoleview.h\
             lib/controller/executioncontroller.h\
             test/controller/executioncontroller_spec.h\
-            lib/controller/playercontroller.h
+            lib/controller/playercontroller.h\
+            lib/view/selectorcamaras.h
 
 FORMS    += lib/view/mainwindow.ui
 
