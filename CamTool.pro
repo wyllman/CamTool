@@ -41,7 +41,7 @@ HEADERS  += lib/view/mainwindow.h\
             lib/view/selectorcamaras.h
 
 FORMS    += lib/view/mainwindow.ui \
-    lib/view/selectorcamaras.ui
+            lib/view/selectorcamaras.ui
 
 # Controlar otros archivos con el QT Creator
 OTHER_FILES += README.md \

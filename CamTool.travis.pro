@@ -38,7 +38,8 @@ HEADERS  += lib/view/mainwindow.h\
             lib/controller/playercontroller.h\
             lib/view/selectorcamaras.h
 
-FORMS    += lib/view/mainwindow.ui
+FORMS    += lib/view/mainwindow.ui\
+            lib/view/selectorcamaras.ui
 
 
 # Dependencias
